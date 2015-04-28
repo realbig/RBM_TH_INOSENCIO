@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<header id="site-header">
 
-		<div class="sticky">
+		<div class="foundation-sticky">
 			<nav class="top-bar" data-topbar role="navigation">
 
 				<section class="top-bar-section">
@@ -81,21 +81,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 								</div>
 							</form>
 						</li>
+
+						<li class="show-for-small-only">
+							<a href="#" class="toggle-nav">
+								<span class="fa fa-bars"></span>
+							</a>
+						</li>
 					</ul>
 				</section>
 
 			</nav>
+
+			<nav id="mobile-nav">
+				<?php
+				wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container'      => false,
+				) );
+				?>
+			</nav>
 		</div>
 
 		<div class="logo-menu row">
-			<section class="site-logo columns small-12 medium-4">
+			<section class="site-logo columns small-12 medium-3 large-4">
 				<a href="<?php bloginfo( 'url' ); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png"
 					     alt="inosencio fisk"/>
 				</a>
 			</section>
 
-			<nav class="site-nav columns small-12 medium-8">
+			<nav class="site-nav columns medium-9 large-8 show-for-medium-up">
 				<?php
 				add_filter( 'the_title', '_inosencio_header_nav_filter' );
 

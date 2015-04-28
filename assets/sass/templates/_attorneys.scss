@@ -31,9 +31,14 @@ body.post-type-archive-attorney {
     margin-top: $column-gutter / 2;
 
     li {
-      @include image-overlay(rgba(#000, 0.6), rgba(#000, 0), left);
+      @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
       color: $light-color;
       background-size: cover;
+      background-position: center center;
+
+      @media #{$small-only} {
+        text-align: center;
+      }
 
       .container {
         position: relative;
@@ -60,6 +65,7 @@ body.post-type-archive-attorney {
           bottom: $column-gutter / 2;
           left: $column-gutter / 2;
           margin: 0;
+          width: 100%;
         }
 
         .button {

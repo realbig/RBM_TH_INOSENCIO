@@ -9,13 +9,14 @@ The static site header.
 
 #site-header {
 
-  .sticky.fixed {
+  .foundation-sticky.fixed {
     z-index: 100000;
   }
 
   .top-bar {
     color: $light-color;
     box-shadow: 0 0 20px rgba(#000, 0.4);
+    z-index: 100000;
 
     a {
       color: inherit;
@@ -27,6 +28,10 @@ The static site header.
     }
 
     .search {
+      @media #{$small-only} {
+        display: none;
+      }
+
       input[type="search"] {
         background-color: transparent;
         border: none;
@@ -44,6 +49,33 @@ The static site header.
     }
   }
 
+  #mobile-nav {
+    text-align: center;
+    background: $primary-color;
+    color: $light-color;
+    padding: ($column-gutter / 2) 0;
+    display: none;
+
+    @media #{$medium-up} {
+      display: none !important;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    .menu-item {
+      a {
+        display: block;
+        padding: 0.5em 0;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
   .logo-menu {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -53,10 +85,23 @@ The static site header.
     .menu {
       text-align: right;
       text-transform: uppercase;
+      font-size: 0.8em;
+
+      @media #{$large-up} {
+        font-size: 1em;
+      }
+
+      .button {
+        font-size: inherit;
+      }
 
       .menu-item {
         display: inline-block;
-        margin: 0 0.5em;
+        margin: 0 0.1em;
+
+        @media #{$large-up} {
+          margin: 0 0.5em;
+        }
 
         &:first-of-type {
           margin-left: 0;

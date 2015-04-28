@@ -59,7 +59,7 @@ Extra functions.
   }
 }
 
-@mixin gradient($start: rgba(#000, 0.6), $stop: rgba(#000, 0), $direction: top) {
+@mixin gradient($start: rgba(#000, 0.8), $stop: rgba(#000, 0), $direction: top) {
 
   // FF3.6+
   background: -moz-linear-gradient(
@@ -113,7 +113,7 @@ Extra functions.
   );
 }
 
-@mixin image-overlay($start: rgba(#000, 0.6), $stop: rgba(#000, 0), $direction: top) {
+@mixin image-overlay($start: rgba(#000, 0.8), $stop: rgba(#000, 0), $direction: top) {
   position: relative;
 
   &:before {

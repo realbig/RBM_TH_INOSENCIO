@@ -21,6 +21,10 @@ body.home {
     text-align: center;
     font-size: 1.5em;
 
+    @media #{$small-only} {
+      font-size: 1em;
+    }
+
     > .container {
       position: relative;
       padding: $column-gutter 0;
@@ -70,6 +74,10 @@ body.home {
       padding: 0 ($column-gutter / 2);
       font-size: 1.3em;
       font-style: italic;
+
+      @media #{$small-only} {
+        font-size: 1em;
+      }
     }
   }
 
@@ -86,7 +94,7 @@ body.home {
     }
 
     .image-container {
-      @include image-overlay(rgba(#000, 0.6), rgba(#000, 0), left);
+      @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
     }
   }
 
@@ -96,12 +104,16 @@ body.home {
     }
 
     .image-container {
-      @include image-overlay(rgba(#000, 0.6), rgba(#000, 0), right);
+      @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), right);
 
       .container {
         right: $column-gutter / 2;
         left: auto;
       }
+    }
+
+    .gform_wrapper {
+      text-align: left;
     }
   }
 }

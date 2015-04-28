@@ -2284,16 +2284,16 @@ h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1, body.home .home-cta .practice-areas {
-  font-size: 2.125rem; }
+  font-size: 1.5rem; }
 
 h2 {
   font-size: 1.6875rem; }
 
 h3 {
-  font-size: 1.375rem; }
+  font-size: 1.25rem; }
 
 h4 {
-  font-size: 1.125rem; }
+  font-size: 1rem; }
 
 h5 {
   font-size: 1.125rem; }
@@ -2835,7 +2835,7 @@ label.error {
   color: #f04124; }
 
 meta.foundation-mq-topbar {
-  font-family: "/only screen and (min-width:40.063em)/";
+  font-family: "/only screen/";
   width: 40.063em; }
 
 /* Wrapped around .top-bar to contain to grid width */
@@ -3154,7 +3154,7 @@ meta.foundation-mq-topbar {
 .js-generated {
   display: block; }
 
-@media only screen and (min-width:40.063em) {
+@media only screen {
   .top-bar {
     background: #232E56;
     overflow: visible; }
@@ -3406,16 +3406,20 @@ throughout this theme's SASS files.
 
 @since 0.1.0
 */
-#site-header .sticky.fixed {
+#site-header .foundation-sticky.fixed {
   z-index: 100000; }
 #site-header .top-bar {
   color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  z-index: 100000; }
   #site-header .top-bar a {
     color: inherit; }
     #site-header .top-bar a .fa {
       font-size: 1.2em;
       vertical-align: middle; }
+  @media only screen and (max-width: 40em) {
+    #site-header .top-bar .search {
+      display: none; } }
   #site-header .top-bar .search input[type="search"] {
     background-color: transparent;
     border: none;
@@ -3427,15 +3431,40 @@ throughout this theme's SASS files.
     line-height: 1.875rem;
     display: inline-block;
     cursor: pointer; }
+#site-header #mobile-nav {
+  text-align: center;
+  background: #232E56;
+  color: #fff;
+  padding: 0.9375rem 0;
+  display: none; }
+  @media only screen and (min-width:40.063em) {
+    #site-header #mobile-nav {
+      display: none !important; } }
+  #site-header #mobile-nav.active {
+    display: block; }
+  #site-header #mobile-nav .menu-item a {
+    display: block;
+    padding: 0.5em 0; }
+  #site-header #mobile-nav a {
+    color: inherit; }
 #site-header .logo-menu {
   margin-top: 1em;
   margin-bottom: 1em; }
 #site-header .site-nav .menu {
   text-align: right;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 0.8em; }
+  @media only screen and (min-width:64.063em) {
+    #site-header .site-nav .menu {
+      font-size: 1em; } }
+  #site-header .site-nav .menu .button, #site-header .site-nav .menu input[type="submit"], #site-header .site-nav .menu .menu-item:last-of-type a {
+    font-size: inherit; }
   #site-header .site-nav .menu .menu-item {
     display: inline-block;
-    margin: 0 0.5em; }
+    margin: 0 0.1em; }
+    @media only screen and (min-width:64.063em) {
+      #site-header .site-nav .menu .menu-item {
+        margin: 0 0.5em; } }
     #site-header .site-nav .menu .menu-item:first-of-type {
       margin-left: 0; }
     #site-header .site-nav .menu .menu-item:last-of-type a {
@@ -3754,7 +3783,7 @@ body.home .home-cta {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0.5; }
   body.home .home-cta:after {
     content: '';
@@ -3764,14 +3793,17 @@ body.home .home-cta {
     top: 0;
     width: 100%;
     height: 50%;
-    background: -webkit-gradient(linear, right top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    background: -webkit-gradient(linear, right top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
+  @media only screen and (max-width: 40em) {
+    body.home .home-cta {
+      font-size: 1em; } }
   body.home .home-cta > .container {
     position: relative;
     padding: 1.875rem 0;
@@ -3805,6 +3837,9 @@ body.home .section {
     padding: 0 0.9375rem;
     font-size: 1.3em;
     font-style: italic; }
+    @media only screen and (max-width: 40em) {
+      body.home .section .home-about-sub-head {
+        font-size: 1em; } }
 body.home .home-about .practice-areas-heading {
   margin: 2em 0 1em; }
 @media only screen and (min-width:40.063em) {
@@ -3820,7 +3855,7 @@ body.home .home-about .image-container {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0.5; }
   body.home .home-about .image-container:after {
     content: '';
@@ -3830,11 +3865,11 @@ body.home .home-about .image-container {
     top: 0;
     width: 50%;
     height: 100%;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
@@ -3849,7 +3884,7 @@ body.home .home-about-2 .image-container {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0.5; }
   body.home .home-about-2 .image-container:after {
     content: '';
@@ -3859,17 +3894,19 @@ body.home .home-about-2 .image-container {
     top: 0;
     width: 50%;
     height: 100%;
-    background: -webkit-gradient(linear, right top, right top, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    background: -webkit-gradient(linear, right top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
   body.home .home-about-2 .image-container .container {
     right: 0.9375rem;
     left: auto; }
+body.home .home-about-2 .gform_wrapper {
+  text-align: left; }
 
 /*
 Attorney archive.
@@ -3897,7 +3934,8 @@ body.post-type-archive-attorney .attorneys {
   body.post-type-archive-attorney .attorneys li {
     position: relative;
     color: #fff;
-    background-size: cover; }
+    background-size: cover;
+    background-position: center center; }
     body.post-type-archive-attorney .attorneys li:before {
       content: '';
       position: absolute;
@@ -3905,7 +3943,7 @@ body.post-type-archive-attorney .attorneys {
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
       opacity: 0.5; }
     body.post-type-archive-attorney .attorneys li:after {
       content: '';
@@ -3915,14 +3953,17 @@ body.post-type-archive-attorney .attorneys {
       top: 0;
       width: 50%;
       height: 100%;
-      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-      background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+      background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
       filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
+    @media only screen and (max-width: 40em) {
+      body.post-type-archive-attorney .attorneys li {
+        text-align: center; } }
     body.post-type-archive-attorney .attorneys li .container {
       position: relative;
       padding-left: 0.9375rem;
@@ -3940,7 +3981,8 @@ body.post-type-archive-attorney .attorneys {
         position: absolute;
         bottom: 0.9375rem;
         left: 0.9375rem;
-        margin: 0; }
+        margin: 0;
+        width: 100%; }
       body.post-type-archive-attorney .attorneys li .container .button, body.post-type-archive-attorney .attorneys li .container input[type="submit"], body.post-type-archive-attorney .attorneys li .container #site-header .site-nav .menu .menu-item:last-of-type a, #site-header .site-nav .menu .menu-item:last-of-type body.post-type-archive-attorney .attorneys li .container a {
         font-size: inherit;
         color: inherit;
@@ -4006,7 +4048,7 @@ body.page-template-firm-overview .image-container {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0.5; }
   body.page-template-firm-overview .image-container:after {
     content: '';
@@ -4016,11 +4058,11 @@ body.page-template-firm-overview .image-container {
     top: 0;
     width: 50%;
     height: 100%;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
@@ -4051,7 +4093,7 @@ body.page-template-contact .image-container {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0.5; }
   body.page-template-contact .image-container:after {
     content: '';
@@ -4061,11 +4103,11 @@ body.page-template-contact .image-container {
     top: 0;
     width: 50%;
     height: 100%;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(100%, transparent));
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#99000000',
+                  startColorstr='#CC000000',
                   endColorstr='#00000000',
                   GradientType=0
   ); }
@@ -4099,7 +4141,8 @@ throughout this theme's SASS files.
   padding-right: 0; }
 
 .image-container {
-  background-size: cover; }
+  background-size: cover;
+  background-position: center center; }
   .image-container .container {
     position: absolute;
     left: 0.9375rem;
@@ -4111,6 +4154,9 @@ throughout this theme's SASS files.
     text-align: left;
     color: #fff;
     z-index: 1; }
+    @media only screen and (max-width: 40em) {
+      .image-container .container {
+        width: auto; } }
 
 .practice-areas {
   font-weight: normal;
