@@ -21,15 +21,15 @@
 
         if ($().textillate) {
             $('.textillate').textillate({
-                loop: true,
-                minDisplayTime: 1000,
+                //loop: true,
+                //minDisplayTime: 1000,
                 in: {
-                    effect: 'rotateIn',
+                    effect: 'flipInX',
                     delayScale: 0.75,
-                    delay: 50
+                    delay: 100
                 },
                 out: {
-                    effect: 'rotateOut',
+                    effect: 'flipOutX',
                     delayScale: 0.75,
                     delay: 50
                 }

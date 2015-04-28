@@ -143,9 +143,8 @@ add_action( 'init', function () {
 	wp_register_style(
 		THEME_ID . '-animate-css',
 		get_template_directory_uri() . '/assets/vendor/css/animate.css',
-		array(),
-		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
-		true
+		array( THEME_ID ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION
 	);
 
 	// Textillate
