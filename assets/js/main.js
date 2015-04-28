@@ -21,8 +21,8 @@
 
         if ($().textillate) {
             $('.textillate').textillate({
-                //loop: true,
-                //minDisplayTime: 1000,
+                loop: true,
+                minDisplayTime: 1000,
                 in: {
                     effect: 'flipInX',
                     delayScale: 0.75,
