@@ -23,13 +23,14 @@ function _inosencio_sc_phone( $atts = array() ) {
 
 	$atts = shortcode_atts( array(
 		'icon' => 'no',
+		'link' => 'yes',
 	), $atts );
 
 	$phone = get_option( '_inosencio_phone', '555-555-5555' );
 
 	$html = '';
 	$html .= $atts['icon'] == 'yes' ? '<span class="fa fa-mobile"></span>&nbsp;&nbsp;' : '';
-	$html .= wp_is_mobile() ? "<a href=\"tel:$phone\">$phone</a>" : $phone;
+	$html .= wp_is_mobile() && $atts['link'] == 'yes' ? "<a class=\"mobile-link\" href=\"tel:$phone\">$phone</a>" : $phone;
 
 	return $html;
 }

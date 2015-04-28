@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<section class="top-bar-section">
 					<ul class="left">
 						<li>
-							<a href="#">
+							<a href="<?php bloginfo( 'url' ); ?>">
 								<span class="fa fa-home"></span>
 							</a>
 						</li>
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<li class="divider"></li>
 
 						<li>
-							<a href="#">
+							<a href="mailto:<?php echo get_option( '_inosencio_email' ); ?>">
 								<span class="fa fa-envelope"></span>
 							</a>
 						</li>
@@ -56,8 +56,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<li class="divider"></li>
 
 						<li>
-							<a href="#">
-								<?php echo _inosencio_sc_phone( array( 'icon' => 'yes' ) ); ?>
+							<a href="tel:<?php echo get_option( '_inosencio_phone' ); ?>">
+								<?php echo _inosencio_sc_phone( array( 'icon' => 'yes', 'link' => 'no' ) ); ?>
 							</a>
 						</li>
 
