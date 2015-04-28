@@ -8,8 +8,8 @@ throughout this theme's SASS files.
 @import "../vendor/sass/foundation/functions";
 
 // We use these as default colors throughout
-$primary-color: #a8c7e9;
-$secondary-color: #f8abad;
+$primary-color: #232E56;
+$secondary-color: #4D6330;
 $alert-color: #f04124;
 $success-color: #43AC6A;
 $warning-color: #f08a24;
@@ -21,10 +21,31 @@ $medium-color: #aaa;
 $light-color: #fff;
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Helvetica", sans-serif;
+$font-family-sans-serif: "Raleway", sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $body-font-color: #222;
+
+// Top-bar
+$topbar-bg-color: $primary-color;
+$topbar-height: rem-calc(30);
+$topbar-link-bg-hover: lighten($primary-color, 10%);
+$topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 15%);
+$topbar-dropdown-bg: $topbar-bg-color;
+
+// Buttons
+$button-bg-color: transparent;
+$button-bg-hover: $primary-color;
+$button-font-color: $body-font-color;
+$button-border-width: 1px;
+$button-border-color: $body-font-color;
+$button-tny: rem-calc(7);
+$button-sml: rem-calc(8);
+$button-med: rem-calc(10);
+$button-lrg: rem-calc(13);
+
+// Forms
+$input-border-color: $body-font-color;
 
 // Sizes
 $gutter: 30px;
@@ -32,9 +53,10 @@ $column-gutter: rem-calc(30);
 
 // We use these to control header font styles
 $header-font-family: $font-family-sans-serif;
-$header-line-height: 1.4;
-$header-top-margin: .2rem;
-$header-bottom-margin: .5rem;
+$header-font-weight: 900;
+//$header-line-height: 1.4;
+//$header-top-margin: .2rem;
+//$header-bottom-margin: .5rem;
 
 // We use these to style anchors
 $anchor-text-decoration: none;

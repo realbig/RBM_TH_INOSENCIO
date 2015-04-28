@@ -14,4 +14,24 @@
         }
     });
 
+    $(function () {
+
+        if ($().textillate) {
+            $('.textillate').textillate({
+                loop: true,
+                minDisplayTime: 1000,
+                in: {
+                    effect: 'rotateIn',
+                    delayScale: 0.75,
+                    delay: 50
+                },
+                out: {
+                    effect: 'rotateOut',
+                    delayScale: 0.75,
+                    delay: 50
+                }
+            });
+        }
+    });
+
 })(jQuery);

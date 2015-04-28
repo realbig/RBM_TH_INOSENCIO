@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<!--[if lt IE 9]>
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/vendor/js/html5.js"></script>
+	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/vendor/js/nomin/html5.js"></script>
 	<![endif]-->
 
 	<?php wp_head(); ?>
@@ -32,4 +32,97 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="wrapper">
 
-	<!-- Header HTML -->
+	<header id="site-header">
+
+		<div class="sticky">
+			<nav class="top-bar" data-topbar role="navigation">
+
+				<section class="top-bar-section">
+					<ul class="left">
+						<li>
+							<a href="#">
+								<span class="fa fa-home"></span>
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="#">
+								<span class="fa fa-envelope"></span>
+							</a>
+						</li>
+
+						<li class="divider"></li>
+
+						<li>
+							<a href="#">
+								<?php echo _inosencio_sc_phone( array( 'icon' => 'yes' ) ); ?>
+							</a>
+						</li>
+
+						<li class="divider"></li>
+					</ul>
+				</section>
+
+				<section class="top-bar-section">
+					<ul class="right">
+						<li class="divider"></li>
+
+						<li class="has-search">
+							<form class="search row collapse" action="<?php bloginfo( 'url' ); ?>" method="get">
+								<div class="small-9 columns">
+									<input type="search" name="s" id="top-bar-search"
+									       data-placeholder="What are you searching for?">
+								</div>
+								<div class="text-right small-3 columns">
+									<a href="#top-bar-search" class="search-button"><span
+											class="fa fa-search"></span></a>
+								</div>
+							</form>
+						</li>
+					</ul>
+				</section>
+
+			</nav>
+		</div>
+
+		<div class="logo-menu row">
+			<section class="site-logo columns small-12 medium-4">
+				<a href="<?php bloginfo( 'url' ); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png"
+					     alt="inosencio fisk"/>
+				</a>
+			</section>
+
+			<nav class="site-nav columns small-12 medium-8">
+				<?php
+				add_filter( 'the_title', '_inosencio_header_nav_filter' );
+
+				function _inosencio_header_nav_filter( $title ) {
+					return "<span data-hover=\"$title\">$title</span>";
+				}
+
+				wp_nav_menu( array(
+					'theme_location' => 'primary',
+					'container'      => false,
+				) );
+
+				remove_filter( 'the_title', '_inosencio_header_nav_filter' );
+				?>
+			</nav>
+		</div>
+
+		<?php do_action( 'inosencio_before_page_title' ); ?>
+
+		<?php if ( $title = apply_filters( 'inosencio_page_title', get_the_title() ) ) : ?>
+			<h1 class="page-title text-center">
+				<?php echo $title; ?>
+			</h1>
+		<?php endif; ?>
+
+		<?php do_action( 'inosencio_after_page_title' ); ?>
+
+	</header>
+
+	<section id="site-content">

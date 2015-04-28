@@ -12,7 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Require files
-require_once __DIR__ . '/pages/Inosencio-general.php';
+require_once __DIR__ . '/extra-meta/home.php';
+require_once __DIR__ . '/extra-meta/contact.php';
+require_once __DIR__ . '/extra-meta/firm-overview.php';
+require_once __DIR__ . '/post-types/practice-area.php';
+require_once __DIR__ . '/post-types/attorney.php';
+require_once __DIR__ . '/pages/inosencio-general.php';
 
 /**
  * Easy way to register a new post type!

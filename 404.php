@@ -29,7 +29,7 @@ get_header();
 				));
 				?>
 
-				If you're still lost, you can always contact us at <?php echo _Inosencio_sc_email(); ?> or <?php echo _Inosencio_sc_phone(); ?>.
+				If you're still lost, you can always contact us at <?php echo _inosencio_sc_email(); ?> or <?php echo _inosencio_sc_phone(); ?>.
 			</div>
 
 		</div>

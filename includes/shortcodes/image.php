@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 add_action( 'init', function () {
-	add_shortcode( 'image', 'Inosencio_sc_image' );
+	add_shortcode( 'image', 'inosencio_sc_image' );
 } );
 
-function Inosencio_sc_image( $atts = array(), $content = '' ) {
+function inosencio_sc_image( $atts = array(), $content = '' ) {
 
 	$atts = shortcode_atts( array(
 		'id' => false,

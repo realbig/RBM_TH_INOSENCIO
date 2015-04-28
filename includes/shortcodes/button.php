@@ -13,10 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 add_action( 'init', function () {
-	add_shortcode( 'button', '_Inosencio_sc_button' );
+	add_shortcode( 'button', '_inosencio_sc_button' );
 } );
 
-function _Inosencio_sc_button( $atts = array(), $content = '' ) {
+function _inosencio_sc_button( $atts = array(), $content = '' ) {
 
 	$atts = shortcode_atts( array(
 		'link' => '#',

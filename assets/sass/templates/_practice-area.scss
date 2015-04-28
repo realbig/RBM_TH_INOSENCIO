@@ -1,0 +1,24 @@
+/*
+Practice area single.
+
+@since 0.1.0
+*/
+
+@import "../settings";
+
+body.post-type-archive-practice_area {
+
+  .practice-area {
+    &.active {
+      a {
+        background: $primary-color;
+        border-bottom: 0.8em solid lighten($primary-color, 10%);
+        color: $light-color;
+      }
+    }
+  }
+
+  .practice-area-content {
+    margin-top: $column-gutter / 2;
+  }
+}

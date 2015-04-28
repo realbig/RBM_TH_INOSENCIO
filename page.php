@@ -16,7 +16,13 @@ get_header();
 the_post();
 ?>
 
-<!-- Page HTML -->
+	<div class="row">
+		<section class="page-content columns small-12 medium-8 medium-push-4">
+			<?php the_content(); ?>
+		</section>
+
+		<?php get_sidebar(); ?>
+	</div>
 
 <?php
 get_footer();

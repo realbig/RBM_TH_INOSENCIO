@@ -77,10 +77,13 @@ module.exports = function (grunt) {
                         'assets/vendor/js/fastclick.js',
                         'assets/vendor/js/placeholder.js',
                         'assets/vendor/js/jquery.cookie.js',
+                        //'assets/vendor/js/jquery.imageScroll.js',
+                        'assets/vendor/js/parallax.min.js',
                         'assets/vendor/js/foundation/foundation.js',
+                        'assets/vendor/js/foundation/foundation.topbar.js',
 
-                        // Included dynamically in header.php
-                        '!assets/vendor/js/html5.js',
+                        // Nomin
+                        '!assets/vendor/js/nomin/*.js',
 
                         // Theme scripts
                         'assets/js/*.js'

@@ -12,23 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_action( 'widgets_init', function () {
-	register_widget( 'Inosencio_Widget_Image' );
+	register_widget( 'inosencio_Widget_Image' );
 } );
 
 /**
- * Class Inosencio_Widget_Image
+ * Class inosencio_Widget_Image
  *
  * Widget for showing Images.
  *
  * @since 1.0.0
  */
-class Inosencio_Widget_Image extends WP_Widget {
+class inosencio_Widget_Image extends WP_Widget {
 
 	public function __construct() {
 
 		// Build the widget
 		parent::__construct(
-			'Inosencio_widget_image',
+			'inosencio_widget_image',
 			'Parallax Image',
 			array(
 				'description' => 'Shows an image with a parallax effect.',

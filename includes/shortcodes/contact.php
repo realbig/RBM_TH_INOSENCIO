@@ -14,25 +14,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 add_action( 'init', function () {
 
-	add_shortcode( 'phone', '_Inosencio_sc_phone' );
-	add_shortcode( 'email', '_Inosencio_sc_email' );
-	add_shortcode( 'address', '_Inosencio_sc_address' );
+	add_shortcode( 'phone', '_inosencio_sc_phone' );
+	add_shortcode( 'email', '_inosencio_sc_email' );
+	add_shortcode( 'address', '_inosencio_sc_address' );
 } );
 
-function _Inosencio_sc_phone() {
+function _inosencio_sc_phone( $atts = array() ) {
 
-	$phone = get_option( '_Inosencio_phone', '' );
-	return wp_is_mobile() ? "<a href=\"tel:$phone\">$phone</a>" : $phone;
+	$atts = shortcode_atts( array(
+		'icon' => 'no',
+	), $atts );
+
+	$phone = get_option( '_inosencio_phone', '555-555-5555' );
+
+	$html = '';
+	$html .= $atts['icon'] == 'yes' ? '<span class="fa fa-mobile"></span>&nbsp;&nbsp;' : '';
+	$html .= wp_is_mobile() ? "<a href=\"tel:$phone\">$phone</a>" : $phone;
+
+	return $html;
 }
 
-function _Inosencio_sc_email() {
+function _inosencio_sc_email( $atts = array() ) {
 
-	$email = get_option( '_Inosencio_email', '' );
-	return "<a href=\"mailto:$email\">$email</a>";
+	$atts = shortcode_atts( array(
+		'icon' => 'yes',
+	), $atts );
+
+	$email = get_option( '_inosencio_email', 'email@example.com' );
+
+	$html = '';
+	$html .= $atts['icon'] == 'yes' ? '<span class="fa fa-envelope"></span>&nbsp;&nbsp;' : '';
+	$html .= "<a href=\"mailto:$email\">$email</a>";
+
+	return $html;
 }
 
-function _Inosencio_sc_address() {
+function _inosencio_sc_address() {
 
-	$address = get_option( '_Inosencio_address', '' );
+	$address = get_option( '_inosencio_address', "1 Example St\nCity, ST 55555" );
 	return wpautop( do_shortcode( $address ) );
 }

@@ -17,7 +17,7 @@ if ( ! version_compare( PHP_VERSION, '5.3.0', '>=' ) ) {
 }
 
 // Make sure no theme constants are already defined (realistically, there should be no conflicts)
-if ( defined( 'THEME_VERSION' ) || defined( 'THEME_ID' ) || isset( $Inosencio_fonts ) ) {
+if ( defined( 'THEME_VERSION' ) || defined( 'THEME_ID' ) || isset( $inosencio_fonts ) ) {
 	wp_die( 'ERROR in Inosencio theme: There is a conflicting constant. Please either find the conflict or rename the constant.' );
 }
 
@@ -34,12 +34,13 @@ define( 'THEME_ID', 'inosencio' );
 /**
  * Fonts for the theme. Must be hosted font (Google fonts for example).
  */
-$Inosencio_fonts = array(
-//	'bangers' => 'http://fonts.googleapis.com/css?family=Bangers',
+$inosencio_fonts = array(
+	'Raleway' => 'http://fonts.googleapis.com/css?family=Raleway:700,800,300',
+	'Font Awesome' => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 );
 
 // Extra image sizes
-$Inosencio_image_sizes = array(
+$inosencio_image_sizes = array(
 	// 'slide' => array(
 	// 	'title' => 'Slide',
 	// 	'width' => 1000,
@@ -56,9 +57,9 @@ $Inosencio_image_sizes = array(
 add_action( 'after_setup_theme', function() {
 
 	// Image sizes
-	if ( ! empty( $Inosencio_image_sizes ) ) {
+	if ( ! empty( $inosencio_image_sizes ) ) {
 
-		foreach ( $Inosencio_image_sizes as $ID => $size ) {
+		foreach ( $inosencio_image_sizes as $ID => $size ) {
 			add_image_size( $ID, $size['width'], $size['height'], $size['crop'] );
 		}
 
@@ -83,10 +84,10 @@ add_action( 'after_setup_theme', function() {
  */
 function _meesdist_add_image_sizes( $sizes ) {
 
-	global $Inosencio_image_sizes;
+	global $inosencio_image_sizes;
 
 	$new_sizes = array();
- 	foreach ( $Inosencio_image_sizes as $ID => $size ) {
+ 	foreach ( $inosencio_image_sizes as $ID => $size ) {
 	    $new_sizes[ $ID ] = $size['title'];
 	}
 
@@ -100,7 +101,7 @@ function _meesdist_add_image_sizes( $sizes ) {
  */
 add_action( 'init', function () {
 
-	global $Inosencio_fonts;
+	global $inosencio_fonts;
 
 	// Theme styles
 	wp_register_style(
@@ -120,14 +121,67 @@ add_action( 'init', function () {
 	);
 
 	// Theme fonts
-	if ( ! empty( $Inosencio_fonts ) ) {
-		foreach ( $Inosencio_fonts as $ID => $link ) {
+	if ( ! empty( $inosencio_fonts ) ) {
+		foreach ( $inosencio_fonts as $ID => $link ) {
 			wp_register_style(
 				THEME_ID . "-font-$ID",
 				$link
 			);
 		}
 	}
+
+	// Admin script
+	wp_register_script(
+		THEME_ID . '-admin',
+		get_template_directory_uri() . '/admin.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
+
+	// Animate CSS
+	wp_register_style(
+		THEME_ID . '-animate-css',
+		get_template_directory_uri() . '/assets/vendor/css/animate.css',
+		array(),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
+
+	// Textillate
+	wp_register_script(
+		THEME_ID . '-textillate',
+		get_template_directory_uri() . '/assets/vendor/js/nomin/jquery.textillate.js',
+		array( THEME_ID . '-lettering' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '0.4.0',
+		true
+	);
+
+	// Lettering
+	wp_register_script(
+		THEME_ID . '-lettering',
+		get_template_directory_uri() . '/assets/vendor/js/nomin/jquery.lettering.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '0.7.0',
+		true
+	);
+
+	// Chosen
+	wp_register_script(
+		THEME_ID . '-chosen',
+		get_template_directory_uri() . '/lib/chosen/chosen.jquery.min.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
+
+	// Chosen
+	wp_register_style(
+		THEME_ID . '-chosen',
+		get_template_directory_uri() . '/lib/chosen/chosen.min.css',
+		null,
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION
+	);
 } );
 
 /**
@@ -137,7 +191,14 @@ add_action( 'init', function () {
  */
 add_action( 'wp_enqueue_scripts', function () {
 
-	global $Inosencio_fonts;
+	global $inosencio_fonts;
+
+	// Home page
+	if ( is_front_page() ) {
+		wp_enqueue_style( THEME_ID . '-animate-css' );
+		wp_enqueue_script( THEME_ID . '-lettering' );
+		wp_enqueue_script( THEME_ID . '-textillate' );
+	}
 
 	// Theme styles
 	wp_enqueue_style( THEME_ID );
@@ -146,11 +207,26 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( THEME_ID );
 
 	// Theme fonts
-	if ( ! empty( $Inosencio_fonts ) ) {
-		foreach ( $Inosencio_fonts as $ID => $link ) {
+	if ( ! empty( $inosencio_fonts ) ) {
+		foreach ( $inosencio_fonts as $ID => $link ) {
 			wp_enqueue_style( THEME_ID . "-font-$ID" );
 		}
 	}
+} );
+
+/**
+ * Enqueue admin files.
+ *
+ * @since 0.1.0
+ */
+add_action( 'admin_enqueue_scripts', function () {
+
+	// Admin script
+	wp_enqueue_script( THEME_ID . '-admin' );
+
+	// Chosen
+	wp_enqueue_script( THEME_ID . '-chosen' );
+	wp_enqueue_style( THEME_ID . '-chosen' );
 } );
 
 /**
@@ -159,7 +235,10 @@ add_action( 'wp_enqueue_scripts', function () {
  * @since 0.1.0
  */
 add_action( 'after_setup_theme', function () {
+
 	register_nav_menu( 'primary', 'Primary Menu' );
+	register_nav_menu( 'footer-a', 'Footer A' );
+	register_nav_menu( 'footer-b', 'Footer B' );
 } );
 
 /**
@@ -177,7 +256,32 @@ add_action( 'widgets_init', function () {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+
+	// Footer Left
+	register_sidebar( array(
+		'name' => 'Footer Left',
+		'id' => 'footer-left',
+		'description' => 'Displays in the footer, on the left side.',
+		'before_widget' => '<div class="columns small-12">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
+
+	// Footer Right
+	register_sidebar( array(
+		'name' => 'Footer Right',
+		'id' => 'footer-right',
+		'description' => 'Displays in the footer, on the right side.',
+		'before_widget' => '<div class="columns small-12">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	));
 } );
+
+require_once __DIR__ . '/includes/theme-functions.php';
+require_once __DIR__ . '/admin/admin.php';
 
 // Include shortcodes
 require_once __DIR__ . '/includes/shortcodes/social.php';

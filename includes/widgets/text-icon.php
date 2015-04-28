@@ -12,23 +12,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 add_action( 'widgets_init', function () {
-	register_widget( 'Inosencio_Widget_TextIcon' );
+	register_widget( 'inosencio_Widget_TextIcon' );
 } );
 
 /**
- * Class Inosencio_Widget_TextIcon
+ * Class inosencio_Widget_TextIcon
  *
  * Widget for showing Text boxes with an Icon in the title.
  *
  * @since 1.0.0
  */
-class Inosencio_Widget_TextIcon extends WP_Widget {
+class inosencio_Widget_TextIcon extends WP_Widget {
 
 	public function __construct() {
 
 		// Build the widget
 		parent::__construct(
-			'Inosencio_texticon',
+			'inosencio_texticon',
 			'Text with Icon',
 			array(
 				'description' => 'For use in the sidebar. Shows text with an icon in the title.',

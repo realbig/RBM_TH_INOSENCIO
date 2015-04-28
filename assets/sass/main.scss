@@ -18,9 +18,11 @@ Version: 0.1.0
 @import "../vendor/sass/foundation/components/visibility";
 @import "../vendor/sass/foundation/components/clearing";
 @import "../vendor/sass/foundation/components/grid";
+@import "../vendor/sass/foundation/components/block-grid";
 @import "../vendor/sass/foundation/components/buttons";
 @import "../vendor/sass/foundation/components/type";
 @import "../vendor/sass/foundation/components/forms";
+@import "../vendor/sass/foundation/components/top-bar";
 
 // Setup
 @import "base";
@@ -28,10 +30,18 @@ Version: 0.1.0
 // Static
 @import "static/header";
 @import "static/footer";
+@import "static/site-content";
+@import "static/sidebar";
 
 // Templates
 @import "templates/single-post";
 @import "templates/page";
+@import "templates/home";
+@import "templates/attorneys";
+@import "templates/attorney";
+@import "templates/practice-area";
+@import "templates/firm-overview";
+@import "templates/contact";
 @import "templates/common";
 
 // Shortcodes
@@ -39,3 +49,4 @@ Version: 0.1.0
 
 // Overrides
 @import "wp";
+@import "overrides/gravity-forms";
