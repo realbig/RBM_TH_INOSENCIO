@@ -2284,16 +2284,16 @@ h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1, body.home .home-cta .practice-areas {
-  font-size: 1.5rem; }
+  font-size: 1.625rem; }
 
 h2 {
-  font-size: 1.6875rem; }
+  font-size: 1.8125rem; }
 
 h3 {
-  font-size: 1.25rem; }
+  font-size: 1.375rem; }
 
 h4 {
-  font-size: 1rem; }
+  font-size: 1.125rem; }
 
 h5 {
   font-size: 1.125rem; }
@@ -3359,6 +3359,10 @@ h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6 {
 #wrapper {
   overflow-x: hidden; }
 
+.fa-spin-fast {
+  -webkit-animation: fa-spin 0.5s infinite linear;
+  animation: fa-spin 0.5s infinite linear; }
+
 ::-moz-selection {
   background: #232E56;
   color: #fff; }
@@ -3432,11 +3436,13 @@ throughout this theme's SASS files.
     display: inline-block;
     cursor: pointer; }
 #site-header #mobile-nav {
+  position: relative;
   text-align: center;
   background: #232E56;
   color: #fff;
   padding: 0.9375rem 0;
-  display: none; }
+  display: none;
+  z-index: 1000; }
   @media only screen and (min-width:40.063em) {
     #site-header #mobile-nav {
       display: none !important; } }
@@ -4139,6 +4145,22 @@ throughout this theme's SASS files.
 [class*="block-grid-"].collapse {
   padding-left: 0;
   padding-right: 0; }
+
+#page-load-overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  background: #fff;
+  z-index: 100; }
+  #page-load-overlay .loader {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -18px;
+    font-size: 50px;
+    color: #232E56; }
 
 .image-container {
   background-size: cover;

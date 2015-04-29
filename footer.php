@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<p class="footer-copyright text-center">
-		&copy; <?php echo date( 'Y' ); ?> Inosencio Fisk &bull; Site by Real Big Marketing &bull; About this site
+		&copy; <?php echo date( 'Y' ); ?> Inosencio Fisk &bull; Site by Real Big Marketing &bull; <a href="<?php bloginfo( 'url' ); ?>/about-this-site/">About this site</a>
 	</p>
 
 </footer>

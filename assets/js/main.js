@@ -7,6 +7,7 @@
 (function ($) {
     'use strict';
 
+    // Foundation
     $(document).foundation({
         abide: {
             validate_on_blur: false,
@@ -19,6 +20,7 @@
 
     $(function () {
 
+        // Textillate
         if ($().textillate) {
             $('.textillate').textillate({
                 loop: true,
@@ -35,6 +37,32 @@
                 }
             });
         }
+    });
+
+    // Page loading overlay
+    $('#site-content').append('<div id="page-load-overlay"><div class="loader fa fa-circle-o-notch fa-spin-fast" /></div>');
+    $('#page-load-overlay').css('top', $('#site-header').outerHeight() - $('.page-title').outerHeight());
+
+    setTimeout(function () {
+
+        var $overlay = $('#page-load-overlay');
+
+        if ($overlay.length) {
+            $overlay.animate({
+                opacity: 1
+            }, 300);
+        }
+    }, 300);
+
+    $(window).load(function () {
+        $('#page-load-overlay').animate({
+            opacity: 0
+        }, {
+            duration: 500,
+            complete: function () {
+                $(this).remove();
+            }
+        });
     });
 
 })(jQuery);

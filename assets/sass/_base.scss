@@ -53,6 +53,11 @@ input[type="submit"] {
   overflow-x: hidden;
 }
 
+.fa-spin-fast {
+  -webkit-animation: fa-spin 0.5s infinite linear;
+  animation: fa-spin 0.5s infinite linear;
+}
+
 // Select color
 ::selection {
   background: $primary-color;

@@ -50,11 +50,13 @@ The static site header.
   }
 
   #mobile-nav {
+    position: relative;
     text-align: center;
     background: $primary-color;
     color: $light-color;
     padding: ($column-gutter / 2) 0;
     display: none;
+    z-index: 1000;
 
     @media #{$medium-up} {
       display: none !important;
