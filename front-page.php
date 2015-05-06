@@ -52,7 +52,7 @@ if ( has_post_thumbnail() ) {
 			<?php endif; ?>
 
 			<p class="call-to-action">
-				Learn more <a href="#" class="button">about us</a>
+				Learn more <a href="/firm-overview/" class="button">about us</a>
 			</p>
 
 		</div>

@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_filter( 'pre_get_posts', '_inosencio_pre_get_posts' );
 add_filter( 'gform_field_content', '_inosencio_gform_column_splits', 10, 5 );
+add_filter( 'gform_get_form_filter', '_inosencio_gform_do_shortcode' );
 
 function _inosencio_pre_get_posts( $wp_query ) {
 
@@ -68,4 +69,8 @@ function _inosencio_gform_column_splits( $content, $field, $value, $lead_id, $fo
 	}
 
 	return $content;
+}
+
+function _inosencio_gform_do_shortcode( $form_string ) {
+	return do_shortcode( $form_string );
 }
