@@ -11,44 +11,57 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-add_filter('gform_field_content', '_inosencio_gform_column_splits', 10, 5);
+add_filter( 'pre_get_posts', '_inosencio_pre_get_posts' );
+add_filter( 'gform_field_content', '_inosencio_gform_column_splits', 10, 5 );
+
+function _inosencio_pre_get_posts( $wp_query ) {
+
+	if ( is_post_type_archive( 'practice_area' ) ) {
+		$wp_query->set( 'posts_per_archive_page', '-1' );
+	}
+}
 
 function inosencio_get_menu_by_location( $location ) {
 
-	if( empty($location) ) return false;
+	if ( empty( $location ) ) {
+		return false;
+	}
 
 	$locations = get_nav_menu_locations();
-	if( ! isset( $locations[$location] ) ) return false;
+	if ( ! isset( $locations[ $location ] ) ) {
+		return false;
+	}
 
-	$menu_obj = get_term( $locations[$location], 'nav_menu' );
+	$menu_obj = get_term( $locations[ $location ], 'nav_menu' );
 
 	return $menu_obj;
 }
-function _inosencio_gform_column_splits($content, $field, $value, $lead_id, $form_id) {
 
-	if(!IS_ADMIN) { // only perform on the front end
+function _inosencio_gform_column_splits( $content, $field, $value, $lead_id, $form_id ) {
+
+	if ( ! IS_ADMIN ) { // only perform on the front end
 
 		// target section breaks
-		if($field['type'] == 'section') {
-			$form = RGFormsModel::get_form_meta($form_id, true);
+		if ( $field['type'] == 'section' ) {
+			$form = RGFormsModel::get_form_meta( $form_id, true );
 
 			// check for the presence of multi-column form classes
-			$form_class = explode(' ', $form['cssClass']);
-			$form_class_matches = array_intersect($form_class, array('gform_columns'));
+			$form_class         = explode( ' ', $form['cssClass'] );
+			$form_class_matches = array_intersect( $form_class, array( 'gform_columns' ) );
 
 			// check for the presence of section break column classes
-			$field_class = explode(' ', $field['cssClass']);
-			$field_class_matches = array_intersect($field_class, array('gform_column_split'));
+			$field_class         = explode( ' ', $field['cssClass'] );
+			$field_class_matches = array_intersect( $field_class, array( 'gform_column_split' ) );
 
 			// if field is a column break in a multi-column form, perform the list split
-			if(!empty($form_class_matches) && !empty($field_class_matches)) { // make sure to target only multi-column forms
+			if ( ! empty( $form_class_matches ) && ! empty( $field_class_matches ) ) { // make sure to target only multi-column forms
 
 				// retrieve the form's field list classes for consistency
-				$form = RGFormsModel::add_default_properties($form);
-				$description_class = rgar($form, 'descriptionPlacement') == 'above' ? 'description_above' : 'description_below';
+				$form              = RGFormsModel::add_default_properties( $form );
+				$description_class = rgar( $form, 'descriptionPlacement' ) == 'above' ? 'description_above' : 'description_below';
 
 				// close current field's li and ul and begin a new list with the same form field list classes
-				return '</li></ul><ul class="gform_fields '.$form['labelPlacement'].' '.$description_class.' '.$field['cssClass'].'"><li class="gfield gsection empty">';
+				return '</li></ul><ul class="gform_fields ' . $form['labelPlacement'] . ' ' . $description_class . ' ' . $field['cssClass'] . '"><li class="gfield gsection empty">';
 
 			}
 		}
