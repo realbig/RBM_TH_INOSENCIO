@@ -50,6 +50,14 @@ function _inosencio_mb_home_extra_callback() {
 	$about_2_image = get_post_meta( $post->ID, '_inosencio_home_about_2_image', true );
 	$about_2_image_preview = $about_2_image ? wp_get_attachment_image_src( $about_2_image, 'medium' ) : '';
 	$about_2_form = get_post_meta( $post->ID, '_inosencio_home_about_2_form', true );
+
+	// Deal with missing images
+	if ( ! $about_image_preview ) {
+		delete_post_meta( $post->ID, '_inosencio_home_about_image' );
+	}
+	if ( ! $about_2_image_preview ) {
+		delete_post_meta( $post->ID, '_inosencio_home_about_2_image' );
+	}
 	?>
 
 	<p>
