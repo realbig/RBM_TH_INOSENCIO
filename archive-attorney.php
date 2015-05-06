@@ -43,7 +43,7 @@ get_header();
 			$image_ID = get_post_thumbnail_id( get_the_ID() );
 			$image    = wp_get_attachment_image_src( $image_ID, 'full' );
 			?>
-			<li style="background-image: url('<?php echo $image[0]; ?>');height: <?php echo $image[2]; ?>px;">
+			<li style="background-image: url('<?php echo $image[0]; ?>');height: <?php echo min( $image[2], 500 ); ?>px;">
 				<div class="container">
 					<h2>
 						<a href="<?php the_permalink(); ?>">

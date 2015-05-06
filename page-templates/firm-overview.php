@@ -21,7 +21,7 @@ the_post();
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 		?>
 		<div style="background-image: url('<?php echo $image[0]; ?>');
-			height:<?php echo $image[2]; ?>px;"
+			height:<?php echo min( $image[2], 500 ); ?>px;"
 		     class="image-container">
 
 			<?php if ( $quote = get_post_meta( get_the_ID(), '_inosencio_firm_overview_quote', true ) ) : ?>
