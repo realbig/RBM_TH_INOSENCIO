@@ -41,12 +41,12 @@ $inosencio_fonts = array(
 
 // Extra image sizes
 $inosencio_image_sizes = array(
-	// 'slide' => array(
-	// 	'title' => 'Slide',
-	// 	'width' => 1000,
-	// 	'height' => 500,
-	// 	'crop' => array( 'center', 'center' ),
-	// ),
+	 'attorney' => array(
+	 	'title' => 'Attorney',
+	 	'width' => 1000,
+	 	'height' => 400,
+	 	'crop' => array( 'center', 'top' ),
+	 ),
 );
 
 /**
@@ -56,6 +56,8 @@ $inosencio_image_sizes = array(
  */
 add_action( 'after_setup_theme', function() {
 
+	global $inosencio_image_sizes;
+
 	// Image sizes
 	if ( ! empty( $inosencio_image_sizes ) ) {
 
@@ -63,7 +65,7 @@ add_action( 'after_setup_theme', function() {
 			add_image_size( $ID, $size['width'], $size['height'], $size['crop'] );
 		}
 
-		add_filter( 'image_size_names_choose', '_meesdist_add_image_sizes' );
+		add_filter( 'image_size_names_choose', '_inosencio_add_image_sizes' );
 	}
 
 	// Add theme support
@@ -82,7 +84,7 @@ add_action( 'after_setup_theme', function() {
  *
  * @return array The new image sizes.
  */
-function _meesdist_add_image_sizes( $sizes ) {
+function _inosencio_add_image_sizes( $sizes ) {
 
 	global $inosencio_image_sizes;
 

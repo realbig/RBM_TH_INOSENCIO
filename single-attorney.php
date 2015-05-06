@@ -16,7 +16,7 @@ get_header();
 the_post();
 ?>
 
-	<?php the_post_thumbnail( 'full' ); ?>
+	<?php the_post_thumbnail( 'attorney' ); ?>
 
 	<div class="row">
 		<section class="columns small-12 medium-8 medium-push-4">
@@ -26,10 +26,15 @@ the_post();
 			</div>
 
 			<?php
-			$practice_areas = get_posts( array(
-				'post_type'   => 'practice_area',
-				'numberposts' => - 1,
-			) );
+			$included_areas = get_post_meta( get_the_ID(), '_practice_areas', true );
+			$practice_areas = array();
+			if ( ! empty( $included_areas ) ) {
+				$practice_areas = get_posts( array(
+					'post_type'   => 'practice_area',
+					'numberposts' => - 1,
+					'include'     => $included_areas,
+				) );
+			}
 
 			if ( ! empty( $practice_areas ) ) :
 				?>
