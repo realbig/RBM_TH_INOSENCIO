@@ -44,7 +44,7 @@ the_post();
 					<?php foreach ( $practice_areas as $practice_area ) : ?>
 						<li>
 							<div class="practice-area">
-								<a href="#">
+								<a href="<?php echo get_post_type_archive_link( 'practice_area' ) . "#{$practice_area->post_name}"; ?>">
 									<h4 class="practice-area-title">
 										<?php echo $practice_area->post_title; ?>
 									</h4>
