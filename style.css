@@ -4149,6 +4149,7 @@ throughout this theme's SASS files.
 #page-load-overlay {
   position: fixed;
   left: 0;
+  top: 0;
   width: 100%;
   bottom: 0;
   opacity: 0;
@@ -4156,9 +4157,10 @@ throughout this theme's SASS files.
   z-index: 100; }
   #page-load-overlay .loader {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    margin-left: -18px;
+    margin-top: -25px;
+    margin-left: -25px;
     font-size: 50px;
     color: #232E56; }
 

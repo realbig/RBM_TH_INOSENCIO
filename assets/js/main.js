@@ -41,7 +41,6 @@
 
     // Page loading overlay
     $('#site-content').append('<div id="page-load-overlay"><div class="loader fa fa-circle-o-notch fa-spin-fast" /></div>');
-    $('#page-load-overlay').css('top', $('#site-header').outerHeight() - $('.page-title').outerHeight());
 
     setTimeout(function () {
 
