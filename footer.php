@@ -23,8 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="row">
 
 				<div class="logo columns small-12">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-logo.png"
-					     alt="inosencio fisk"/>
+					<a href="<?php bloginfo( 'url' ); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-logo.png"
+						     alt="inosencio fisk"/>
+					</a>
 				</div>
 
 				<?php dynamic_sidebar( 'footer-left' ); ?>
