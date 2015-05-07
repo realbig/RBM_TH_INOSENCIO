@@ -34,7 +34,7 @@ get_header();
 						?>
 						<li>
 							<div id="<?php echo $post->post_name; ?>" class="practice-area">
-								<a href="#">
+								<a href="#<?php echo $post->post_name; ?>">
 									<h4 class="practice-area-title">
 										<?php the_title(); ?>
 									</h4>

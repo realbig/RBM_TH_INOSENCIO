@@ -7,7 +7,11 @@
 (function ($) {
     'use strict';
 
+
     $(function () {
+
+        // Prevent page jump
+        prevent_jump();
 
         if (!$('body').hasClass('post-type-archive-practice_area')) {
             return;
@@ -20,7 +24,7 @@
 
         $practice_areas.find('.practice-area > a').click(function (e) {
 
-            e.preventDefault();
+            console.log('click');
 
             var $practice_area = $(this).closest('.practice-area');
 
@@ -29,14 +33,36 @@
             $practice_area.siblings('.practice-area-content').show();
             $practice_area.addClass('active');
 
-            window.location.hash = '#' + $practice_area.attr('id');
+            // Scroll
+            var href = $(this).attr('href'),
+                hash = href.substring(href.indexOf("#") + 1),
+                target = $('#' + hash);
 
+            if (target.length) {
+                $('html,body').animate({
+                    scrollTop: target.offset().top - $('.top-bar').height() - 10
+                }, 500);
+            }
+
+            e.preventDefault();
             return false;
         });
 
+        // Scroll to practice area if hash is in page load
         if (hash.length) {
-            $(hash).find('> a').click();
+            setTimeout(function () {
+                $(hash).find('> a').click();
+            }, 100);
         }
     });
+
+    function prevent_jump() {
+
+        if (window.location.hash) {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 1);
+        }
+    }
 
 })(jQuery);
