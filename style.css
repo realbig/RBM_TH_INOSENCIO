@@ -3345,7 +3345,13 @@ ul {
   margin: 0; }
 
 button:hover, .button:hover, input[type="submit"]:hover, #site-header .site-nav .menu .menu-item:last-of-type a:hover {
-  color: #fff !important; }
+  color: #fff !important;
+  border-color: #232E56 !important; }
+button.light, .button.light, input.light[type="submit"], #site-header .site-nav .menu .menu-item:last-of-type a.light {
+  color: #fff;
+  border-color: inherit;
+  -webkit-transition: border 300ms, background 300ms;
+          transition: border 300ms, background 300ms; }
 
 p .fa {
   vertical-align: middle; }
@@ -3991,13 +3997,7 @@ body.post-type-archive-attorney .attorneys {
         width: 100%; }
       body.post-type-archive-attorney .attorneys li .container .button, body.post-type-archive-attorney .attorneys li .container input[type="submit"], body.post-type-archive-attorney .attorneys li .container #site-header .site-nav .menu .menu-item:last-of-type a, #site-header .site-nav .menu .menu-item:last-of-type body.post-type-archive-attorney .attorneys li .container a {
         font-size: inherit;
-        color: inherit;
-        border-color: inherit;
-        -webkit-transition: border 300ms, background 300ms;
-                transition: border 300ms, background 300ms;
         margin: 0; }
-        body.post-type-archive-attorney .attorneys li .container .button:hover, body.post-type-archive-attorney .attorneys li .container input[type="submit"]:hover, body.post-type-archive-attorney .attorneys li .container #site-header .site-nav .menu .menu-item:last-of-type a:hover, #site-header .site-nav .menu .menu-item:last-of-type body.post-type-archive-attorney .attorneys li .container a:hover {
-          border-color: #232E56; }
 
 /*
 Attorney single.

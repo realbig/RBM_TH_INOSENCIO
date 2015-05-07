@@ -70,14 +70,7 @@ body.post-type-archive-attorney {
 
         .button {
           font-size: inherit;
-          color: inherit;
-          border-color: inherit;
-          transition: border 300ms, background 300ms;
           margin: 0;
-
-          &:hover {
-            border-color: $primary-color;
-          }
         }
       }
     }

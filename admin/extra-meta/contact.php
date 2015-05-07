@@ -37,6 +37,7 @@ function _inosencio_mb_contact_extra_callback() {
 	wp_nonce_field( __FILE__, 'inosencio_mb_contact_extra_nonce' );
 
 	$form = get_post_meta( $post->ID, '_inosencio_form', true );
+	$map_link = get_post_meta( $post->ID, '_inosencio_map_link', true );
 	?>
 
 	<p>
@@ -44,6 +45,14 @@ function _inosencio_mb_contact_extra_callback() {
 			Form:
 			<br/>
 			<input type="text" name="_inosencio_form" value="<?php echo $form; ?>" />
+		</label>
+	</p>
+
+	<p>
+		<label>
+			Map Link:
+			<br/>
+			<input type="text" class="widefat" name="_inosencio_map_link" value="<?php echo $map_link; ?>" />
 		</label>
 	</p>
 <?php
@@ -69,6 +78,7 @@ function _inosencio_save_metaboxes_contact( $post_ID ) {
 
 	$options = array(
 		'_inosencio_form',
+		'_inosencio_map_link',
 	);
 
 	foreach ( $options as $option ) {

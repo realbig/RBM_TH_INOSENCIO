@@ -24,6 +24,13 @@ ul {
 button, .button {
   &:hover {
     color: $light-color !important;
+    border-color: $primary-color !important;
+  }
+
+  &.light {
+    color: $light-color;
+    border-color: inherit;
+    transition: border 300ms, background 300ms;
   }
 }
 

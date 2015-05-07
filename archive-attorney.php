@@ -58,7 +58,7 @@ get_header();
 					<?php endif; ?>
 
 					<p class="attorney-read-more">
-						Read more about <a href="<?php the_permalink(); ?>" class="button">
+						Read more about <a href="<?php the_permalink(); ?>" class="button light">
 							<?php
 							$arr = explode( ' ', trim( get_the_title() ) );
 							echo $arr[0];

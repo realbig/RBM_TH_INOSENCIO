@@ -27,6 +27,12 @@ the_post();
 		<div class="container">
 			<div class="address">
 				<?php echo wpautop( get_option( '_inosencio_address', '' ) ); ?>
+
+				<?php if ( $map_link = get_post_meta( get_the_ID(), '_inosencio_map_link', true ) ) : ?>
+					<a href="<?php echo $map_link; ?>" class="button light">
+						View Map
+					</a>
+				<?php endif; ?>
 			</div>
 
 			<p class="meta">
