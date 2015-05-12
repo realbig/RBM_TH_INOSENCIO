@@ -16,40 +16,40 @@ add_filter( 'inosencio_page_title', '__return_false' );
 get_header();
 the_post();
 
-if ( has_post_thumbnail() ) {
+$practice_areas = get_posts( array(
+	'post_type'   => 'practice_area',
+	'numberposts' => - 1,
+	'meta_key'    => '_show_home',
+) );
 
-	$image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+if ( ! empty( $practice_areas ) ) :
 
-	$style = 'style="background-image: url(\'';
-	$style .= $image_src[0];
-	$style .= '\');"';
-}
-?>
+	$style = '';
+	if ( has_post_thumbnail() ) {
+
+		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+
+		$style = 'style="background-image: url(\'';
+		$style .= $image_src[0];
+		$style .= '\');"';
+	}
+	?>
 
 	<section class="home-cta" <?php echo $style; ?>>
 
 		<div class="container">
 
-			<?php
-			$practice_areas = get_posts( array(
-				'post_type'   => 'practice_area',
-				'numberposts' => - 1,
-			) );
+			<p>A technologically advanced law firm serving clients serving Michigan in the following areas:</p>
 
-			if ( ! empty( $practice_areas ) ) :
-				?>
-				<p>A technologically advanced law firm serving clients serving Michigan in the following areas:</p>
+			<div class="practice-areas textillate text-center">
+				<ul class="texts">
 
-				<div class="practice-areas textillate text-center">
-					<ul class="texts">
+					<?php foreach ( $practice_areas as $practice_area ) : ?>
+						<li><?php echo $practice_area->post_title; ?></li>
+					<?php endforeach; ?>
 
-						<?php foreach ( $practice_areas as $practice_area ) : ?>
-							<li><?php echo $practice_area->post_title; ?></li>
-						<?php endforeach; ?>
-
-					</ul>
-				</div>
-			<?php endif; ?>
+				</ul>
+			</div>
 
 			<p class="call-to-action">
 				Learn more <a href="/firm-overview/" class="button">about us</a>
@@ -58,6 +58,8 @@ if ( has_post_thumbnail() ) {
 		</div>
 
 	</section>
+
+<?php endif; ?>
 
 	<section class="home-about section green">
 
