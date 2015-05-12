@@ -20,6 +20,7 @@ $practice_areas = get_posts( array(
 	'post_type'   => 'practice_area',
 	'numberposts' => - 1,
 	'meta_key'    => '_show_home',
+	'meta_value'  => '1',
 ) );
 
 if ( ! empty( $practice_areas ) ) :
@@ -39,7 +40,11 @@ if ( ! empty( $practice_areas ) ) :
 
 		<div class="container">
 
-			<p>A technologically advanced law firm serving clients serving Michigan in the following areas:</p>
+			<?php if ( $home_title = get_post_meta( get_the_ID(), '_inosencio_home_title', true ) ) : ?>
+				<p>
+					<?php echo $home_title; ?>
+				</p>
+			<?php endif; ?>
 
 			<div class="practice-areas textillate text-center">
 				<ul class="texts">

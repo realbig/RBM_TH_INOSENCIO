@@ -3780,8 +3780,12 @@ throughout this theme's SASS files.
 */
 body.home #site-content {
   padding-top: 0; }
+body.home #site-header {
+  padding-bottom: 100px;
+  margin-bottom: 0; }
 body.home .home-cta {
   position: relative;
+  margin-top: -100px;
   position: relative;
   background-size: cover;
   height: 90vh;

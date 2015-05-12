@@ -39,6 +39,7 @@ function _inosencio_mb_home_extra_callback() {
 
 	wp_nonce_field( __FILE__, 'inosencio_mb_home_extra_nonce' );
 
+	$title = get_post_meta( $post->ID, '_inosencio_home_title', true );
 	$about_sub_head = get_post_meta( $post->ID, '_inosencio_home_about_sub_head', true );
 	$about_copy = get_post_meta( $post->ID, '_inosencio_home_about_copy', true );
 	$about_image = get_post_meta( $post->ID, '_inosencio_home_about_image', true );
@@ -59,6 +60,15 @@ function _inosencio_mb_home_extra_callback() {
 		delete_post_meta( $post->ID, '_inosencio_home_about_2_image' );
 	}
 	?>
+
+	<p>
+		<label>
+			Rotating text Heading
+			<br/>
+			<input type="text" class="widefat" name="_inosencio_home_title"
+			       value="<?php echo $title; ?>"/>
+		</label>
+	</p>
 
 	<p>
 		<label>
@@ -159,6 +169,7 @@ function _inosencio_save_metaboxes_home( $post_ID ) {
 	}
 
 	$options = array(
+		'_inosencio_home_title',
 		'_inosencio_home_about_sub_head',
 		'_inosencio_home_about_copy',
 		'_inosencio_home_about_image',

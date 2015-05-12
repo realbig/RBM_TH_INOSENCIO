@@ -12,8 +12,13 @@ body.home {
     padding-top: 0;
   }
 
+  #site-header {
+    @include pre-separator;
+  }
+
   .home-cta {
     @include image-overlay;
+    margin-top: -100px; // compensate for separator
     position: relative;
     background-size: cover;
     height: 90vh;
