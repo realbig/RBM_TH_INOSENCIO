@@ -3856,6 +3856,9 @@ body.home .section {
     @media only screen and (max-width: 40em) {
       body.home .section .home-about-sub-head {
         font-size: 1em; } }
+body.home .home-about .practice-areas {
+  max-width: 62.5rem;
+  margin: 0 auto; }
 body.home .home-about .practice-areas-heading {
   margin: 2em 0 1em; }
 @media only screen and (min-width:40.063em) {

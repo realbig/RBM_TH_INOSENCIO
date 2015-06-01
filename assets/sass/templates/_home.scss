@@ -87,6 +87,11 @@ body.home {
   }
 
   .home-about {
+    .practice-areas {
+      max-width: $row-width;
+      margin: 0 auto;
+    }
+
     .practice-areas-heading {
       margin: 2em 0 1em;
     }
