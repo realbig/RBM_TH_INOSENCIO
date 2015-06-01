@@ -26,7 +26,6 @@ the_post();
 
 			<?php if ( $quote = get_post_meta( get_the_ID(), '_inosencio_firm_overview_quote', true ) ) : ?>
 				<div class="container">
-					<span class="quote fa fa-quote-left"></span>
 					<?php echo $quote; ?>
 				</div>
 			<?php endif; ?>
