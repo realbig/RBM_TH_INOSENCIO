@@ -42,19 +42,28 @@ Styles shared among all templates.
 .image-container {
   background-size: cover;
   background-position: center center;
+  position: relative;
 
   .container {
     position: absolute;
     left: $column-gutter / 2;
     top: 50%;
-    width: 50%;
     transform: translateY(-50%);
-    text-align: left;
     color: $light-color;
+    text-align: justify;
+    width: auto;
+    right: $column-gutter / 2;
     z-index: 1;
 
-    @media #{$small-only} {
-      width: auto;
+    @media #{$large-up} {
+      text-align: left;
+      width: 50%;
+    }
+
+    &.bottom {
+      bottom: $column-gutter / 2;
+      top: auto;
+      transform: none;
     }
   }
 }

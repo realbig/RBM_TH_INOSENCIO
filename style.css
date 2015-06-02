@@ -4173,21 +4173,30 @@ throughout this theme's SASS files.
 
 .image-container {
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  position: relative; }
   .image-container .container {
     position: absolute;
     left: 0.9375rem;
     top: 50%;
-    width: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-    text-align: left;
     color: #fff;
+    text-align: justify;
+    width: auto;
+    right: 0.9375rem;
     z-index: 1; }
-    @media only screen and (max-width: 40em) {
+    @media only screen and (min-width:64.063em) {
       .image-container .container {
-        width: auto; } }
+        text-align: left;
+        width: 50%; } }
+    .image-container .container.bottom {
+      bottom: 0.9375rem;
+      top: auto;
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none; }
 
 .practice-areas {
   font-weight: normal;

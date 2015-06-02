@@ -83,7 +83,7 @@ if ( ! empty( $practice_areas ) ) :
 			<div style="background-image: url('<?php echo $about_image_src[0]; ?>');
 				height:<?php echo $about_image_src[2]; ?>px;"
 			     class="image-container">
-				<div class="container">
+				<div class="container bottom">
 					<?php echo do_shortcode( get_post_meta( get_the_ID(), '_inosencio_home_about_copy', true ) ); ?>
 				</div>
 			</div>
