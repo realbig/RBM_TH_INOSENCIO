@@ -18,9 +18,16 @@ the_post();
 
 $practice_areas = get_posts( array(
 	'post_type'   => 'practice_area',
-	'numberposts' => - 1,
-	'meta_key'    => '_show_home',
-	'meta_value'  => '1',
+	'numberposts' => 5,
+	'orderby'     => 'menu_order',
+	'order'       => 'ASC',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'practice_area_category',
+			'field' => 'slug',
+			'terms' => 'home-banner',
+		),
+	),
 ) );
 
 if ( ! empty( $practice_areas ) ) :
@@ -92,7 +99,10 @@ if ( ! empty( $practice_areas ) ) :
 		<?php
 		$practice_areas = get_posts( array(
 			'post_type'   => 'practice_area',
+			'orderby'     => 'menu_order',
+			'order'       => 'ASC',
 			'numberposts' => - 1,
+
 		) );
 
 		if ( ! empty( $practice_areas ) ) :
@@ -104,7 +114,8 @@ if ( ! empty( $practice_areas ) ) :
 			<ul class="practice-areas top-level small-block-grid-1 medium-block-grid-2">
 				<?php
 				foreach ( $practice_areas as $practice_area ) :
-					if ( ! get_post_meta( $practice_area->ID, '_top_level', true ) ) {
+
+					if ( ! has_term( 'top-level', 'practice_area_category', $practice_area ) ) {
 						continue;
 					}
 					?>
