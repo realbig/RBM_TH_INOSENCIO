@@ -112,10 +112,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<nav class="site-nav columns medium-9 large-8 show-for-medium-up">
 				<?php
-				add_filter( 'the_title', '_inosencio_header_nav_filter' );
+				add_filter( 'the_title', '_inosencio_header_nav_filter', 10, 2 );
 
-				function _inosencio_header_nav_filter( $title ) {
-					return "<span data-hover=\"$title\">$title</span>";
+				function _inosencio_header_nav_filter( $title, $ID) {
+
+					if (strpos( $title, '<span data-hover=' ) !== false ) {
+
+						return $title;
+
+					} else {
+
+						return "<span data-hover=\"$title\">$title</span>";
+					}
 				}
 
 				wp_nav_menu( array(
