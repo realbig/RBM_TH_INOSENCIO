@@ -4,6 +4,8 @@ Description: A kick-butt theme for Inosencio.
 Author: Joel Worsham
 Author URI: http://joelworsham.com
 Version: 0.1.0
+GitHub Theme URI: https://github.com/realbig/RBM_TH_INOSENCIO
+GitHub Branch: master
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -33,14 +35,29 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
   display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
@@ -58,7 +75,8 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-[hidden], template {
+[hidden],
+template {
   display: none; }
 
 /* Links
@@ -72,7 +90,8 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0; }
 
 /* Text-level semantics
@@ -86,7 +105,8 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 /**
@@ -119,7 +139,8 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -157,6 +178,7 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -169,7 +191,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -185,7 +210,11 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -205,7 +234,8 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
+button,
+select {
   text-transform: none; }
 
 /**
@@ -215,7 +245,10 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -224,13 +257,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -248,7 +283,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -259,7 +295,8 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -270,6 +307,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -278,7 +317,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -321,7 +361,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+td,
+th {
   padding: 0; }
 
 /*
@@ -380,10 +421,15 @@ meta.foundation-data-attribute-namespace {
 html, body {
   height: 100%; }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-html, body {
+html,
+body {
   font-size: 100%; }
 
 body {
@@ -408,7 +454,12 @@ img {
 img {
   -ms-interpolation-mode: bicubic; }
 
-#map_canvas img, #map_canvas embed, #map_canvas object, .map_canvas img, .map_canvas embed, .map_canvas object {
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
   max-width: none !important; }
 
 .left {
@@ -420,6 +471,7 @@ img {
 .clearfix:before, .clearfix:after {
   content: " ";
   display: table; }
+
 .clearfix:after {
   clear: both; }
 
@@ -475,7 +527,7 @@ select {
     display: table-cell !important; } }
 
 /* medium displays */
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .show-for-medium-only, .show-for-medium-up, .show-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xlarge, .show-for-xlarge-down, .hide-for-xxlarge-only, .hide-for-xxlarge-up, .hide-for-xxlarge, .show-for-xxlarge-down {
     display: inherit !important; }
   .show-for-small-only, .hide-for-small-up, .show-for-small, .show-for-small-down, .hide-for-medium-only, .hide-for-medium-up, .hide-for-medium, .hide-for-medium-down, .show-for-large-only, .show-for-large-up, .show-for-large, .hide-for-large-down, .show-for-xlarge-only, .show-for-xlarge-up, .show-for-xlarge, .hide-for-xlarge-down, .show-for-xxlarge-only, .show-for-xxlarge-up, .show-for-xxlarge, .hide-for-xxlarge-down {
@@ -504,7 +556,7 @@ select {
     display: table-cell !important; } }
 
 /* large displays */
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width: 64.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .show-for-large-only, .show-for-large-up, .show-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xlarge, .show-for-xlarge-down, .hide-for-xxlarge-only, .hide-for-xxlarge-up, .hide-for-xxlarge, .show-for-xxlarge-down {
     display: inherit !important; }
   .show-for-small-only, .hide-for-small-up, .show-for-small, .show-for-small-down, .show-for-medium-only, .hide-for-medium-up, .show-for-medium, .show-for-medium-down, .hide-for-large-only, .hide-for-large-up, .hide-for-large, .hide-for-large-down, .show-for-xlarge-only, .show-for-xlarge-up, .show-for-xlarge, .hide-for-xlarge-down, .show-for-xxlarge-only, .show-for-xxlarge-up, .show-for-xxlarge, .hide-for-xxlarge-down {
@@ -533,7 +585,7 @@ select {
     display: table-cell !important; } }
 
 /* xlarge displays */
-@media only screen and (min-width:90.063em) {
+@media only screen and (min-width: 90.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .hide-for-large-only, .show-for-large-up, .hide-for-large, .hide-for-large-down, .show-for-xlarge-only, .show-for-xlarge-up, .show-for-xlarge, .show-for-xlarge-down, .hide-for-xxlarge-only, .hide-for-xxlarge-up, .hide-for-xxlarge, .show-for-xxlarge-down {
     display: inherit !important; }
   .show-for-small-only, .hide-for-small-up, .show-for-small, .show-for-small-down, .show-for-medium-only, .hide-for-medium-up, .show-for-medium, .show-for-medium-down, .show-for-large-only, .hide-for-large-up, .show-for-large, .show-for-large-down, .hide-for-xlarge-only, .hide-for-xlarge-up, .hide-for-xlarge, .hide-for-xlarge-down, .show-for-xxlarge-only, .show-for-xxlarge-up, .show-for-xxlarge, .hide-for-xxlarge-down {
@@ -562,7 +614,7 @@ select {
     display: table-cell !important; } }
 
 /* xxlarge displays */
-@media only screen and (min-width:120.063em) {
+@media only screen and (min-width: 120.063em) {
   .hide-for-small-only, .show-for-small-up, .hide-for-small, .hide-for-small-down, .hide-for-medium-only, .show-for-medium-up, .hide-for-medium, .hide-for-medium-down, .hide-for-large-only, .show-for-large-up, .hide-for-large, .hide-for-large-down, .hide-for-xlarge-only, .show-for-xlarge-up, .hide-for-xlarge, .hide-for-xlarge-down, .show-for-xxlarge-only, .show-for-xxlarge-up, .show-for-xxlarge, .show-for-xxlarge-down {
     display: inherit !important; }
   .show-for-small-only, .hide-for-small-up, .show-for-small, .show-for-small-down, .show-for-medium-only, .hide-for-medium-up, .show-for-medium, .show-for-medium-down, .show-for-large-only, .hide-for-large-up, .show-for-large, .show-for-large-down, .show-for-xlarge-only, .hide-for-xlarge-up, .show-for-xlarge, .show-for-xlarge-down, .hide-for-xxlarge-only, .hide-for-xxlarge-up, .hide-for-xxlarge, .hide-for-xxlarge-down {
@@ -591,10 +643,12 @@ select {
     display: table-cell !important; } }
 
 /* Orientation targeting */
-.show-for-landscape, .hide-for-portrait {
+.show-for-landscape,
+.hide-for-portrait {
   display: inherit !important; }
 
-.hide-for-landscape, .show-for-portrait {
+.hide-for-landscape,
+.show-for-portrait {
   display: none !important; }
 
 /* Specific visibility for tables */
@@ -610,13 +664,17 @@ tbody.hide-for-landscape, tbody.show-for-portrait {
 tr.hide-for-landscape, tr.show-for-portrait {
   display: table-row !important; }
 
-td.hide-for-landscape, td.show-for-portrait, th.hide-for-landscape, th.show-for-portrait {
+td.hide-for-landscape, td.show-for-portrait,
+th.hide-for-landscape,
+th.show-for-portrait {
   display: table-cell !important; }
 
 @media only screen and (orientation: landscape) {
-  .show-for-landscape, .hide-for-portrait {
+  .show-for-landscape,
+  .hide-for-portrait {
     display: inherit !important; }
-  .hide-for-landscape, .show-for-portrait {
+  .hide-for-landscape,
+  .show-for-portrait {
     display: none !important; }
   /* Specific visibility for tables */
   table.show-for-landscape, table.hide-for-portrait {
@@ -627,13 +685,17 @@ td.hide-for-landscape, td.show-for-portrait, th.hide-for-landscape, th.show-for-
     display: table-row-group !important; }
   tr.show-for-landscape, tr.hide-for-portrait {
     display: table-row !important; }
-  td.show-for-landscape, td.hide-for-portrait, th.show-for-landscape, th.hide-for-portrait {
+  td.show-for-landscape, td.hide-for-portrait,
+  th.show-for-landscape,
+  th.hide-for-portrait {
     display: table-cell !important; } }
 
 @media only screen and (orientation: portrait) {
-  .show-for-portrait, .hide-for-landscape {
+  .show-for-portrait,
+  .hide-for-landscape {
     display: inherit !important; }
-  .hide-for-portrait, .show-for-landscape {
+  .hide-for-portrait,
+  .show-for-landscape {
     display: none !important; }
   /* Specific visibility for tables */
   table.show-for-portrait, table.hide-for-landscape {
@@ -644,7 +706,9 @@ td.hide-for-landscape, td.show-for-portrait, th.hide-for-landscape, th.show-for-
     display: table-row-group !important; }
   tr.show-for-portrait, tr.hide-for-landscape {
     display: table-row !important; }
-  td.show-for-portrait, td.hide-for-landscape, th.show-for-portrait, th.hide-for-landscape {
+  td.show-for-portrait, td.hide-for-landscape,
+  th.show-for-portrait,
+  th.hide-for-landscape {
     display: table-cell !important; } }
 
 /* Touch-enabled device targeting */
@@ -802,20 +866,23 @@ th.hide-for-touch {
   .clearing-feature li.clearing-featured-img {
     display: block; }
 
-@media only screen and (min-width:40.063em) {
-  .clearing-main-prev, .clearing-main-next {
+@media only screen and (min-width: 40.063em) {
+  .clearing-main-prev,
+  .clearing-main-next {
     position: absolute;
     height: 100%;
     width: 40px;
     top: 0; }
-    .clearing-main-prev > span, .clearing-main-next > span {
+    .clearing-main-prev > span,
+    .clearing-main-next > span {
       position: absolute;
       top: 50%;
       display: block;
       width: 0;
       height: 0;
       border: solid 12px; }
-      .clearing-main-prev > span:hover, .clearing-main-next > span:hover {
+      .clearing-main-prev > span:hover,
+      .clearing-main-next > span:hover {
         opacity: 0.8; }
   .clearing-main-prev {
     left: 0; }
@@ -828,7 +895,8 @@ th.hide-for-touch {
     .clearing-main-next > span {
       border-color: transparent;
       border-left-color: #CCCCCC; }
-  .clearing-main-prev.disabled, .clearing-main-next.disabled {
+  .clearing-main-prev.disabled,
+  .clearing-main-next.disabled {
     opacity: 0.3; }
   .clearing-assembled .clearing-container .carousel {
     background: rgba(51, 51, 51, 0.8);
@@ -890,7 +958,9 @@ th.hide-for-touch {
     display: table; }
   .row:after, .gform_columns .gform_body:after {
     clear: both; }
-  .row.collapse > .column, .gform_columns .collapse.gform_body > .column, .row.collapse > .columns, .gform_columns .collapse.gform_body > .columns, .gform_columns .row.collapse > .gform_fields, .gform_columns .collapse.gform_body > .gform_fields {
+  .row.collapse > .column, .gform_columns .collapse.gform_body > .column,
+  .row.collapse > .columns, .gform_columns .collapse.gform_body > .columns, .gform_columns
+  .row.collapse > .gform_fields, .gform_columns .collapse.gform_body > .gform_fields {
     padding-left: 0;
     padding-right: 0; }
   .row.collapse .row, .gform_columns .collapse.gform_body .row, .row.collapse .gform_columns .gform_body, .gform_columns .row.collapse .gform_body, .gform_columns .collapse.gform_body .gform_body {
@@ -918,7 +988,9 @@ th.hide-for-touch {
       .row .row.collapse:after, .gform_columns .gform_body .row.collapse:after, .row .gform_columns .collapse.gform_body:after, .gform_columns .row .collapse.gform_body:after, .gform_columns .gform_body .collapse.gform_body:after {
         clear: both; }
 
-.column, .columns, .gform_columns .gform_fields {
+.column,
+.columns,
+.gform_columns .gform_fields {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   width: 100%;
@@ -1027,7 +1099,9 @@ th.hide-for-touch {
     position: relative;
     right: 91.6666666667%;
     left: auto; }
-  .column, .columns, .gform_columns .gform_fields {
+  .column,
+  .columns,
+  .gform_columns .gform_fields {
     position: relative;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
@@ -1086,32 +1160,46 @@ th.hide-for-touch {
     left: auto;
     right: auto;
     float: left; }
-  .column.small-centered, .columns.small-centered, .gform_columns .small-centered.gform_fields {
+  .column.small-centered,
+  .columns.small-centered,
+  .gform_columns .small-centered.gform_fields {
     margin-left: auto;
     margin-right: auto;
     float: none; }
-  .column.small-uncentered, .columns.small-uncentered, .gform_columns .small-uncentered.gform_fields {
+  .column.small-uncentered,
+  .columns.small-uncentered,
+  .gform_columns .small-uncentered.gform_fields {
     margin-left: 0;
     margin-right: 0;
     float: left; }
-  .column.small-centered:last-child, .columns.small-centered:last-child, .gform_columns .small-centered.gform_fields:last-child {
+  .column.small-centered:last-child,
+  .columns.small-centered:last-child,
+  .gform_columns .small-centered.gform_fields:last-child {
     float: none; }
-  .column.small-uncentered:last-child, .columns.small-uncentered:last-child, .gform_columns .small-uncentered.gform_fields:last-child {
+  .column.small-uncentered:last-child,
+  .columns.small-uncentered:last-child,
+  .gform_columns .small-uncentered.gform_fields:last-child {
     float: left; }
-  .column.small-uncentered.opposite, .columns.small-uncentered.opposite, .gform_columns .small-uncentered.opposite.gform_fields {
+  .column.small-uncentered.opposite,
+  .columns.small-uncentered.opposite,
+  .gform_columns .small-uncentered.opposite.gform_fields {
     float: right; }
-  .row.small-collapse > .column, .gform_columns .small-collapse.gform_body > .column, .row.small-collapse > .columns, .gform_columns .small-collapse.gform_body > .columns, .gform_columns .row.small-collapse > .gform_fields, .gform_columns .small-collapse.gform_body > .gform_fields {
+  .row.small-collapse > .column, .gform_columns .small-collapse.gform_body > .column,
+  .row.small-collapse > .columns, .gform_columns .small-collapse.gform_body > .columns, .gform_columns
+  .row.small-collapse > .gform_fields, .gform_columns .small-collapse.gform_body > .gform_fields {
     padding-left: 0;
     padding-right: 0; }
   .row.small-collapse .row, .gform_columns .small-collapse.gform_body .row, .row.small-collapse .gform_columns .gform_body, .gform_columns .row.small-collapse .gform_body, .gform_columns .small-collapse.gform_body .gform_body {
     margin-left: 0;
     margin-right: 0; }
-  .row.small-uncollapse > .column, .gform_columns .small-uncollapse.gform_body > .column, .row.small-uncollapse > .columns, .gform_columns .small-uncollapse.gform_body > .columns, .gform_columns .row.small-uncollapse > .gform_fields, .gform_columns .small-uncollapse.gform_body > .gform_fields {
+  .row.small-uncollapse > .column, .gform_columns .small-uncollapse.gform_body > .column,
+  .row.small-uncollapse > .columns, .gform_columns .small-uncollapse.gform_body > .columns, .gform_columns
+  .row.small-uncollapse > .gform_fields, .gform_columns .small-uncollapse.gform_body > .gform_fields {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     float: left; } }
 
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   .medium-push-0 {
     position: relative;
     left: 0%;
@@ -1208,7 +1296,9 @@ th.hide-for-touch {
     position: relative;
     right: 91.6666666667%;
     left: auto; }
-  .column, .columns, .gform_columns .gform_fields {
+  .column,
+  .columns,
+  .gform_columns .gform_fields {
     position: relative;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
@@ -1267,27 +1357,41 @@ th.hide-for-touch {
     left: auto;
     right: auto;
     float: left; }
-  .column.medium-centered, .columns.medium-centered, .gform_columns .medium-centered.gform_fields {
+  .column.medium-centered,
+  .columns.medium-centered,
+  .gform_columns .medium-centered.gform_fields {
     margin-left: auto;
     margin-right: auto;
     float: none; }
-  .column.medium-uncentered, .columns.medium-uncentered, .gform_columns .medium-uncentered.gform_fields {
+  .column.medium-uncentered,
+  .columns.medium-uncentered,
+  .gform_columns .medium-uncentered.gform_fields {
     margin-left: 0;
     margin-right: 0;
     float: left; }
-  .column.medium-centered:last-child, .columns.medium-centered:last-child, .gform_columns .medium-centered.gform_fields:last-child {
+  .column.medium-centered:last-child,
+  .columns.medium-centered:last-child,
+  .gform_columns .medium-centered.gform_fields:last-child {
     float: none; }
-  .column.medium-uncentered:last-child, .columns.medium-uncentered:last-child, .gform_columns .medium-uncentered.gform_fields:last-child {
+  .column.medium-uncentered:last-child,
+  .columns.medium-uncentered:last-child,
+  .gform_columns .medium-uncentered.gform_fields:last-child {
     float: left; }
-  .column.medium-uncentered.opposite, .columns.medium-uncentered.opposite, .gform_columns .medium-uncentered.opposite.gform_fields {
+  .column.medium-uncentered.opposite,
+  .columns.medium-uncentered.opposite,
+  .gform_columns .medium-uncentered.opposite.gform_fields {
     float: right; }
-  .row.medium-collapse > .column, .gform_columns .medium-collapse.gform_body > .column, .row.medium-collapse > .columns, .gform_columns .medium-collapse.gform_body > .columns, .gform_columns .row.medium-collapse > .gform_fields, .gform_columns .medium-collapse.gform_body > .gform_fields {
+  .row.medium-collapse > .column, .gform_columns .medium-collapse.gform_body > .column,
+  .row.medium-collapse > .columns, .gform_columns .medium-collapse.gform_body > .columns, .gform_columns
+  .row.medium-collapse > .gform_fields, .gform_columns .medium-collapse.gform_body > .gform_fields {
     padding-left: 0;
     padding-right: 0; }
   .row.medium-collapse .row, .gform_columns .medium-collapse.gform_body .row, .row.medium-collapse .gform_columns .gform_body, .gform_columns .row.medium-collapse .gform_body, .gform_columns .medium-collapse.gform_body .gform_body {
     margin-left: 0;
     margin-right: 0; }
-  .row.medium-uncollapse > .column, .gform_columns .medium-uncollapse.gform_body > .column, .row.medium-uncollapse > .columns, .gform_columns .medium-uncollapse.gform_body > .columns, .gform_columns .row.medium-uncollapse > .gform_fields, .gform_columns .medium-uncollapse.gform_body > .gform_fields {
+  .row.medium-uncollapse > .column, .gform_columns .medium-uncollapse.gform_body > .column,
+  .row.medium-uncollapse > .columns, .gform_columns .medium-uncollapse.gform_body > .columns, .gform_columns
+  .row.medium-uncollapse > .gform_fields, .gform_columns .medium-uncollapse.gform_body > .gform_fields {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     float: left; }
@@ -1388,7 +1492,7 @@ th.hide-for-touch {
     right: 91.6666666667%;
     left: auto; } }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width: 64.063em) {
   .large-push-0 {
     position: relative;
     left: 0%;
@@ -1485,7 +1589,9 @@ th.hide-for-touch {
     position: relative;
     right: 91.6666666667%;
     left: auto; }
-  .column, .columns, .gform_columns .gform_fields {
+  .column,
+  .columns,
+  .gform_columns .gform_fields {
     position: relative;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
@@ -1544,27 +1650,41 @@ th.hide-for-touch {
     left: auto;
     right: auto;
     float: left; }
-  .column.large-centered, .columns.large-centered, .gform_columns .large-centered.gform_fields {
+  .column.large-centered,
+  .columns.large-centered,
+  .gform_columns .large-centered.gform_fields {
     margin-left: auto;
     margin-right: auto;
     float: none; }
-  .column.large-uncentered, .columns.large-uncentered, .gform_columns .large-uncentered.gform_fields {
+  .column.large-uncentered,
+  .columns.large-uncentered,
+  .gform_columns .large-uncentered.gform_fields {
     margin-left: 0;
     margin-right: 0;
     float: left; }
-  .column.large-centered:last-child, .columns.large-centered:last-child, .gform_columns .large-centered.gform_fields:last-child {
+  .column.large-centered:last-child,
+  .columns.large-centered:last-child,
+  .gform_columns .large-centered.gform_fields:last-child {
     float: none; }
-  .column.large-uncentered:last-child, .columns.large-uncentered:last-child, .gform_columns .large-uncentered.gform_fields:last-child {
+  .column.large-uncentered:last-child,
+  .columns.large-uncentered:last-child,
+  .gform_columns .large-uncentered.gform_fields:last-child {
     float: left; }
-  .column.large-uncentered.opposite, .columns.large-uncentered.opposite, .gform_columns .large-uncentered.opposite.gform_fields {
+  .column.large-uncentered.opposite,
+  .columns.large-uncentered.opposite,
+  .gform_columns .large-uncentered.opposite.gform_fields {
     float: right; }
-  .row.large-collapse > .column, .gform_columns .large-collapse.gform_body > .column, .row.large-collapse > .columns, .gform_columns .large-collapse.gform_body > .columns, .gform_columns .row.large-collapse > .gform_fields, .gform_columns .large-collapse.gform_body > .gform_fields {
+  .row.large-collapse > .column, .gform_columns .large-collapse.gform_body > .column,
+  .row.large-collapse > .columns, .gform_columns .large-collapse.gform_body > .columns, .gform_columns
+  .row.large-collapse > .gform_fields, .gform_columns .large-collapse.gform_body > .gform_fields {
     padding-left: 0;
     padding-right: 0; }
   .row.large-collapse .row, .gform_columns .large-collapse.gform_body .row, .row.large-collapse .gform_columns .gform_body, .gform_columns .row.large-collapse .gform_body, .gform_columns .large-collapse.gform_body .gform_body {
     margin-left: 0;
     margin-right: 0; }
-  .row.large-uncollapse > .column, .gform_columns .large-uncollapse.gform_body > .column, .row.large-uncollapse > .columns, .gform_columns .large-uncollapse.gform_body > .columns, .gform_columns .row.large-uncollapse > .gform_fields, .gform_columns .large-uncollapse.gform_body > .gform_fields {
+  .row.large-uncollapse > .column, .gform_columns .large-uncollapse.gform_body > .column,
+  .row.large-uncollapse > .columns, .gform_columns .large-uncollapse.gform_body > .columns, .gform_columns
+  .row.large-uncollapse > .gform_fields, .gform_columns .large-uncollapse.gform_body > .gform_fields {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     float: left; }
@@ -1766,7 +1886,7 @@ th.hide-for-touch {
     .small-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
 
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   .medium-block-grid-1 > li {
     width: 100%;
     list-style: none; }
@@ -1852,7 +1972,7 @@ th.hide-for-touch {
     .medium-block-grid-12 > li:nth-of-type(12n+1) {
       clear: both; } }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width: 64.063em) {
   .large-block-grid-1 > li {
     width: 100%;
     list-style: none; }
@@ -1960,8 +2080,7 @@ button, .button, input[type="submit"], #site-header .site-nav .menu .menu-item:l
   background: transparent;
   border-color: #222;
   color: #222;
-  -webkit-transition: background-color 300ms ease-out;
-          transition: background-color 300ms ease-out; }
+  transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, input[type="submit"]:hover, #site-header .site-nav .menu .menu-item:last-of-type a:hover, .button:focus, input[type="submit"]:focus, #site-header .site-nav .menu .menu-item:last-of-type a:focus {
     background: #232E56; }
   button:hover, button:focus, .button:hover, input[type="submit"]:hover, #site-header .site-nav .menu .menu-item:last-of-type a:hover, .button:focus, input[type="submit"]:focus, #site-header .site-nav .menu .menu-item:last-of-type a:focus {
@@ -2121,7 +2240,7 @@ button::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   button, .button, input[type="submit"], #site-header .site-nav .menu .menu-item:last-of-type a {
     display: inline-block; } }
 
@@ -2157,7 +2276,7 @@ button::-moz-focus-inner {
   .small-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:40.063em) and (max-width:64em) {
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .medium-only-text-left {
     text-align: left !important; }
   .medium-only-text-right {
@@ -2167,7 +2286,7 @@ button::-moz-focus-inner {
   .medium-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   .medium-text-left {
     text-align: left !important; }
   .medium-text-right {
@@ -2177,7 +2296,7 @@ button::-moz-focus-inner {
   .medium-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:64.063em) and (max-width:90em) {
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
   .large-only-text-left {
     text-align: left !important; }
   .large-only-text-right {
@@ -2187,7 +2306,7 @@ button::-moz-focus-inner {
   .large-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:64.063em) {
+@media only screen and (min-width: 64.063em) {
   .large-text-left {
     text-align: left !important; }
   .large-text-right {
@@ -2197,7 +2316,7 @@ button::-moz-focus-inner {
   .large-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:90.063em) and (max-width:120em) {
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
   .xlarge-only-text-left {
     text-align: left !important; }
   .xlarge-only-text-right {
@@ -2207,7 +2326,7 @@ button::-moz-focus-inner {
   .xlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:90.063em) {
+@media only screen and (min-width: 90.063em) {
   .xlarge-text-left {
     text-align: left !important; }
   .xlarge-text-right {
@@ -2217,7 +2336,7 @@ button::-moz-focus-inner {
   .xlarge-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:120.063em) and (max-width:99999999em) {
+@media only screen and (min-width: 120.063em) and (max-width: 99999999em) {
   .xxlarge-only-text-left {
     text-align: left !important; }
   .xxlarge-only-text-right {
@@ -2227,7 +2346,7 @@ button::-moz-focus-inner {
   .xxlarge-only-text-justify {
     text-align: justify !important; } }
 
-@media only screen and (min-width:120.063em) {
+@media only screen and (min-width: 120.063em) {
   .xxlarge-text-left {
     text-align: left !important; }
   .xxlarge-text-right {
@@ -2238,7 +2357,26 @@ button::-moz-focus-inner {
     text-align: justify !important; } }
 
 /* Typography resets */
-div, dl, dt, dd, ul, ol, li, h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td {
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+body.home .home-cta .practice-areas,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
   margin: 0;
   padding: 0; }
 
@@ -2316,11 +2454,13 @@ hr {
   height: 0; }
 
 /* Helpful Typography Defaults */
-em, i {
+em,
+i {
   font-style: italic;
   line-height: inherit; }
 
-strong, b {
+strong,
+b {
   font-weight: bold;
   line-height: inherit; }
 
@@ -2339,7 +2479,9 @@ code {
   padding: 0.125rem 0.3125rem 0.0625rem; }
 
 /* Lists */
-ul, ol, dl {
+ul,
+ol,
+dl {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -2350,33 +2492,41 @@ ul {
   margin-left: 1.1rem; }
   ul.no-bullet {
     margin-left: 0; }
-    ul.no-bullet li ul, ul.no-bullet li ol {
+    ul.no-bullet li ul,
+    ul.no-bullet li ol {
       margin-left: 1.25rem;
       margin-bottom: 0;
       list-style: none; }
 
 /* Unordered Lists */
-ul li ul, ul li ol {
+ul li ul,
+ul li ol {
   margin-left: 1.25rem;
   margin-bottom: 0; }
+
 ul.square li ul, ul.circle li ul, ul.disc li ul {
   list-style: inherit; }
+
 ul.square {
   list-style-type: square;
   margin-left: 1.1rem; }
+
 ul.circle {
   list-style-type: circle;
   margin-left: 1.1rem; }
+
 ul.disc {
   list-style-type: disc;
   margin-left: 1.1rem; }
+
 ul.no-bullet {
   list-style: none; }
 
 /* Ordered Lists */
 ol {
   margin-left: 1.4rem; }
-  ol li ul, ol li ol {
+  ol li ul,
+  ol li ol {
     margin-left: 1.25rem;
     margin-bottom: 0; }
 
@@ -2384,11 +2534,13 @@ ol {
 dl dt {
   margin-bottom: 0.3rem;
   font-weight: bold; }
+
 dl dd {
   margin-bottom: 0.75rem; }
 
 /* Abbreviations */
-abbr, acronym {
+abbr,
+acronym {
   text-transform: uppercase;
   font-size: 90%;
   color: #222;
@@ -2410,10 +2562,12 @@ blockquote {
     color: #555555; }
     blockquote cite:before {
       content: "\2014 \0020"; }
-    blockquote cite a, blockquote cite a:visited {
+    blockquote cite a,
+    blockquote cite a:visited {
       color: #555555; }
 
-blockquote, blockquote p {
+blockquote,
+blockquote p {
   line-height: 1.6;
   color: #6f6f6f; }
 
@@ -2432,6 +2586,7 @@ blockquote, blockquote p {
 
 .vevent .summary {
   font-weight: bold; }
+
 .vevent abbr {
   cursor: default;
   text-decoration: none;
@@ -2439,7 +2594,7 @@ blockquote, blockquote p {
   border: none;
   padding: 0 0.0625rem; }
 
-@media only screen and (min-width:40.063em) {
+@media only screen and (min-width: 40.063em) {
   h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6 {
     line-height: 1.4; }
   h1, body.home .home-cta .practice-areas {
@@ -2471,31 +2626,38 @@ blockquote, blockquote p {
     /* Black prints faster: h5bp.com/s */
     box-shadow: none !important;
     text-shadow: none !important; }
-  a, a:visited {
+  a,
+  a:visited {
     text-decoration: underline; }
   a[href]:after {
     content: " (" attr(href) ")"; }
   abbr[title]:after {
     content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
     content: ""; }
-  pre, blockquote {
+  pre,
+  blockquote {
     border: 1px solid #999999;
     page-break-inside: avoid; }
   thead {
     display: table-header-group;
     /* h5bp.com/t */ }
-  tr, img {
+  tr,
+  img {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-
-  p, h2, h3 {
+  p,
+  h2,
+  h3 {
     orphans: 3;
     widows: 3; }
-  h2, h3 {
+  h2,
+  h3 {
     page-break-after: avoid; }
   .hide-on-print {
     display: none !important; }
@@ -2513,24 +2675,72 @@ form {
 /* Using forms within rows, we need to set some defaults */
 form .row .row, form .gform_columns .gform_body .row, .gform_columns form .gform_body .row, form .row .gform_columns .gform_body, .gform_columns form .row .gform_body, form .gform_columns .gform_body .gform_body, .gform_columns form .gform_body .gform_body {
   margin: 0 -0.5rem; }
-  form .row .row .column, form .gform_columns .gform_body .row .column, .gform_columns form .gform_body .row .column, form .row .gform_columns .gform_body .column, .gform_columns form .row .gform_body .column, form .gform_columns .gform_body .gform_body .column, .gform_columns form .gform_body .gform_body .column, form .row .row .columns, form .gform_columns .gform_body .row .columns, .gform_columns form .gform_body .row .columns, form .row .gform_columns .gform_body .columns, .gform_columns form .row .gform_body .columns, form .gform_columns .gform_body .gform_body .columns, .gform_columns form .gform_body .gform_body .columns, form .row .row .gform_columns .gform_fields, .gform_columns form .row .row .gform_fields, form .gform_columns .gform_body .row .gform_fields, .gform_columns form .gform_body .row .gform_fields, form .row .gform_columns .gform_body .gform_fields, .gform_columns form .row .gform_body .gform_fields, form .gform_columns .gform_body .gform_body .gform_fields, .gform_columns form .gform_body .gform_body .gform_fields {
+  form .row .row .column, form .gform_columns .gform_body .row .column, .gform_columns form .gform_body .row .column, form .row .gform_columns .gform_body .column, .gform_columns form .row .gform_body .column, form .gform_columns .gform_body .gform_body .column, .gform_columns form .gform_body .gform_body .column,
+  form .row .row .columns,
+  form .gform_columns .gform_body .row .columns, .gform_columns
+  form .gform_body .row .columns,
+  form .row .gform_columns .gform_body .columns, .gform_columns
+  form .row .gform_body .columns,
+  form .gform_columns .gform_body .gform_body .columns, .gform_columns
+  form .gform_body .gform_body .columns,
+  form .row .row .gform_columns .gform_fields, .gform_columns
+  form .row .row .gform_fields,
+  form .gform_columns .gform_body .row .gform_fields, .gform_columns
+  form .gform_body .row .gform_fields,
+  form .row .gform_columns .gform_body .gform_fields, .gform_columns
+  form .row .gform_body .gform_fields,
+  form .gform_columns .gform_body .gform_body .gform_fields, .gform_columns
+  form .gform_body .gform_body .gform_fields {
     padding: 0 0.5rem; }
   form .row .row.collapse, form .gform_columns .gform_body .row.collapse, .gform_columns form .gform_body .row.collapse, form .row .gform_columns .collapse.gform_body, .gform_columns form .row .collapse.gform_body, form .gform_columns .gform_body .collapse.gform_body, .gform_columns form .gform_body .collapse.gform_body {
     margin: 0; }
-    form .row .row.collapse .column, form .gform_columns .gform_body .row.collapse .column, .gform_columns form .gform_body .row.collapse .column, form .row .gform_columns .collapse.gform_body .column, .gform_columns form .row .collapse.gform_body .column, form .gform_columns .gform_body .collapse.gform_body .column, .gform_columns form .gform_body .collapse.gform_body .column, form .row .row.collapse .columns, form .gform_columns .gform_body .row.collapse .columns, .gform_columns form .gform_body .row.collapse .columns, form .row .gform_columns .collapse.gform_body .columns, .gform_columns form .row .collapse.gform_body .columns, form .gform_columns .gform_body .collapse.gform_body .columns, .gform_columns form .gform_body .collapse.gform_body .columns, form .row .row.collapse .gform_columns .gform_fields, .gform_columns form .row .row.collapse .gform_fields, form .gform_columns .gform_body .row.collapse .gform_fields, .gform_columns form .gform_body .row.collapse .gform_fields, form .row .gform_columns .collapse.gform_body .gform_fields, .gform_columns form .row .collapse.gform_body .gform_fields, form .gform_columns .gform_body .collapse.gform_body .gform_fields, .gform_columns form .gform_body .collapse.gform_body .gform_fields {
+    form .row .row.collapse .column, form .gform_columns .gform_body .row.collapse .column, .gform_columns form .gform_body .row.collapse .column, form .row .gform_columns .collapse.gform_body .column, .gform_columns form .row .collapse.gform_body .column, form .gform_columns .gform_body .collapse.gform_body .column, .gform_columns form .gform_body .collapse.gform_body .column,
+    form .row .row.collapse .columns,
+    form .gform_columns .gform_body .row.collapse .columns, .gform_columns
+    form .gform_body .row.collapse .columns,
+    form .row .gform_columns .collapse.gform_body .columns, .gform_columns
+    form .row .collapse.gform_body .columns,
+    form .gform_columns .gform_body .collapse.gform_body .columns, .gform_columns
+    form .gform_body .collapse.gform_body .columns,
+    form .row .row.collapse .gform_columns .gform_fields, .gform_columns
+    form .row .row.collapse .gform_fields,
+    form .gform_columns .gform_body .row.collapse .gform_fields, .gform_columns
+    form .gform_body .row.collapse .gform_fields,
+    form .row .gform_columns .collapse.gform_body .gform_fields, .gform_columns
+    form .row .collapse.gform_body .gform_fields,
+    form .gform_columns .gform_body .collapse.gform_body .gform_fields, .gform_columns
+    form .gform_body .collapse.gform_body .gform_fields {
       padding: 0; }
     form .row .row.collapse input, form .gform_columns .gform_body .row.collapse input, .gform_columns form .gform_body .row.collapse input, form .row .gform_columns .collapse.gform_body input, .gform_columns form .row .collapse.gform_body input, form .gform_columns .gform_body .collapse.gform_body input, .gform_columns form .gform_body .collapse.gform_body input {
       -webkit-border-bottom-right-radius: 0;
       -webkit-border-top-right-radius: 0;
       border-bottom-right-radius: 0;
       border-top-right-radius: 0; }
-form .row input.column, form .gform_columns .gform_body input.column, .gform_columns form .gform_body input.column, form .row input.columns, form .gform_columns .gform_body input.columns, .gform_columns form .gform_body input.columns, form .row .gform_columns input.gform_fields, .gform_columns form .row input.gform_fields, form .gform_columns .gform_body input.gform_fields, .gform_columns form .gform_body input.gform_fields, form .row textarea.column, form .gform_columns .gform_body textarea.column, .gform_columns form .gform_body textarea.column, form .row textarea.columns, form .gform_columns .gform_body textarea.columns, .gform_columns form .gform_body textarea.columns, form .row .gform_columns textarea.gform_fields, .gform_columns form .row textarea.gform_fields, form .gform_columns .gform_body textarea.gform_fields, .gform_columns form .gform_body textarea.gform_fields {
+
+form .row input.column, form .gform_columns .gform_body input.column, .gform_columns form .gform_body input.column,
+form .row input.columns,
+form .gform_columns .gform_body input.columns, .gform_columns
+form .gform_body input.columns,
+form .row .gform_columns input.gform_fields, .gform_columns
+form .row input.gform_fields,
+form .gform_columns .gform_body input.gform_fields, .gform_columns
+form .gform_body input.gform_fields,
+form .row textarea.column,
+form .gform_columns .gform_body textarea.column, .gform_columns
+form .gform_body textarea.column,
+form .row textarea.columns,
+form .gform_columns .gform_body textarea.columns, .gform_columns
+form .gform_body textarea.columns,
+form .row .gform_columns textarea.gform_fields, .gform_columns
+form .row textarea.gform_fields,
+form .gform_columns .gform_body textarea.gform_fields, .gform_columns
+form .gform_body textarea.gform_fields {
   padding-left: 0.5rem; }
 
 /* Label Styles */
 label {
   font-size: 0.875rem;
-  color: #4d4d4d;
+  color: #4d4c4c;
   cursor: pointer;
   display: block;
   font-weight: normal;
@@ -2548,7 +2758,8 @@ label {
     color: #676767; }
 
 /* Attach elements to the beginning or end of an input */
-.prefix, .postfix {
+.prefix,
+.postfix {
   display: block;
   position: relative;
   z-index: 2;
@@ -2638,9 +2849,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   padding: 0.5rem;
   height: 2.3125rem;
   width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
-          transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out; }
   input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="color"]:focus, textarea:focus {
     box-shadow: 0 0 5px #999999;
     border-color: #999999; }
@@ -2651,54 +2863,132 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
   input[type="text"]:disabled, input[type="password"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="month"]:disabled, input[type="week"]:disabled, input[type="email"]:disabled, input[type="number"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="color"]:disabled, textarea:disabled {
     background-color: #DDDDDD;
     cursor: default; }
-  input[type="text"][disabled], input[type="text"][readonly], fieldset[disabled] input[type="text"], input[type="password"][disabled], input[type="password"][readonly], fieldset[disabled] input[type="password"], input[type="date"][disabled], input[type="date"][readonly], fieldset[disabled] input[type="date"], input[type="datetime"][disabled], input[type="datetime"][readonly], fieldset[disabled] input[type="datetime"], input[type="datetime-local"][disabled], input[type="datetime-local"][readonly], fieldset[disabled] input[type="datetime-local"], input[type="month"][disabled], input[type="month"][readonly], fieldset[disabled] input[type="month"], input[type="week"][disabled], input[type="week"][readonly], fieldset[disabled] input[type="week"], input[type="email"][disabled], input[type="email"][readonly], fieldset[disabled] input[type="email"], input[type="number"][disabled], input[type="number"][readonly], fieldset[disabled] input[type="number"], input[type="search"][disabled], input[type="search"][readonly], fieldset[disabled] input[type="search"], input[type="tel"][disabled], input[type="tel"][readonly], fieldset[disabled] input[type="tel"], input[type="time"][disabled], input[type="time"][readonly], fieldset[disabled] input[type="time"], input[type="url"][disabled], input[type="url"][readonly], fieldset[disabled] input[type="url"], input[type="color"][disabled], input[type="color"][readonly], fieldset[disabled] input[type="color"], textarea[disabled], textarea[readonly], fieldset[disabled] textarea {
+  input[type="text"][disabled], input[type="text"][readonly],
+  fieldset[disabled] input[type="text"], input[type="password"][disabled], input[type="password"][readonly],
+  fieldset[disabled] input[type="password"], input[type="date"][disabled], input[type="date"][readonly],
+  fieldset[disabled] input[type="date"], input[type="datetime"][disabled], input[type="datetime"][readonly],
+  fieldset[disabled] input[type="datetime"], input[type="datetime-local"][disabled], input[type="datetime-local"][readonly],
+  fieldset[disabled] input[type="datetime-local"], input[type="month"][disabled], input[type="month"][readonly],
+  fieldset[disabled] input[type="month"], input[type="week"][disabled], input[type="week"][readonly],
+  fieldset[disabled] input[type="week"], input[type="email"][disabled], input[type="email"][readonly],
+  fieldset[disabled] input[type="email"], input[type="number"][disabled], input[type="number"][readonly],
+  fieldset[disabled] input[type="number"], input[type="search"][disabled], input[type="search"][readonly],
+  fieldset[disabled] input[type="search"], input[type="tel"][disabled], input[type="tel"][readonly],
+  fieldset[disabled] input[type="tel"], input[type="time"][disabled], input[type="time"][readonly],
+  fieldset[disabled] input[type="time"], input[type="url"][disabled], input[type="url"][readonly],
+  fieldset[disabled] input[type="url"], input[type="color"][disabled], input[type="color"][readonly],
+  fieldset[disabled] input[type="color"], textarea[disabled], textarea[readonly],
+  fieldset[disabled] textarea {
     background-color: #DDDDDD;
     cursor: default; }
   input[type="text"].radius, input[type="password"].radius, input[type="date"].radius, input[type="datetime"].radius, input[type="datetime-local"].radius, input[type="month"].radius, input[type="week"].radius, input[type="email"].radius, input[type="number"].radius, input[type="search"].radius, input[type="tel"].radius, input[type="time"].radius, input[type="url"].radius, input[type="color"].radius, textarea.radius {
     border-radius: 3px; }
 
-form .row .prefix-radius.row.collapse input, form .gform_columns .gform_body .prefix-radius.row.collapse input, .gform_columns form .gform_body .prefix-radius.row.collapse input, form .row .gform_columns .prefix-radius.collapse.gform_body input, .gform_columns form .row .prefix-radius.collapse.gform_body input, form .gform_columns .gform_body .prefix-radius.collapse.gform_body input, .gform_columns form .gform_body .prefix-radius.collapse.gform_body input, form .row .prefix-radius.row.collapse textarea, form .gform_columns .gform_body .prefix-radius.row.collapse textarea, .gform_columns form .gform_body .prefix-radius.row.collapse textarea, form .row .gform_columns .prefix-radius.collapse.gform_body textarea, .gform_columns form .row .prefix-radius.collapse.gform_body textarea, form .gform_columns .gform_body .prefix-radius.collapse.gform_body textarea, .gform_columns form .gform_body .prefix-radius.collapse.gform_body textarea, form .row .prefix-radius.row.collapse select, form .gform_columns .gform_body .prefix-radius.row.collapse select, .gform_columns form .gform_body .prefix-radius.row.collapse select, form .row .gform_columns .prefix-radius.collapse.gform_body select, .gform_columns form .row .prefix-radius.collapse.gform_body select, form .gform_columns .gform_body .prefix-radius.collapse.gform_body select, .gform_columns form .gform_body .prefix-radius.collapse.gform_body select {
+form .row .prefix-radius.row.collapse input, form .gform_columns .gform_body .prefix-radius.row.collapse input, .gform_columns form .gform_body .prefix-radius.row.collapse input, form .row .gform_columns .prefix-radius.collapse.gform_body input, .gform_columns form .row .prefix-radius.collapse.gform_body input, form .gform_columns .gform_body .prefix-radius.collapse.gform_body input, .gform_columns form .gform_body .prefix-radius.collapse.gform_body input,
+form .row .prefix-radius.row.collapse textarea,
+form .gform_columns .gform_body .prefix-radius.row.collapse textarea, .gform_columns
+form .gform_body .prefix-radius.row.collapse textarea,
+form .row .gform_columns .prefix-radius.collapse.gform_body textarea, .gform_columns
+form .row .prefix-radius.collapse.gform_body textarea,
+form .gform_columns .gform_body .prefix-radius.collapse.gform_body textarea, .gform_columns
+form .gform_body .prefix-radius.collapse.gform_body textarea,
+form .row .prefix-radius.row.collapse select,
+form .gform_columns .gform_body .prefix-radius.row.collapse select, .gform_columns
+form .gform_body .prefix-radius.row.collapse select,
+form .row .gform_columns .prefix-radius.collapse.gform_body select, .gform_columns
+form .row .prefix-radius.collapse.gform_body select,
+form .gform_columns .gform_body .prefix-radius.collapse.gform_body select, .gform_columns
+form .gform_body .prefix-radius.collapse.gform_body select {
   border-radius: 0;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
+
 form .row .prefix-radius.row.collapse .prefix, form .gform_columns .gform_body .prefix-radius.row.collapse .prefix, .gform_columns form .gform_body .prefix-radius.row.collapse .prefix, form .row .gform_columns .prefix-radius.collapse.gform_body .prefix, .gform_columns form .row .prefix-radius.collapse.gform_body .prefix, form .gform_columns .gform_body .prefix-radius.collapse.gform_body .prefix, .gform_columns form .gform_body .prefix-radius.collapse.gform_body .prefix {
   border-radius: 0;
   -webkit-border-bottom-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
-form .row .postfix-radius.row.collapse input, form .gform_columns .gform_body .postfix-radius.row.collapse input, .gform_columns form .gform_body .postfix-radius.row.collapse input, form .row .gform_columns .postfix-radius.collapse.gform_body input, .gform_columns form .row .postfix-radius.collapse.gform_body input, form .gform_columns .gform_body .postfix-radius.collapse.gform_body input, .gform_columns form .gform_body .postfix-radius.collapse.gform_body input, form .row .postfix-radius.row.collapse textarea, form .gform_columns .gform_body .postfix-radius.row.collapse textarea, .gform_columns form .gform_body .postfix-radius.row.collapse textarea, form .row .gform_columns .postfix-radius.collapse.gform_body textarea, .gform_columns form .row .postfix-radius.collapse.gform_body textarea, form .gform_columns .gform_body .postfix-radius.collapse.gform_body textarea, .gform_columns form .gform_body .postfix-radius.collapse.gform_body textarea, form .row .postfix-radius.row.collapse select, form .gform_columns .gform_body .postfix-radius.row.collapse select, .gform_columns form .gform_body .postfix-radius.row.collapse select, form .row .gform_columns .postfix-radius.collapse.gform_body select, .gform_columns form .row .postfix-radius.collapse.gform_body select, form .gform_columns .gform_body .postfix-radius.collapse.gform_body select, .gform_columns form .gform_body .postfix-radius.collapse.gform_body select {
+
+form .row .postfix-radius.row.collapse input, form .gform_columns .gform_body .postfix-radius.row.collapse input, .gform_columns form .gform_body .postfix-radius.row.collapse input, form .row .gform_columns .postfix-radius.collapse.gform_body input, .gform_columns form .row .postfix-radius.collapse.gform_body input, form .gform_columns .gform_body .postfix-radius.collapse.gform_body input, .gform_columns form .gform_body .postfix-radius.collapse.gform_body input,
+form .row .postfix-radius.row.collapse textarea,
+form .gform_columns .gform_body .postfix-radius.row.collapse textarea, .gform_columns
+form .gform_body .postfix-radius.row.collapse textarea,
+form .row .gform_columns .postfix-radius.collapse.gform_body textarea, .gform_columns
+form .row .postfix-radius.collapse.gform_body textarea,
+form .gform_columns .gform_body .postfix-radius.collapse.gform_body textarea, .gform_columns
+form .gform_body .postfix-radius.collapse.gform_body textarea,
+form .row .postfix-radius.row.collapse select,
+form .gform_columns .gform_body .postfix-radius.row.collapse select, .gform_columns
+form .gform_body .postfix-radius.row.collapse select,
+form .row .gform_columns .postfix-radius.collapse.gform_body select, .gform_columns
+form .row .postfix-radius.collapse.gform_body select,
+form .gform_columns .gform_body .postfix-radius.collapse.gform_body select, .gform_columns
+form .gform_body .postfix-radius.collapse.gform_body select {
   border-radius: 0;
   -webkit-border-bottom-left-radius: 3px;
   -webkit-border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px; }
+
 form .row .postfix-radius.row.collapse .postfix, form .gform_columns .gform_body .postfix-radius.row.collapse .postfix, .gform_columns form .gform_body .postfix-radius.row.collapse .postfix, form .row .gform_columns .postfix-radius.collapse.gform_body .postfix, .gform_columns form .row .postfix-radius.collapse.gform_body .postfix, form .gform_columns .gform_body .postfix-radius.collapse.gform_body .postfix, .gform_columns form .gform_body .postfix-radius.collapse.gform_body .postfix {
   border-radius: 0;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px; }
-form .row .prefix-round.row.collapse input, form .gform_columns .gform_body .prefix-round.row.collapse input, .gform_columns form .gform_body .prefix-round.row.collapse input, form .row .gform_columns .prefix-round.collapse.gform_body input, .gform_columns form .row .prefix-round.collapse.gform_body input, form .gform_columns .gform_body .prefix-round.collapse.gform_body input, .gform_columns form .gform_body .prefix-round.collapse.gform_body input, form .row .prefix-round.row.collapse textarea, form .gform_columns .gform_body .prefix-round.row.collapse textarea, .gform_columns form .gform_body .prefix-round.row.collapse textarea, form .row .gform_columns .prefix-round.collapse.gform_body textarea, .gform_columns form .row .prefix-round.collapse.gform_body textarea, form .gform_columns .gform_body .prefix-round.collapse.gform_body textarea, .gform_columns form .gform_body .prefix-round.collapse.gform_body textarea, form .row .prefix-round.row.collapse select, form .gform_columns .gform_body .prefix-round.row.collapse select, .gform_columns form .gform_body .prefix-round.row.collapse select, form .row .gform_columns .prefix-round.collapse.gform_body select, .gform_columns form .row .prefix-round.collapse.gform_body select, form .gform_columns .gform_body .prefix-round.collapse.gform_body select, .gform_columns form .gform_body .prefix-round.collapse.gform_body select {
+
+form .row .prefix-round.row.collapse input, form .gform_columns .gform_body .prefix-round.row.collapse input, .gform_columns form .gform_body .prefix-round.row.collapse input, form .row .gform_columns .prefix-round.collapse.gform_body input, .gform_columns form .row .prefix-round.collapse.gform_body input, form .gform_columns .gform_body .prefix-round.collapse.gform_body input, .gform_columns form .gform_body .prefix-round.collapse.gform_body input,
+form .row .prefix-round.row.collapse textarea,
+form .gform_columns .gform_body .prefix-round.row.collapse textarea, .gform_columns
+form .gform_body .prefix-round.row.collapse textarea,
+form .row .gform_columns .prefix-round.collapse.gform_body textarea, .gform_columns
+form .row .prefix-round.collapse.gform_body textarea,
+form .gform_columns .gform_body .prefix-round.collapse.gform_body textarea, .gform_columns
+form .gform_body .prefix-round.collapse.gform_body textarea,
+form .row .prefix-round.row.collapse select,
+form .gform_columns .gform_body .prefix-round.row.collapse select, .gform_columns
+form .gform_body .prefix-round.row.collapse select,
+form .row .gform_columns .prefix-round.collapse.gform_body select, .gform_columns
+form .row .prefix-round.collapse.gform_body select,
+form .gform_columns .gform_body .prefix-round.collapse.gform_body select, .gform_columns
+form .gform_body .prefix-round.collapse.gform_body select {
   border-radius: 0;
   -webkit-border-bottom-right-radius: 1000px;
   -webkit-border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
   border-top-right-radius: 1000px; }
+
 form .row .prefix-round.row.collapse .prefix, form .gform_columns .gform_body .prefix-round.row.collapse .prefix, .gform_columns form .gform_body .prefix-round.row.collapse .prefix, form .row .gform_columns .prefix-round.collapse.gform_body .prefix, .gform_columns form .row .prefix-round.collapse.gform_body .prefix, form .gform_columns .gform_body .prefix-round.collapse.gform_body .prefix, .gform_columns form .gform_body .prefix-round.collapse.gform_body .prefix {
   border-radius: 0;
   -webkit-border-bottom-left-radius: 1000px;
   -webkit-border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
   border-top-left-radius: 1000px; }
-form .row .postfix-round.row.collapse input, form .gform_columns .gform_body .postfix-round.row.collapse input, .gform_columns form .gform_body .postfix-round.row.collapse input, form .row .gform_columns .postfix-round.collapse.gform_body input, .gform_columns form .row .postfix-round.collapse.gform_body input, form .gform_columns .gform_body .postfix-round.collapse.gform_body input, .gform_columns form .gform_body .postfix-round.collapse.gform_body input, form .row .postfix-round.row.collapse textarea, form .gform_columns .gform_body .postfix-round.row.collapse textarea, .gform_columns form .gform_body .postfix-round.row.collapse textarea, form .row .gform_columns .postfix-round.collapse.gform_body textarea, .gform_columns form .row .postfix-round.collapse.gform_body textarea, form .gform_columns .gform_body .postfix-round.collapse.gform_body textarea, .gform_columns form .gform_body .postfix-round.collapse.gform_body textarea, form .row .postfix-round.row.collapse select, form .gform_columns .gform_body .postfix-round.row.collapse select, .gform_columns form .gform_body .postfix-round.row.collapse select, form .row .gform_columns .postfix-round.collapse.gform_body select, .gform_columns form .row .postfix-round.collapse.gform_body select, form .gform_columns .gform_body .postfix-round.collapse.gform_body select, .gform_columns form .gform_body .postfix-round.collapse.gform_body select {
+
+form .row .postfix-round.row.collapse input, form .gform_columns .gform_body .postfix-round.row.collapse input, .gform_columns form .gform_body .postfix-round.row.collapse input, form .row .gform_columns .postfix-round.collapse.gform_body input, .gform_columns form .row .postfix-round.collapse.gform_body input, form .gform_columns .gform_body .postfix-round.collapse.gform_body input, .gform_columns form .gform_body .postfix-round.collapse.gform_body input,
+form .row .postfix-round.row.collapse textarea,
+form .gform_columns .gform_body .postfix-round.row.collapse textarea, .gform_columns
+form .gform_body .postfix-round.row.collapse textarea,
+form .row .gform_columns .postfix-round.collapse.gform_body textarea, .gform_columns
+form .row .postfix-round.collapse.gform_body textarea,
+form .gform_columns .gform_body .postfix-round.collapse.gform_body textarea, .gform_columns
+form .gform_body .postfix-round.collapse.gform_body textarea,
+form .row .postfix-round.row.collapse select,
+form .gform_columns .gform_body .postfix-round.row.collapse select, .gform_columns
+form .gform_body .postfix-round.row.collapse select,
+form .row .gform_columns .postfix-round.collapse.gform_body select, .gform_columns
+form .row .postfix-round.collapse.gform_body select,
+form .gform_columns .gform_body .postfix-round.collapse.gform_body select, .gform_columns
+form .gform_body .postfix-round.collapse.gform_body select {
   border-radius: 0;
   -webkit-border-bottom-left-radius: 1000px;
   -webkit-border-top-left-radius: 1000px;
   border-bottom-left-radius: 1000px;
   border-top-left-radius: 1000px; }
+
 form .row .postfix-round.row.collapse .postfix, form .gform_columns .gform_body .postfix-round.row.collapse .postfix, .gform_columns form .gform_body .postfix-round.row.collapse .postfix, form .row .gform_columns .postfix-round.collapse.gform_body .postfix, .gform_columns form .row .postfix-round.collapse.gform_body .postfix, form .gform_columns .gform_body .postfix-round.collapse.gform_body .postfix, .gform_columns form .gform_body .postfix-round.collapse.gform_body .postfix {
   border-radius: 0;
   -webkit-border-bottom-right-radius: 1000px;
@@ -2741,17 +3031,21 @@ select {
   select.radius {
     border-radius: 3px; }
   select:hover {
-    background-color: #f3f3f3;
+    background-color: #f3f2f2;
     border-color: #999999; }
   select:disabled {
     background-color: #DDDDDD;
     cursor: default; }
 
 /* Adjust margin for form elements below */
-input[type="file"], input[type="checkbox"], input[type="radio"], select {
+input[type="file"],
+input[type="checkbox"],
+input[type="radio"],
+select {
   margin: 0 0 1rem 0; }
 
-input[type="checkbox"] + label, input[type="radio"] + label {
+input[type="checkbox"] + label,
+input[type="radio"] + label {
   display: inline-block;
   margin-left: 0.5rem;
   margin-right: 1rem;
@@ -2786,6 +3080,7 @@ fieldset {
   font-style: italic;
   background: #f04124;
   color: #FFFFFF; }
+
 [data-abide] span.error, [data-abide] small.error {
   display: none; }
 
@@ -2800,12 +3095,19 @@ span.error, small.error {
   background: #f04124;
   color: #FFFFFF; }
 
-.error input, .error textarea, .error select {
+.error input,
+.error textarea,
+.error select {
   margin-bottom: 0; }
-.error input[type="checkbox"], .error input[type="radio"] {
+
+.error input[type="checkbox"],
+.error input[type="radio"] {
   margin-bottom: 1rem; }
-.error label, .error label.error {
+
+.error label,
+.error label.error {
   color: #f04124; }
+
 .error small.error {
   display: block;
   padding: 0.375rem 0.5625rem 0.5625rem;
@@ -2816,6 +3118,7 @@ span.error, small.error {
   font-style: italic;
   background: #f04124;
   color: #FFFFFF; }
+
 .error > label > small {
   color: #676767;
   background: transparent;
@@ -2825,10 +3128,13 @@ span.error, small.error {
   font-size: 60%;
   margin: 0;
   display: inline; }
+
 .error span.error-message {
   display: block; }
 
-input.error, textarea.error, select.error {
+input.error,
+textarea.error,
+select.error {
   margin-bottom: 0; }
 
 label.error {
@@ -2876,7 +3182,8 @@ meta.foundation-mq-topbar {
     list-style: none; }
   .top-bar .row, .top-bar .gform_columns .gform_body, .gform_columns .top-bar .gform_body {
     max-width: none; }
-  .top-bar form, .top-bar input {
+  .top-bar form,
+  .top-bar input {
     margin-bottom: 0; }
   .top-bar input {
     height: 1.75rem;
@@ -2884,8 +3191,8 @@ meta.foundation-mq-topbar {
     padding-bottom: .35rem;
     font-size: 0.75rem; }
   .top-bar .button, .top-bar input[type="submit"], .top-bar #site-header .site-nav .menu .menu-item:last-of-type a, #site-header .site-nav .menu .menu-item:last-of-type .top-bar a, .top-bar button {
-    padding-top: .4125rem;
-    padding-bottom: .4125rem;
+    padding-top: 0.4125rem;
+    padding-bottom: 0.4125rem;
     margin-bottom: 0;
     font-size: 0.75rem; }
     @media only screen and (max-width: 40em) {
@@ -2958,8 +3265,7 @@ meta.foundation-mq-topbar {
   left: 0;
   position: relative;
   width: auto;
-  -webkit-transition: left 300ms ease-out;
-          transition: left 300ms ease-out; }
+  transition: left 300ms ease-out; }
   .top-bar-section ul {
     padding: 0;
     width: 100%;
@@ -2967,7 +3273,8 @@ meta.foundation-mq-topbar {
     display: block;
     font-size: 16px;
     margin: 0; }
-  .top-bar-section .divider, .top-bar-section [role="separator"] {
+  .top-bar-section .divider,
+  .top-bar-section [role="separator"] {
     border-top: solid 1px #12172b;
     clear: both;
     height: 1px;
@@ -3169,7 +3476,12 @@ meta.foundation-mq-topbar {
       float: left; }
     .top-bar .name h1 a, .top-bar .name body.home .home-cta .practice-areas a, body.home .home-cta .top-bar .name .practice-areas a {
       width: auto; }
-    .top-bar input, .top-bar .button, .top-bar input[type="submit"], .top-bar #site-header .site-nav .menu .menu-item:last-of-type a, #site-header .site-nav .menu .menu-item:last-of-type .top-bar a, .top-bar button {
+    .top-bar input,
+    .top-bar .button,
+    .top-bar input[type="submit"],
+    .top-bar #site-header .site-nav .menu .menu-item:last-of-type a, #site-header .site-nav .menu .menu-item:last-of-type
+    .top-bar a,
+    .top-bar button {
       font-size: 0.875rem;
       position: relative;
       height: 1.75rem;
@@ -3181,8 +3493,7 @@ meta.foundation-mq-topbar {
     margin: 0 auto;
     margin-bottom: 0; }
   .top-bar-section {
-    -webkit-transition: none 0 0;
-            transition: none 0 0;
+    transition: none 0 0;
     left: 0 !important; }
     .top-bar-section ul {
       width: auto;
@@ -3192,23 +3503,23 @@ meta.foundation-mq-topbar {
         float: left; }
         .top-bar-section ul li .js-generated {
           display: none; }
-    .top-bar-section li.hover > a:not(.button) {
+    .top-bar-section li.hover > a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a) {
       background-color: #555555;
       background: #32417a;
       color: #FFFFFF; }
-    .top-bar-section li:not(.has-form) a:not(.button) {
+    .top-bar-section li:not(.has-form) a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a) {
       padding: 0 0.625rem;
       line-height: 1.875rem;
       background: #232E56; }
-      .top-bar-section li:not(.has-form) a:not(.button):hover {
+      .top-bar-section li:not(.has-form) a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a):hover {
         background-color: #555555;
         background: #32417a; }
-    .top-bar-section li.active:not(.has-form) a:not(.button) {
+    .top-bar-section li.active:not(.has-form) a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a) {
       padding: 0 0.625rem;
       line-height: 1.875rem;
       color: #FFFFFF;
       background: #232E56; }
-      .top-bar-section li.active:not(.has-form) a:not(.button):hover {
+      .top-bar-section li.active:not(.has-form) a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a):hover {
         background: #1e284a;
         color: #FFFFFF; }
     .top-bar-section .has-dropdown > a {
@@ -3266,10 +3577,10 @@ meta.foundation-mq-topbar {
         white-space: nowrap;
         padding: 12px 0.625rem;
         background: #333333; }
-      .top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+      .top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a) {
         color: #FFFFFF;
         background: #333333; }
-      .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
+      .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button):not(input[type="submit"]):not(#site-header .site-nav .menu .menu-item:last-of-type a) {
         color: #FFFFFF;
         background-color: #555555;
         background: #333333; }
@@ -3279,7 +3590,8 @@ meta.foundation-mq-topbar {
       .top-bar-section .dropdown li .dropdown {
         left: 100%;
         top: 0; }
-    .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
+    .top-bar-section > ul > .divider,
+    .top-bar-section > ul > [role="separator"] {
       border-bottom: none;
       border-top: none;
       border-right: solid 1px #34447f;
@@ -3347,11 +3659,11 @@ ul {
 button:hover, .button:hover, input[type="submit"]:hover, #site-header .site-nav .menu .menu-item:last-of-type a:hover {
   color: #fff !important;
   border-color: #232E56 !important; }
+
 button.light, .button.light, input.light[type="submit"], #site-header .site-nav .menu .menu-item:last-of-type a.light {
   color: #fff;
   border-color: inherit;
-  -webkit-transition: border 300ms, background 300ms;
-          transition: border 300ms, background 300ms; }
+  transition: border 300ms, background 300ms; }
 
 p .fa {
   vertical-align: middle; }
@@ -3368,10 +3680,6 @@ h1, body.home .home-cta .practice-areas, h2, h3, h4, h5, h6 {
 .fa-spin-fast {
   -webkit-animation: fa-spin 0.5s infinite linear;
   animation: fa-spin 0.5s infinite linear; }
-
-::-moz-selection {
-  background: #232E56;
-  color: #fff; }
 
 ::selection {
   background: #232E56;
@@ -3418,6 +3726,7 @@ throughout this theme's SASS files.
 */
 #site-header .foundation-sticky.fixed {
   z-index: 100000; }
+
 #site-header .top-bar {
   color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
@@ -3441,6 +3750,7 @@ throughout this theme's SASS files.
     line-height: 1.875rem;
     display: inline-block;
     cursor: pointer; }
+
 #site-header #mobile-nav {
   position: relative;
   text-align: center;
@@ -3449,7 +3759,7 @@ throughout this theme's SASS files.
   padding: 0.9375rem 0;
   display: none;
   z-index: 1000; }
-  @media only screen and (min-width:40.063em) {
+  @media only screen and (min-width: 40.063em) {
     #site-header #mobile-nav {
       display: none !important; } }
   #site-header #mobile-nav.active {
@@ -3459,14 +3769,16 @@ throughout this theme's SASS files.
     padding: 0.5em 0; }
   #site-header #mobile-nav a {
     color: inherit; }
+
 #site-header .logo-menu {
   margin-top: 1em;
   margin-bottom: 1em; }
+
 #site-header .site-nav .menu {
   text-align: right;
   text-transform: uppercase;
   font-size: 0.8em; }
-  @media only screen and (min-width:64.063em) {
+  @media only screen and (min-width: 64.063em) {
     #site-header .site-nav .menu {
       font-size: 1em; } }
   #site-header .site-nav .menu .button, #site-header .site-nav .menu input[type="submit"], #site-header .site-nav .menu .menu-item:last-of-type a {
@@ -3474,7 +3786,7 @@ throughout this theme's SASS files.
   #site-header .site-nav .menu .menu-item {
     display: inline-block;
     margin: 0 0.1em; }
-    @media only screen and (min-width:64.063em) {
+    @media only screen and (min-width: 64.063em) {
       #site-header .site-nav .menu .menu-item {
         margin: 0 0.5em; } }
     #site-header .site-nav .menu .menu-item:first-of-type {
@@ -3487,27 +3799,22 @@ throughout this theme's SASS files.
         position: relative;
         display: inline-block;
         overflow: hidden;
-        -webkit-transform: translateY(0.5em);
-            -ms-transform: translateY(0.5em);
-                transform: translateY(0.5em);
+        transform: translateY(0.5em);
         color: inherit; }
         #site-header .site-nav .menu .menu-item:not(:last-of-type) a:hover span {
-          -webkit-transform: translateY(-100%);
-              -ms-transform: translateY(-100%);
-                  transform: translateY(-100%); }
+          transform: translateY(-100%); }
         #site-header .site-nav .menu .menu-item:not(:last-of-type) a span {
           position: relative;
           display: block;
-          -webkit-transition: -webkit-transform 0.3s;
-                  transition: transform 0.3s;
+          transition: transform 0.3s;
           white-space: nowrap; }
           #site-header .site-nav .menu .menu-item:not(:last-of-type) a span:before {
             content: attr(data-hover);
             position: absolute;
             top: 100%;
             font-weight: 700;
-            -webkit-transform: translate3d(0, 0, 0);
-                    transform: translate3d(0, 0, 0); }
+            transform: translate3d(0, 0, 0); }
+
 #site-header .page-title {
   background: #4D6330 repeat;
   background-image: url("assets/images/arches-light.png");
@@ -3547,15 +3854,11 @@ throughout this theme's SASS files.
     top: -79px; }
   #site-footer:before {
     left: -25px;
-    -webkit-transform: skewX(20deg);
-        -ms-transform: skewX(20deg);
-            transform: skewX(20deg);
+    transform: skewX(20deg);
     box-shadow: -10px -20px #32417a; }
   #site-footer:after {
     right: -25px;
-    -webkit-transform: skewX(-20deg);
-        -ms-transform: skewX(-20deg);
-            transform: skewX(-20deg);
+    transform: skewX(-20deg);
     box-shadow: 10px -20px #32417a; }
   #site-footer h1, #site-footer body.home .home-cta .practice-areas, body.home .home-cta #site-footer .practice-areas, #site-footer h2, #site-footer h3, #site-footer h4, #site-footer h5, #site-footer h6, #site-footer a {
     color: inherit; }
@@ -3599,16 +3902,12 @@ body:not(.home) #site-content {
     top: -79px; }
   body:not(.home) #site-content:before {
     left: -25px;
-    -webkit-transform: skewX(20deg);
-        -ms-transform: skewX(20deg);
-            transform: skewX(20deg);
-    box-shadow: -10px -20px #e6e6e6; }
+    transform: skewX(20deg);
+    box-shadow: -10px -20px #e6e5e5; }
   body:not(.home) #site-content:after {
     right: -25px;
-    -webkit-transform: skewX(-20deg);
-        -ms-transform: skewX(-20deg);
-            transform: skewX(-20deg);
-    box-shadow: 10px -20px #e6e6e6; }
+    transform: skewX(-20deg);
+    box-shadow: 10px -20px #e6e5e5; }
 
 #site-content {
   background: #fff repeat;
@@ -3632,16 +3931,11 @@ body:not(.home) #site-content {
       height: 2px;
       background: rgba(77, 99, 48, 0.5);
       opacity: 0;
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-              transition: opacity 0.3s, transform 0.3s;
-      -webkit-transform: translateY(10px);
-          -ms-transform: translateY(10px);
-              transform: translateY(10px); }
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(10px); }
     #site-content .page-content a:hover:after {
       opacity: 1;
-      -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
-              transform: translateY(0); }
+      transform: translateY(0); }
   #site-content .section {
     padding-top: 30px;
     padding-bottom: 130px;
@@ -3664,15 +3958,11 @@ body:not(.home) #site-content {
         top: -79px; }
       #site-content .section.blue:before {
         left: -25px;
-        -webkit-transform: skewX(20deg);
-            -ms-transform: skewX(20deg);
-                transform: skewX(20deg);
+        transform: skewX(20deg);
         box-shadow: -10px -20px #32417a; }
       #site-content .section.blue:after {
         right: -25px;
-        -webkit-transform: skewX(-20deg);
-            -ms-transform: skewX(-20deg);
-                transform: skewX(-20deg);
+        transform: skewX(-20deg);
         box-shadow: 10px -20px #32417a; }
     #site-content .section.green {
       background: #4D6330 repeat;
@@ -3692,15 +3982,11 @@ body:not(.home) #site-content {
         top: -79px; }
       #site-content .section.green:before {
         left: -25px;
-        -webkit-transform: skewX(20deg);
-            -ms-transform: skewX(20deg);
-                transform: skewX(20deg);
+        transform: skewX(20deg);
         box-shadow: -10px -20px #688541; }
       #site-content .section.green:after {
         right: -25px;
-        -webkit-transform: skewX(-20deg);
-            -ms-transform: skewX(-20deg);
-                transform: skewX(-20deg);
+        transform: skewX(-20deg);
         box-shadow: 10px -20px #688541; }
     #site-content .section.white {
       background: #fff repeat;
@@ -3720,16 +4006,12 @@ body:not(.home) #site-content {
         top: -79px; }
       #site-content .section.white:before {
         left: -25px;
-        -webkit-transform: skewX(20deg);
-            -ms-transform: skewX(20deg);
-                transform: skewX(20deg);
-        box-shadow: -10px -20px #e6e6e6; }
+        transform: skewX(20deg);
+        box-shadow: -10px -20px #e6e5e5; }
       #site-content .section.white:after {
         right: -25px;
-        -webkit-transform: skewX(-20deg);
-            -ms-transform: skewX(-20deg);
-                transform: skewX(-20deg);
-        box-shadow: 10px -20px #e6e6e6; }
+        transform: skewX(-20deg);
+        box-shadow: 10px -20px #e6e5e5; }
 
 /*
 The site sidebar.
@@ -3780,9 +4062,11 @@ throughout this theme's SASS files.
 */
 body.home #site-content {
   padding-top: 0; }
+
 body.home #site-header {
   padding-bottom: 100px;
   margin-bottom: 0; }
+
 body.home .home-cta {
   position: relative;
   margin-top: -100px;
@@ -3809,14 +4093,13 @@ body.home .home-cta {
     top: 0;
     width: 100%;
     height: 50%;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: -webkit-gradient(linear, right top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
   @media only screen and (max-width: 40em) {
     body.home .home-cta {
       font-size: 1em; } }
@@ -3840,10 +4123,10 @@ body.home .home-cta {
     font-size: inherit;
     color: inherit;
     border-color: inherit;
-    -webkit-transition: border 300ms, background 300ms;
-            transition: border 300ms, background 300ms; }
+    transition: border 300ms, background 300ms; }
     body.home .home-cta .button:hover, body.home .home-cta input[type="submit"]:hover, body.home .home-cta #site-header .site-nav .menu .menu-item:last-of-type a:hover, #site-header .site-nav .menu .menu-item:last-of-type body.home .home-cta a:hover {
       border-color: #232E56; }
+
 body.home .section {
   text-align: center; }
   body.home .section h1, body.home .section .home-cta .practice-areas, body.home .home-cta .section .practice-areas {
@@ -3856,15 +4139,19 @@ body.home .section {
     @media only screen and (max-width: 40em) {
       body.home .section .home-about-sub-head {
         font-size: 1em; } }
+
 body.home .home-about .practice-areas {
   max-width: 62.5rem;
   margin: 0 auto; }
+
 body.home .home-about .practice-areas-heading {
   margin: 2em 0 1em; }
-@media only screen and (min-width:40.063em) {
+
+@media only screen and (min-width: 40.063em) {
   body.home .home-about .practice-areas.top-level {
     width: 70%;
     margin: 0 auto; } }
+
 body.home .home-about .image-container {
   position: relative; }
   body.home .home-about .image-container:before {
@@ -3884,16 +4171,17 @@ body.home .home-about .image-container {
     top: 0;
     width: 50%;
     height: 100%;
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
+
 body.home .home-about-2 h1, body.home .home-about-2 .home-cta .practice-areas, body.home .home-cta .home-about-2 .practice-areas {
   border-color: rgba(0, 0, 0, 0.3); }
+
 body.home .home-about-2 .image-container {
   position: relative; }
   body.home .home-about-2 .image-container:before {
@@ -3913,17 +4201,17 @@ body.home .home-about-2 .image-container {
     top: 0;
     width: 50%;
     height: 100%;
+    background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: -webkit-gradient(linear, right top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
     background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -o-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -ms-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
   body.home .home-about-2 .image-container .container {
     right: 0.9375rem;
     left: auto; }
+
 body.home .home-about-2 .gform_wrapper {
   text-align: left; }
 
@@ -3943,11 +4231,11 @@ body.post-type-archive-attorney .attorney-select li {
   background: #000; }
   body.post-type-archive-attorney .attorney-select li img {
     opacity: 0.5;
-    -webkit-transition: opacity 300ms;
-            transition: opacity 300ms;
+    transition: opacity 300ms;
     cursor: pointer; }
   body.post-type-archive-attorney .attorney-select li.active img {
     opacity: 1; }
+
 body.post-type-archive-attorney .attorneys {
   margin-top: 0.9375rem; }
   body.post-type-archive-attorney .attorneys li {
@@ -3972,14 +4260,13 @@ body.post-type-archive-attorney .attorneys {
       top: 0;
       width: 50%;
       height: 100%;
+      background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
       background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
       background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+      background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
       background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
     @media only screen and (max-width: 40em) {
       body.post-type-archive-attorney .attorneys li {
         text-align: center; } }
@@ -4036,6 +4323,7 @@ body.post-type-archive-practice_area .practice-area.active a {
   background: #232E56;
   border-bottom: 0.8em solid #32417a;
   color: #fff; }
+
 body.post-type-archive-practice_area .practice-area-content {
   margin-top: 0.9375rem; }
 
@@ -4071,14 +4359,13 @@ body.page-template-firm-overview .image-container {
     top: 0;
     width: 50%;
     height: 100%;
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
   body.page-template-firm-overview .image-container .quote {
     display: block;
     font-size: 3em; }
@@ -4116,14 +4403,13 @@ body.page-template-contact .image-container {
     top: 0;
     width: 50%;
     height: 100%;
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.8)), color-stop(100%, transparent));
     background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(
-                  startColorstr='#CC000000',
-                  endColorstr='#00000000',
-                  GradientType=0
-  ); }
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CC000000', endColorstr='#00000000', GradientType=0 ); }
   body.page-template-contact .image-container .container {
     width: 100%; }
   body.page-template-contact .image-container .address {
@@ -4179,24 +4465,20 @@ throughout this theme's SASS files.
     position: absolute;
     left: 0.9375rem;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     color: #fff;
     text-align: justify;
     width: auto;
     right: 0.9375rem;
     z-index: 1; }
-    @media only screen and (min-width:64.063em) {
+    @media only screen and (min-width: 64.063em) {
       .image-container .container {
         text-align: left;
         width: 50%; } }
     .image-container .container.bottom {
       bottom: 0.9375rem;
       top: auto;
-      -webkit-transform: none;
-          -ms-transform: none;
-              transform: none; }
+      transform: none; }
 
 .practice-areas {
   font-weight: normal;
@@ -4209,19 +4491,17 @@ throughout this theme's SASS files.
     .practice-areas li .practice-area a {
       display: block;
       padding: 0.5em;
-      border-bottom: 0.8em solid #e6e6e6;
+      border-bottom: 0.8em solid #e6e5e5;
       background: #fff;
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
       color: #aaa;
       cursor: pointer;
-      -webkit-transition: color 300ms, border 300ms, background 300ms;
-              transition: color 300ms, border 300ms, background 300ms; }
+      transition: color 300ms, border 300ms, background 300ms; }
       .practice-areas li .practice-area a:hover {
         background: #232E56;
         border-bottom: 0.8em solid #32417a;
         color: #fff;
-        -webkit-transition: color 150ms, border 150ms, background 150ms;
-                transition: color 150ms, border 150ms, background 150ms; }
+        transition: color 150ms, border 150ms, background 150ms; }
     .practice-areas li .practice-area .practice-area-title {
       font-size: 1.2em;
       margin: 0; }
@@ -4272,8 +4552,7 @@ throughout this theme's SASS files.
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  -webkit-transition: opacity 300ms ease-out;
-          transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
   background-color: #232E56;
   border-color: #1e284a;
   color: #FFFFFF; }
@@ -4324,11 +4603,11 @@ throughout this theme's SASS files.
   margin-bottom: 1em; }
   .gform_fields .gfield .gfield_label {
     text-transform: uppercase; }
-  @media only screen and (min-width:40.063em) {
+  @media only screen and (min-width: 40.063em) {
     .gform_fields .gfield.medium-left {
       float: left;
       width: 50%; } }
-  @media only screen and (min-width:40.063em) {
+  @media only screen and (min-width: 40.063em) {
     .gform_fields .gfield.medium-right {
       float: right;
       width: 50%; } }
@@ -4342,14 +4621,14 @@ throughout this theme's SASS files.
   position: relative;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   font-size: 0.8125rem;
-  -webkit-transition: opacity 300ms ease-out;
-          transition: opacity 300ms ease-out;
+  transition: opacity 300ms ease-out;
   background-color: #f04124;
   border-color: #de2d0f;
   color: #FFFFFF; }
 
 .ginput_container input, .ginput_container textarea, .ginput_container select {
   margin-bottom: 0; }
+
 .ginput_container textarea {
   max-height: 10em; }
 
@@ -4366,4 +4645,5 @@ throughout this theme's SASS files.
 
 .gform_columns .gfield.empty {
   display: none; }
+
 /*# sourceMappingURL=style.css.map */
