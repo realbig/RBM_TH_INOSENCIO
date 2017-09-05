@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<aside id="site-sidebar" class="columns small-12 medium-4 medium-pull-8">
+<aside id="site-sidebar" class="columns small-12 medium-4">
 	<?php
 	if ( $sidebar = get_post_meta( get_the_ID(), '_sidebar', true ) ) {
 		echo wpautop( do_shortcode( $sidebar ) );

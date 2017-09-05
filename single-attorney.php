@@ -19,7 +19,7 @@ the_post();
 	<?php the_post_thumbnail( 'attorney' ); ?>
 
 	<div class="row">
-		<section class="columns small-12 medium-8 medium-push-4">
+		<section class="columns small-12 medium-8">
 
 			<div class="page-content">
 				<?php the_content(); ?>

@@ -17,7 +17,7 @@ the_post();
 ?>
 
 	<div class="row">
-		<section class="page-content columns small-12 medium-8 medium-push-4">
+		<section class="page-content columns small-12 medium-8">
 			<?php the_content(); ?>
 		</section>
 

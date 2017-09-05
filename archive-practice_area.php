@@ -21,7 +21,7 @@ get_header();
 ?>
 
 	<div class="row">
-		<section class="columns small-12 medium-8 medium-push-4">
+		<section class="columns small-12 medium-8">
 
 			<?php if ( have_posts() ) : ?>
 				<h3 class="text-uppercase">Practice Areas:</h3>
