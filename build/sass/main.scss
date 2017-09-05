@@ -1,0 +1,56 @@
+/*!
+Theme Name: Inosencio
+Description: A kick-butt theme for Inosencio.
+Author: Joel Worsham
+Author URI: http://joelworsham.com
+Version: 0.1.0
+*/
+
+@import "foundation/functions";
+
+// Vendor
+@import "vendor/normalize";
+@import "vendor/icomoon";
+
+// Deps
+@import "settings.scss";
+@import "functions.scss";
+
+// Foundation
+// Here we control all of the various foundation components to use
+@import "foundation/components/visibility";
+@import "foundation/components/clearing";
+@import "foundation/components/grid";
+@import "foundation/components/block-grid";
+@import "foundation/components/buttons";
+@import "foundation/components/type";
+@import "foundation/components/forms";
+@import "foundation/components/alert-boxes";
+@import "foundation/components/top-bar";
+
+// Setup
+@import "base";
+
+// Static
+@import "static/header";
+@import "static/footer";
+@import "static/site-content";
+@import "static/sidebar";
+
+// Templates
+@import "templates/single-post";
+@import "templates/page";
+@import "templates/home";
+@import "templates/attorneys";
+@import "templates/attorney";
+@import "templates/practice-area";
+@import "templates/firm-overview";
+@import "templates/contact";
+@import "templates/common";
+
+// Shortcodes
+@import "shortcodes/social";
+
+// Overrides
+@import "wp";
+@import "overrides/gravity-forms";

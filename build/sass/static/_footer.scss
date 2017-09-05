@@ -1,0 +1,36 @@
+/*
+The static site footer.
+
+@since 0.1.0
+*/
+
+#site-footer {
+  @include pattern-background();
+  @include separator();
+  padding-top: $column-gutter;
+
+  h1, h2, h3, h4, h5, h6, a {
+    color: inherit;
+  }
+
+  .columns {
+    margin-bottom: 1em;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-left {
+    .logo {
+      max-width: 300px;
+    }
+  }
+
+  .footer-copyright {
+    margin: $column-gutter 0 0 0;
+    background: lighten($primary-color, 10%);
+    font-size: 0.8em;
+    padding: 0.5em;
+  }
+}

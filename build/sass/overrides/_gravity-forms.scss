@@ -1,0 +1,69 @@
+/*
+Gravity forms styling
+
+@since 0.1.0
+*/
+
+.gform_heading {
+  margin-bottom: 1em;
+}
+
+.gform_fields {
+  .gfield {
+    margin-bottom: 1em;
+
+    .gfield_label {
+      text-transform: uppercase;
+    }
+
+    &.medium-left {
+      @media #{$medium-up} {
+        float: left;
+        width: 50%;
+      }
+    }
+
+    &.medium-right {
+      @media #{$medium-up} {
+        float: right;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.validation_error {
+  @include alert-base;
+  @include alert-style($alert-color);
+}
+
+.ginput_container {
+  input, textarea, select {
+    margin-bottom: 0;
+  }
+
+  textarea {
+    max-height: 10em;
+  }
+}
+
+.validation_message {
+  @include form-error-message;
+}
+
+// Columns
+.gform_columns {
+  .gform_body {
+    @extend .row;
+  }
+
+  .gform_fields {
+    @extend .columns;
+    @extend .small-12;
+    @extend .medium-6;
+  }
+
+  .gfield.empty {
+    display: none;
+  }
+}

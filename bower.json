@@ -1,0 +1,19 @@
+{
+	"name": "Inosencio",
+	"version": "0.1.0",
+	"dependencies": {
+		"foundation-sites": "~5.5.1"
+	},
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/realbig/RBM_TH_INOSENCIO.git"
+	}
+}

@@ -144,7 +144,7 @@ add_action( 'init', function () {
 	// Animate CSS
 	wp_register_style(
 		THEME_ID . '-animate-css',
-		get_template_directory_uri() . '/assets/vendor/css/animate.css',
+		get_template_directory_uri() . '/assets/css/animate.css',
 		array( THEME_ID ),
 		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION
 	);
@@ -152,7 +152,7 @@ add_action( 'init', function () {
 	// Textillate
 	wp_register_script(
 		THEME_ID . '-textillate',
-		get_template_directory_uri() . '/assets/vendor/js/nomin/jquery.textillate.js',
+		get_template_directory_uri() . '/assets/js/jquery.textillate.js',
 		array( THEME_ID . '-lettering' ),
 		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '0.4.0',
 		true
@@ -161,7 +161,7 @@ add_action( 'init', function () {
 	// Lettering
 	wp_register_script(
 		THEME_ID . '-lettering',
-		get_template_directory_uri() . '/assets/vendor/js/nomin/jquery.lettering.js',
+		get_template_directory_uri() . '/assets/js/jquery.lettering.js',
 		array( 'jquery' ),
 		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '0.7.0',
 		true

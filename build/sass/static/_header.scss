@@ -1,0 +1,164 @@
+/*
+The static site header.
+
+@since 0.1.0
+*/
+
+#site-header {
+
+  .foundation-sticky.fixed {
+    z-index: 100000;
+  }
+
+  .top-bar {
+    color: $light-color;
+    box-shadow: 0 0 20px rgba(#000, 0.4);
+    z-index: 100000;
+
+    a {
+      color: inherit;
+
+      .fa {
+        font-size: 1.2em;
+        vertical-align: middle;
+      }
+    }
+
+    .search {
+      @media #{$small-only} {
+        display: none;
+      }
+
+      input[type="search"] {
+        background-color: transparent;
+        border: none;
+        color: $light-color;
+        outline: none;
+        box-shadow: none;
+        width: auto;
+      }
+    }
+
+    .search-button {
+      line-height: $topbar-height;
+      display: inline-block;
+      cursor: pointer;
+    }
+	  
+	  .top-bar-section li a {
+		  padding: 0 0.625rem;
+		  line-height: 1.875rem;
+	  }
+	  
+  }
+
+  #mobile-nav {
+    position: relative;
+    text-align: center;
+    background: $primary-color;
+    color: $light-color;
+    padding: ($column-gutter / 2) 0;
+    display: none;
+    z-index: 1000;
+
+    @media #{$medium-up} {
+      display: none !important;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    .menu-item {
+      a {
+        display: block;
+        padding: 0.5em 0;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .logo-menu {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .site-nav {
+    .menu {
+      text-align: right;
+      text-transform: uppercase;
+      font-size: 0.8em;
+
+      @media #{$large-up} {
+        font-size: 1em;
+      }
+
+      .button {
+        font-size: inherit;
+      }
+
+      .menu-item {
+        display: inline-block;
+        margin: 0 0.1em;
+
+        @media #{$large-up} {
+          margin: 0 0.5em;
+        }
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:last-of-type {
+          a {
+            @extend .button;
+            margin: 0;
+          }
+        }
+
+        &:not(:last-of-type) {
+          -webkit-perspective: 1000; // Help fix fuzzy text
+
+          a {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            transform: translateY(0.5em);
+            color: inherit;
+
+            &:hover {
+              span {
+                transform: translateY(-100%);
+              }
+            }
+
+            span {
+              position: relative;
+              display: block;
+              transition: transform 0.3s;
+              white-space: nowrap;
+
+              &:before {
+                content: attr(data-hover);
+                position: absolute;
+                top: 100%;
+                font-weight: 700;
+                transform: translate3d(0, 0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .page-title {
+    @include pattern-background($secondary-color);
+    @include pre-separator(20);
+    text-transform: uppercase;
+    padding-top: 20px;
+  }
+}
