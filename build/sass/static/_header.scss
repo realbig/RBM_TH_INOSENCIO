@@ -4,16 +4,34 @@ The static site header.
 @since 0.1.0
 */
 
+// Fix positioning of Top-Bar with a Fixed-position Admin Bar
+body.admin-bar {
+	
+	&.f-topbar-fixed {
+		
+		.top-bar {
+			margin-top: 32px;
+		}
+		
+	}
+	
+	.top-bar {
+		// Give it a slight transition to make it seem less jerky
+		transition: 200ms margin;
+	}
+	
+}
+
 #site-header {
 
   .foundation-sticky.fixed {
-    z-index: 100000;
+    z-index: 42;
   }
 
   .top-bar {
     color: $light-color;
     box-shadow: 0 0 20px rgba(#000, 0.4);
-    z-index: 100000;
+    z-index: 42;
 
     a {
       color: inherit;
