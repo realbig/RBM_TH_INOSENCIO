@@ -95,6 +95,10 @@ if ( ! empty( $practice_areas ) ) :
 				</div>
 			</div>
 		<?php endif; ?>
+		
+	</section>
+
+	<section class="home-practice-areas section white">
 
 		<?php
 		$practice_areas = get_posts( array(
@@ -162,7 +166,7 @@ if ( ! empty( $practice_areas ) ) :
 
 	</section>
 
-	<section class="home-about-2 section white">
+	<section class="home-about-2 section green">
 
 		<h1><?php echo get_post_meta( get_the_ID(), '_inosencio_home_about_2_title', true ); ?></h1>
 

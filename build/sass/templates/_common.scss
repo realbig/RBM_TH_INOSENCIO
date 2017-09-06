@@ -91,8 +91,8 @@ Styles shared among all templates.
         transition: color 300ms, border 300ms, background 300ms;
 
         &:hover {
-          background: $primary-color;
-          border-bottom: 0.8em solid lighten($primary-color, 10%);
+          background: $secondary-color;
+          border-bottom: 0.8em solid lighten($secondary-color, 10%);
           color: $light-color;
           transition: color 150ms, border 150ms, background 150ms;
         }
