@@ -35,7 +35,7 @@ define( 'THEME_ID', 'inosencio' );
  * Fonts for the theme. Must be hosted font (Google fonts for example).
  */
 $inosencio_fonts = array(
-	'Raleway' => 'http://fonts.googleapis.com/css?family=Raleway:700,800,300',
+	'Open Sans' => 'http://fonts.googleapis.com/css?family=Open+Sans:700,800,300',
 	'Font Awesome' => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 );
 

@@ -46,10 +46,13 @@ $medium-color: #aaa;
 $light-color: #fff;
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Raleway", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $body-font-color: #222;
+
+$body-font-family: $font-family-serif;
+$header-font-family: $font-family-sans-serif;
 
 // Top-bar
 $topbar-bg-color: $primary-color;
