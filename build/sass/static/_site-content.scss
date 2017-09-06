@@ -4,13 +4,6 @@ The static site content.
 @since 0.1.0
 */
 
-body:not(.home) {
-  #site-content {
-    @include separator($light-color);
-    @include pre-separator(30);
-  }
-}
-
 #site-content {
   @include pattern-background($light-color);
   padding-top: $column-gutter;
@@ -51,21 +44,17 @@ body:not(.home) {
 
   .section {
     padding-top: 30px;
-    @include pre-separator(30);
 
     &.blue {
       @include pattern-background($primary-color);
-      @include separator($primary-color);
     }
 
     &.green {
       @include pattern-background($secondary-color);
-      @include separator($secondary-color);
     }
 
     &.white {
       @include pattern-background($light-color);
-      @include separator($light-color);
     }
   }
 }

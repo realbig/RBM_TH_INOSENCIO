@@ -18,44 +18,10 @@ Extra functions.
 
   @if (lightness($color) > 70%) {
 
-    background-image: url("assets/images/arches-dark.png");
     color: $dark-color;
   } @else {
 
-    background-image: url("assets/images/arches-light.png");
     color: $light-color;
-  }
-}
-
-@mixin pre-separator($padding: 0) {
-  padding-bottom: 100px + $padding;
-  margin-bottom: 0;
-}
-
-@mixin separator($color: $primary-color) {
-  position: relative;
-
-  &:before, &:after {
-    content: '';
-    @include pattern-background($color);
-    position: absolute;
-    pointer-events: none;
-    width: 50.5%;
-    width: calc(50% + 10px);
-    height: 80px;
-    top: -79px;
-  }
-
-  &:before {
-    left: -25px;
-    transform: skewX(20deg);
-    box-shadow: -10px -20px if(lightness($color) > 70%, darken($color, 10%), lighten($color, 10%));
-  }
-
-  &:after {
-    right: -25px;
-    transform: skewX(-20deg);
-    box-shadow: 10px -20px if(lightness($color) > 70%, darken($color, 10%), lighten($color, 10%));
   }
 }
 
