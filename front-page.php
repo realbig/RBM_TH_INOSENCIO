@@ -76,12 +76,18 @@ if ( ! empty( $practice_areas ) ) :
 	<section class="home-about section green">
 
 		<h1><?php the_title(); ?></h1>
+		
+		<div class="row">
+			<div class="columns small-12">
 
-		<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
-			<p class="home-about-sub-head">
-				<?php echo do_shortcode( $sub_head ); ?>
-			</p>
-		<?php endif; ?>
+				<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
+					<p class="home-about-sub-head">
+						<?php echo do_shortcode( $sub_head ); ?>
+					</p>
+				<?php endif; ?>
+				
+			</div>
+		</div>
 
 		<?php
 		if ( $about_image = get_post_meta( get_the_ID(), '_inosencio_home_about_image', true ) ) :
@@ -99,70 +105,78 @@ if ( ! empty( $practice_areas ) ) :
 	</section>
 
 	<section class="home-practice-areas section white">
+		
+		<div class="row">
+			<div class="columns small-12">
 
-		<?php
-		$practice_areas = get_posts( array(
-			'post_type'   => 'practice_area',
-			'orderby'     => 'menu_order',
-			'order'       => 'ASC',
-			'numberposts' => - 1,
-
-		) );
-
-		if ( ! empty( $practice_areas ) ) :
-			?>
-			<h3 class="practice-areas-heading">
-				The areas in which we practice include:
-			</h3>
-
-			<ul class="practice-areas top-level small-block-grid-1 medium-block-grid-2">
 				<?php
-				foreach ( $practice_areas as $practice_area ) :
+				$practice_areas = get_posts( array(
+					'post_type'   => 'practice_area',
+					'orderby'     => 'menu_order',
+					'order'       => 'ASC',
+					'numberposts' => - 1,
 
-					if ( ! has_term( 'top-level', 'practice_area_category', $practice_area ) ) {
-						continue;
-					}
+				) );
+
+				if ( ! empty( $practice_areas ) ) :
 					?>
-					<li>
-						<div class="practice-area">
-							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
-								<?php if ( $icon = get_post_meta( $practice_area->ID, '_icon', true ) ) : ?>
-									<p class="practice-area-icon fa fa-<?php echo $icon; ?>"></p>
-								<?php endif; ?>
+					<h3 class="practice-areas-heading">
+						The areas in which we practice include:
+					</h3>
 
-								<h4 class="practice-area-title">
-									<?php echo $practice_area->post_title; ?>
-								</h4>
-							</a>
-						</div>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+					<ul class="practice-areas top-level small-block-grid-1 medium-block-grid-2">
+						<?php
+						foreach ( $practice_areas as $practice_area ) :
 
-			<h3 class="practice-areas-heading">
-				We’ve also represented clients concerning:
-			</h3>
+							if ( ! has_term( 'top-level', 'practice_area_category', $practice_area ) ) {
+								continue;
+							}
+							?>
+							<li>
+								<div class="practice-area">
+									<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
+										<?php if ( $icon = get_post_meta( $practice_area->ID, '_icon', true ) ) : ?>
+											<p class="practice-area-icon fa fa-<?php echo $icon; ?>"></p>
+										<?php endif; ?>
 
-			<ul class="practice-areas small-block-grid-1 medium-block-grid-2">
-				<?php
-				foreach ( $practice_areas as $practice_area ) :
-					if ( get_post_meta( $practice_area->ID, '_top_level', true ) ) {
-						continue;
-					}
-					?>
-					<li>
-						<div class="practice-area">
-							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
-								<h4 class="practice-area-title">
-									<?php echo $practice_area->post_title; ?>
-								</h4>
-							</a>
-						</div>
-					</li>
-				<?php endforeach; ?>
-			</ul>
+										<h4 class="practice-area-title">
+											<?php echo $practice_area->post_title; ?>
+										</h4>
+									</a>
+								</div>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				
+					<br />
 
-		<?php endif; ?>
+					<h3 class="practice-areas-heading">
+						We’ve also represented clients concerning:
+					</h3>
+
+					<ul class="practice-areas small-block-grid-1 medium-block-grid-2">
+						<?php
+						foreach ( $practice_areas as $practice_area ) :
+							if ( get_post_meta( $practice_area->ID, '_top_level', true ) ) {
+								continue;
+							}
+							?>
+							<li>
+								<div class="practice-area">
+									<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
+										<h4 class="practice-area-title">
+											<?php echo $practice_area->post_title; ?>
+										</h4>
+									</a>
+								</div>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+
+				<?php endif; ?>
+				
+			</div>
+		</div>
 
 	</section>
 
@@ -171,9 +185,15 @@ if ( ! empty( $practice_areas ) ) :
 		<h1><?php echo get_post_meta( get_the_ID(), '_inosencio_home_about_2_title', true ); ?></h1>
 
 		<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_2_sub_head', true ) ) : ?>
-			<p class="home-about-sub-head">
-				<?php echo do_shortcode( $sub_head ); ?>
-			</p>
+		
+			<div class="row">
+				<div class="columns small-12">
+					<p class="home-about-sub-head">
+						<?php echo do_shortcode( $sub_head ); ?>
+					</p>
+				</div>
+			</div>
+		
 		<?php endif; ?>
 
 		<?php

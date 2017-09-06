@@ -80,26 +80,29 @@ body.home {
   }
 
   .home-about {
-    .practice-areas {
-      max-width: $row-width;
-      margin: 0 auto;
-    }
-
-    .practice-areas-heading {
-      margin: 2em 0 1em;
-    }
-
-    .practice-areas.top-level {
-      @media #{$medium-up} {
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
+	  
+	  padding-bottom: 0 !important;
 
     .image-container {
       @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
     }
   }
+	
+	.home-practice-areas {
+		.practice-areas {
+		  margin: 0 auto;
+		}
+
+		.practice-areas-heading {
+		  margin: 1em 0 1em;
+		}
+
+		.practice-areas.top-level {
+		  @media #{$medium-up} {
+			margin: 0 auto;
+		  }
+		}
+	}
 
   .home-about-2 {
     h1 {
