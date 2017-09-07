@@ -57,12 +57,19 @@
 			> .is-dropdown-submenu-parent {
 
 				> a:after {
-					border-top-color: $topbar-link-color;
+					
+					@if lightness( darken( #fff, 10% ) ) < 65% {
+						border-top-color: $light-color;
+					}
+					@else {
+						border-top-color: $dark-color;
+					}
+					
 				}
 
 				&:hover > a:after {
 
-					@if lightness( darken( #fff, 10% ) ) < 65% {
+					@if lightness( darken( $primary-color, 10% ) ) < 65% {
 
 						border-top-color: $light-color;
 
@@ -81,12 +88,12 @@
 
 						@if lightness( $body-background ) < 65% {
 
-							border-right-color: $light-color;
+							border-color: transparent transparent transparent $light-color;
 
 						}
 						@else {
 
-							border-right-color: $dark-color;
+							border-color: transparent transparent transparent $dark-color;
 
 						}
 
@@ -97,12 +104,12 @@
 
 						@if lightness( darken( #fff, 10% ) ) < 65% {
 
-							border-right-color: $dark-color;
+							border-color: transparent transparent transparent $light-color;
 
 						}
 						@else {
 
-							border-right-color: $light-color;
+							border-color: transparent transparent transparent $dark-color;
 
 						}
 
@@ -152,6 +159,8 @@
 
 			// Everything below
 			> li {
+				
+				z-index: 10;
 
 				li {
 
