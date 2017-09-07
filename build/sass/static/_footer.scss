@@ -6,7 +6,6 @@ The static site footer.
 
 #site-footer {
   @include pattern-background();
-  @include separator();
   padding-top: $column-gutter;
 
   h1, h2, h3, h4, h5, h6, a {

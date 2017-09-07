@@ -136,7 +136,6 @@ The static site header.
 
   .page-title {
     @include pattern-background($secondary-color);
-    @include pre-separator(20);
     text-transform: uppercase;
     padding-top: 20px;
   }
