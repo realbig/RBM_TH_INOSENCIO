@@ -64,7 +64,7 @@ if ( ! empty( $practice_areas ) ) :
 			</div>
 
 			<p class="call-to-action">
-				Learn more <a href="/firm-overview/" class="button">about us</a>
+				Learn more <a href="/firm-overview/" class="button primary hollow">about us</a>
 			</p>
 
 		</div>

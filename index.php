@@ -39,7 +39,7 @@ get_header();
 				<?php the_excerpt(); ?>
 			</div>
 
-			<a href="<?php the_permalink(); ?>" class="button">
+			<a href="<?php the_permalink(); ?>" class="button primary hollow">
 				Read More
 			</a>
 		</article>

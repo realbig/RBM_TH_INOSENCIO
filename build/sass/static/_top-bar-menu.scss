@@ -25,13 +25,8 @@
 	}
 
 	.nav-menu {
-		position: absolute;
-		right: 2%;
-		top: 50% !important;
-		transform: translate( -2%, -50% ) !important;
-		-webkit-transform: translate( -2%, -50% ) !important;
-		-o-transform: translate( -2%, -50% ) !important;
-		-ms-transform: translate( -2%, -50% ) !important;
+		margin-right: -2%;
+		margin-top: 2%;
 		z-index: 2;
 		
 		&, * {
@@ -71,7 +66,7 @@
 
 				&:hover > a:after {
 
-					@if lightness( darken( $topbar-background, 10% ) ) < 65% {
+					@if lightness( darken( #fff, 10% ) ) < 65% {
 
 						border-top-color: $light-color;
 
@@ -104,7 +99,7 @@
 					// Top Level:hover
 					&:hover > a:after {
 
-						@if lightness( darken( $topbar-background, 10% ) ) < 65% {
+						@if lightness( darken( #fff, 10% ) ) < 65% {
 
 							border-right-color: $dark-color;
 
@@ -122,6 +117,7 @@
 			}
 
 		}
+		
 
 		> .menu {
 
@@ -143,7 +139,7 @@
 			> li {
 
 				a {
-					color: $topbar-link-color;
+					@include light-or-dark-text( #fff );
 				}
 
 				&:hover {
@@ -163,20 +159,20 @@
 
 				li {
 
-					background-color: #E5E5E5;
+					background-color: $body-background;
 					text-transform: none;
 
 					a {
-						@include light-or-dark-text( #E5E5E5 );
+						@include light-or-dark-text( $dropdownmenu-background );
 					}
 
 				}
 
 				li:hover {
-					background-color: #fff !important;
+					background-color: $light-gray !important;
 
 					> a {
-						@include light-or-dark-text( #fff );
+						@include light-or-dark-text( $light-gray );
 					}
 
 				}
@@ -185,10 +181,10 @@
 
 			> li li.current-menu-item, > li li.current-menu-ancestor {
 
-				background-color: darken( #fff, 5% );
+				background-color: darken( $light-gray, 10% );
 
 				> a {
-					@include light-or-dark-text( darken( #fff, 5% ) );
+					@include light-or-dark-text( darken( $light-gray, 10% ) );
 				}
 
 			}

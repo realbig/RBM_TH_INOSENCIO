@@ -1,0 +1,154 @@
+@mixin light-or-dark-text($color) {
+
+  @if lightness($color) < 50% {
+    color: $light-color;
+  } @else {
+    color: $dark-color;
+  }
+}
+
+@mixin pattern-background($color: $primary-color) {
+  background: $color repeat;
+
+  @if (lightness($color) > 70%) {
+
+    background-image: url("assets/images/arches-dark.png");
+    color: $dark-color;
+  } @else {
+
+    background-image: url("assets/images/arches-light.png");
+    color: $light-color;
+  }
+}
+
+@mixin pre-separator($padding: 0) {
+  padding-bottom: 100px + $padding;
+  margin-bottom: 0;
+}
+
+@mixin separator($color: $primary-color) {
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    @include pattern-background($color);
+    position: absolute;
+    pointer-events: none;
+    width: 50.5%;
+    width: calc(50% + 10px);
+    height: 80px;
+    top: -79px;
+  }
+
+  &:before {
+    left: -25px;
+    transform: skewX(20deg);
+    box-shadow: -10px -20px if(lightness($color) > 70%, darken($color, 10%), lighten($color, 10%));
+  }
+
+  &:after {
+    right: -25px;
+    transform: skewX(-20deg);
+    box-shadow: 10px -20px if(lightness($color) > 70%, darken($color, 10%), lighten($color, 10%));
+  }
+}
+
+@mixin gradient($start: rgba(#000, 0.8), $stop: rgba(#000, 0), $direction: top) {
+
+  // FF3.6+
+  background: -moz-linear-gradient(
+                  #{if($direction == top, top, if($direction == left, left, right))},
+                  $start 0%,
+                  $stop 100%
+  );
+
+  // Chrome,Safari4+
+  background: -webkit-gradient(
+                  linear,
+                  if($direction == left, left, right) top,
+                  #{if($direction == top, left bottom, right top)},
+                  color-stop(0%,$start),
+                  color-stop(100%,$stop)
+  );
+
+  // Chrome10+,Safari5.1+
+  background: -webkit-linear-gradient(
+                  #{if($direction == top, top, if($direction == left, left, right))},
+                  $start 0%,
+                  $stop 100%
+  );
+
+  // Opera 11.10+
+  background: -o-linear-gradient(
+                  #{if($direction == top, top, if($direction == left, left, right))},
+                  $start 0%,
+                  $stop 100%
+  );
+
+  // IE10+
+  background: -ms-linear-gradient(
+                  #{if($direction == top, top, if($direction == left, left, right))},
+                  $start 0%,
+                  $stop 100%
+  );
+
+  // W3C
+  background: linear-gradient(
+                  to #{if($direction == top, bottom, if($direction == left, right, left))},
+                  $start 0%,
+                  $stop 100%
+  );
+
+  // IE6-9
+  filter: progid:DXImageTransform.Microsoft.gradient(
+                  startColorstr='#{ie-hex-str($start)}',
+                  endColorstr='#{ie-hex-str($stop)}',
+                  GradientType=0
+  );
+}
+
+@mixin image-overlay($start: rgba(#000, 0.8), $stop: rgba(#000, 0), $direction: top) {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $start;
+    opacity: 0.5;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: if($direction == right, auto, 0);
+    right: if($direction == right, 0, auto);
+    top: 0;
+    width: if($direction == top, 100%, 50%);
+    height: if($direction == top, 50%, 100%);
+    @include gradient($start, $stop, $direction);
+  }
+}
+
+// Foundation's Light/Dark check makes the buttons hard to read sometimes
+@mixin foundation-button-fix( $button-color ) {
+	
+	@include light-or-dark-text( $button-color );
+
+	&:hover, &:focus {
+
+		$hover-background: scale-color( $button-color, $lightness: $button-background-hover-lightness );
+		@include light-or-dark-text( $hover-background );
+
+	}
+	
+}
+
+// Convert Hex to RGBA
+@mixin background-opacity( $color, $opacity: 0.3 ) {
+	background: $color; /* The fallback for ancient things */
+	background: rgba( $color, $opacity );
+}

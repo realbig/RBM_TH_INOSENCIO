@@ -1,0 +1,45 @@
+.button {
+
+	@each $name, $color in $foundation-palette {
+		
+		&.#{$name} {
+
+			@include foundation-button-fix( $color );
+			
+		}
+
+		&.hollow.#{$name} {
+
+			color: $color;
+
+			&:hover, &:focus {
+
+				background-color: $color;
+				border-color: $color;
+				@include light-or-dark-text( $color );
+
+			}
+
+		}
+
+	}
+
+}
+
+.give-btn, .woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button, .woocommerce input.button.alt, input[type="submit"], .tribe-events-button, #tribe-events .tribe-events-button {
+
+	@include button( false, $primary-color, scale-color( $primary-color, $lightness: $button-background-hover-lightness ), 'auto', 'hollow' );
+	
+	@include foundation-button-fix( $primary-color );
+	
+	color: $primary-color;
+
+	&:hover, &:focus {
+
+		background-color: $primary-color;
+		border-color: $primary-color;
+		@include light-or-dark-text( $primary-color );
+
+	}
+
+}

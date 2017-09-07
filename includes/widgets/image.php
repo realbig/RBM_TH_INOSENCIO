@@ -78,7 +78,7 @@ class inosencio_Widget_Image extends WP_Widget {
 			<br/>
 			<img src="<?php echo $image_preview; ?>" class="image-preview" style="max-width: 100%; height: auto;" />
 			<br/>
-			<input type="button" class="button image-button" value="Choose / Upload Image" />
+			<input type="button primary hollow" class="button image-button" value="Choose / Upload Image" />
 
 			<input class="image-id" id="<?php echo $this->get_field_id( 'image' ); ?>"
 			       name="<?php echo $this->get_field_name( 'image' ); ?>" type="hidden"

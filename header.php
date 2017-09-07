@@ -34,10 +34,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<header id="site-header">
 
-		<div class="foundation-sticky">
-			<nav class="top-bar" data-topbar role="navigation">
+		<div class="foundation-sticky" data-sticky-container>
+			<nav class="top-bar" data-topbar role="navigation" data-sticky data-sticky-on="small" <?php echo ( is_admin_bar_showing() ) ? ' data-margin-top="2"' : ' data-margin-top="0"'; ?>>
 
-				<section class="top-bar-section">
+				<section class="top-bar-left">
 					<ul class="left">
 						<li>
 							<a href="<?php bloginfo( 'url' ); ?>">
@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</ul>
 				</section>
 
-				<section class="top-bar-section">
+				<section class="top-bar-right">
 					<ul class="right">
 						<li class="divider"></li>
 
@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 			</section>
 
-			<nav class="site-nav nav-menu columns medium-9 large-8 show-for-medium-up">
+			<nav class="site-nav nav-menu columns medium-9 large-8 show-for-medium">
 				<?php
 				
 				wp_nav_menu( array(
@@ -120,7 +120,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					'menu' => __( 'Primary Menu', 'good-shepherd-catholic-radio' ),
 					'menu_class' => 'dropdown menu',
 					'theme_location' => 'primary',
-					'items_wrap' => '<ul id="%1$s" class="right %2$s" data-dropdown-menu>%3$s</ul>',
+					'items_wrap' => '<ul id="%1$s" class="right %2$s" data-dropdown-menu data-closing-time="50">%3$s</ul>',
 					'fallback_cb' => false,
 					'walker' => new Foundation_Nav_Walker(),
 				) );
