@@ -4,7 +4,36 @@ Base element settings (no classes or id's).
 @since 0.1.0
 */
 
-@import "settings";
+@media
+    only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-device-pixel-ratio: 1.5){
+        html,
+        body{
+            width:100%;
+            overflow-x: hidden;
+
+            overflow-y: scroll; // iOS Safari Momentum Scroll Fix
+            -webkit-overflow-scrolling: touch;
+        }
+}
+
+// Select color
+::selection {
+    background: $primary-color;
+    @include light-or-dark-text($primary-color);
+}
+
+::-moz-selection {
+    background: $primary-color;
+    @include light-or-dark-text($primary-color);
+}
+
+html {
+    height: auto;
+    overflow-y: auto;
+}
 
 a {
   &.color-invert {

@@ -28,117 +28,127 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'off-canvas-wrapper' ); ?>>
+	
+<div id="wrapper" class="off-canvass-wrapper-inner" data-off-canvas-wrapper>
 
-<div id="wrapper">
+	<div class="off-canvas position-right nav-menu" id="offCanvasRight" data-off-canvas>
 
-	<header id="site-header">
+		<?php
+			wp_nav_menu( array(
+				'container' => false,
+				'menu_class' => 'menu',
+				'theme_location' => 'primary',
+				'items_wrap' => '<ul id="%1$s" class="vertical %2$s">%3$s</ul>',
+				'fallback_cb' => false,
+				'walker' => new Foundation_Nav_Walker(),
+			) );
+		?>
 
-		<div class="foundation-sticky" data-sticky-container>
-			<nav class="top-bar" data-topbar role="navigation" data-sticky data-sticky-on="small" <?php echo ( is_admin_bar_showing() ) ? ' data-margin-top="2"' : ' data-margin-top="0"'; ?>>
+	</div>
+	
+	<div class="off-canvas-content" data-off-canvas-content>
 
-				<section class="top-bar-left">
-					<ul class="left">
-						<li>
-							<a href="<?php bloginfo( 'url' ); ?>">
-								<span class="fa fa-home"></span>
-							</a>
-						</li>
+		<header id="site-header">
 
-						<li class="divider"></li>
+			<div class="foundation-sticky" data-sticky-container>
+				<nav class="top-bar" data-topbar role="navigation" data-sticky data-sticky-on="small" data-margin-top="0">
 
-						<li>
-							<a href="mailto:<?php echo get_option( '_inosencio_email' ); ?>">
-								<span class="fa fa-envelope"></span>
-							</a>
-						</li>
+					<section class="top-bar-left">
+						<ul class="left">
+							<li>
+								<a href="<?php bloginfo( 'url' ); ?>">
+									<span class="fa fa-home"></span>
+								</a>
+							</li>
 
-						<li class="divider"></li>
+							<li class="divider"></li>
 
-						<li>
-							<a href="tel:<?php echo get_option( '_inosencio_phone' ); ?>">
-								<?php echo _inosencio_sc_phone( array( 'icon' => 'yes', 'link' => 'no' ) ); ?>
-							</a>
-						</li>
+							<li>
+								<a href="mailto:<?php echo get_option( '_inosencio_email' ); ?>">
+									<span class="fa fa-envelope"></span>
+								</a>
+							</li>
 
-						<li class="divider"></li>
-					</ul>
+							<li class="divider"></li>
+
+							<li>
+								<a href="tel:<?php echo get_option( '_inosencio_phone' ); ?>">
+									<?php echo _inosencio_sc_phone( array( 'icon' => 'yes', 'link' => 'no' ) ); ?>
+								</a>
+							</li>
+
+							<li class="divider"></li>
+						</ul>
+					</section>
+
+					<section class="top-bar-right">
+						
+						<ul class="right">
+							<li class="divider"></li>
+
+							<li class="has-search">
+								<form class="search row collapse" action="<?php bloginfo( 'url' ); ?>" method="get">
+									<div class="small-9 columns">
+										<input type="search" name="s" id="top-bar-search"
+											   data-placeholder="What are you searching for?">
+									</div>
+									<div class="text-right small-3 columns">
+										<a href="#top-bar-search" class="search-button"><span
+												class="fa fa-search"></span></a>
+									</div>
+								</form>
+							</li>
+						</ul>
+						
+						<div class="top-bar-right show-for-small-only menu-icon-container" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+							<button type="button" data-open="offCanvasRight">
+								<span class="menu-icon"></span>
+							</button>
+						</div>
+						
+						
+					</section>
+
+				</nav>
+			</div>
+
+			<div class="logo-menu row">
+				<section class="site-logo columns small-12 medium-3 large-4">
+					<a href="<?php bloginfo( 'url' ); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png"
+							 alt="inosencio fisk"/>
+					</a>
 				</section>
 
-				<section class="top-bar-right">
-					<ul class="right">
-						<li class="divider"></li>
+				<nav class="site-nav nav-menu columns medium-9 large-8 show-for-medium">
+					<?php
 
-						<li class="has-search">
-							<form class="search row collapse" action="<?php bloginfo( 'url' ); ?>" method="get">
-								<div class="small-9 columns">
-									<input type="search" name="s" id="top-bar-search"
-									       data-placeholder="What are you searching for?">
-								</div>
-								<div class="text-right small-3 columns">
-									<a href="#top-bar-search" class="search-button"><span
-											class="fa fa-search"></span></a>
-								</div>
-							</form>
-						</li>
+					wp_nav_menu( array(
+						'container' => false,
+						'menu' => __( 'Primary Menu', 'good-shepherd-catholic-radio' ),
+						'menu_class' => 'dropdown menu',
+						'theme_location' => 'primary',
+						'items_wrap' => '<ul id="%1$s" class="right %2$s" data-dropdown-menu data-closing-time="50">%3$s</ul>',
+						'fallback_cb' => false,
+						'walker' => new Foundation_Nav_Walker(),
+					) );
 
-						<li class="show-for-small-only">
-							<a href="#" class="toggle-nav">
-								<span class="fa fa-bars"></span>
-							</a>
-						</li>
-					</ul>
-				</section>
-
-			</nav>
-
-			<nav id="mobile-nav">
-				<?php wp_nav_menu( array(
-                    'container' => false,
-                    'menu_class' => 'menu',
-                    'theme_location' => 'primary',
-                    'items_wrap' => '<ul id="%1$s" class="vertical %2$s">%3$s</ul>',
-                    'fallback_cb' => false,
-                    'walker' => new Foundation_Nav_Walker(),
-                ) ); ?>
-			</nav>
-		</div>
-
-		<div class="logo-menu row">
-			<section class="site-logo columns small-12 medium-3 large-4">
-				<a href="<?php bloginfo( 'url' ); ?>">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png"
-					     alt="inosencio fisk"/>
-				</a>
-			</section>
-
-			<nav class="site-nav nav-menu columns medium-9 large-8 show-for-medium">
-				<?php
+					?>
+				</nav>
 				
-				wp_nav_menu( array(
-					'container' => false,
-					'menu' => __( 'Primary Menu', 'good-shepherd-catholic-radio' ),
-					'menu_class' => 'dropdown menu',
-					'theme_location' => 'primary',
-					'items_wrap' => '<ul id="%1$s" class="right %2$s" data-dropdown-menu data-closing-time="50">%3$s</ul>',
-					'fallback_cb' => false,
-					'walker' => new Foundation_Nav_Walker(),
-				) );
-				
-				?>
-			</nav>
-		</div>
+			</div>
 
-		<?php do_action( 'inosencio_before_page_title' ); ?>
+			<?php do_action( 'inosencio_before_page_title' ); ?>
 
-		<?php if ( $title = apply_filters( 'inosencio_page_title', get_the_title() ) ) : ?>
-			<h1 class="page-title text-center">
-				<?php echo $title; ?>
-			</h1>
-		<?php endif; ?>
+			<?php if ( $title = apply_filters( 'inosencio_page_title', get_the_title() ) ) : ?>
+				<h1 class="page-title text-center">
+					<?php echo $title; ?>
+				</h1>
+			<?php endif; ?>
 
-		<?php do_action( 'inosencio_after_page_title' ); ?>
+			<?php do_action( 'inosencio_after_page_title' ); ?>
 
-	</header>
+		</header>
 
-	<section id="site-content">
+		<section id="site-content">

@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php // #site-content ?>
 </section>
 
+</div> <?php // .off-canvas-content ?>
+
 <footer id="site-footer">
 
 	<div class="row">

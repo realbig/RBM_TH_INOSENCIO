@@ -9,6 +9,18 @@
 
     // Foundation
     $(document).foundation();
+	
+	$( document ).on( 'opened.zf.offcanvas', function() {
+		
+		$( 'body' ).addClass( 'off-canvas-open' );
+		
+	} );
+	
+	$( document ).on( 'closed.zf.offcanvas', function() {
+		
+		$( 'body' ).removeClass( 'off-canvas-open' );
+		
+	} );
 
     $(function () {
 
