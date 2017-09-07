@@ -19,6 +19,17 @@
 				@include light-or-dark-text( $color );
 
 			}
+			
+			&.white-border {
+				
+				color: #fff;
+				border-color: #fff;
+				
+				&:hover, &:focus {
+					border-color: #fff !important;
+				}
+				
+			}
 
 		}
 

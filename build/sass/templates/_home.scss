@@ -34,7 +34,6 @@ body.home {
       @extend h1;
       color: inherit;
       font-size: 2em;
-      border-top: 1px solid rgba(#fff, 0.5);
       border-bottom: 1px solid rgba(#fff, 0.5);
 		text-align: center;
     }
@@ -61,7 +60,6 @@ body.home {
     text-align: center;
 
     h1 {
-      border-top: 1px solid rgba(#fff, 0.5);
       border-bottom: 1px solid rgba(#fff, 0.5);
     }
 
@@ -77,6 +75,8 @@ body.home {
   }
 
   .home-about {
+	  
+	  padding-bottom: 0 !important;
 
     .image-container {
       @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
@@ -85,7 +85,6 @@ body.home {
 	
 	.home-practice-areas {
 		.practice-areas {
-		  max-width: $row-width;
 		  margin: 0 auto;
 		}
 
@@ -102,8 +101,9 @@ body.home {
 	}
 
   .home-about-2 {
+	  
     h1 {
-      border-color: rgba(#000, 0.3);
+      border-bottom: 1px solid rgba(#fff, 0.5);
     }
 
     .image-container {
@@ -116,7 +116,17 @@ body.home {
     }
 
     .gform_wrapper {
+		
       text-align: left;
+		
+		.gfield_label {
+			color: #fff;
+		}
+		
+		.gform_button {
+			@extend .button.hollow.primary.white-border;
+		}
+		
     }
   }
 }
