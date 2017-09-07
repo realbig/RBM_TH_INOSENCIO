@@ -33,8 +33,8 @@ Gravity forms styling
 }
 
 .validation_error {
-  @include alert-base;
-  @include alert-style($alert-color);
+  //@include alert-base;
+  //@include alert-style($alert-color);
 }
 
 .ginput_container {
@@ -48,7 +48,7 @@ Gravity forms styling
 }
 
 .validation_message {
-  @include form-error-message;
+  //@include form-error-message;
 }
 
 // Columns

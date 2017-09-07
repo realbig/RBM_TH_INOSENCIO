@@ -236,10 +236,14 @@ add_action( 'admin_enqueue_scripts', function () {
  * @since 0.1.0
  */
 add_action( 'after_setup_theme', function () {
+	
+	// Nav Walker for Foundation
+    require_once __DIR__ . '/includes/class-foundation-nav-walker.php';
 
 	register_nav_menu( 'primary', 'Primary Menu' );
 	register_nav_menu( 'footer-a', 'Footer A' );
 	register_nav_menu( 'footer-b', 'Footer B' );
+	
 } );
 
 /**

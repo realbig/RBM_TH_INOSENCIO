@@ -93,12 +93,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</nav>
 
 			<nav id="mobile-nav">
-				<?php
-				wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container'      => false,
-				) );
-				?>
+				<?php wp_nav_menu( array(
+                    'container' => false,
+                    'menu_class' => 'menu',
+                    'theme_location' => 'primary',
+                    'items_wrap' => '<ul id="%1$s" class="vertical %2$s">%3$s</ul>',
+                    'fallback_cb' => false,
+                    'walker' => new Foundation_Nav_Walker(),
+                ) ); ?>
 			</nav>
 		</div>
 
@@ -110,28 +112,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</a>
 			</section>
 
-			<nav class="site-nav columns medium-9 large-8 show-for-medium-up">
+			<nav class="site-nav nav-menu columns medium-9 large-8 show-for-medium-up">
 				<?php
-				add_filter( 'the_title', '_inosencio_header_nav_filter', 10, 2 );
-
-				function _inosencio_header_nav_filter( $title, $ID) {
-
-					if (strpos( $title, '<span data-hover=' ) !== false ) {
-
-						return $title;
-
-					} else {
-
-						return "<span data-hover=\"$title\">$title</span>";
-					}
-				}
-
+				
 				wp_nav_menu( array(
+					'container' => false,
+					'menu' => __( 'Primary Menu', 'good-shepherd-catholic-radio' ),
+					'menu_class' => 'dropdown menu',
 					'theme_location' => 'primary',
-					'container'      => false,
+					'items_wrap' => '<ul id="%1$s" class="right %2$s" data-dropdown-menu>%3$s</ul>',
+					'fallback_cb' => false,
+					'walker' => new Foundation_Nav_Walker(),
 				) );
-
-				remove_filter( 'the_title', '_inosencio_header_nav_filter' );
+				
 				?>
 			</nav>
 		</div>

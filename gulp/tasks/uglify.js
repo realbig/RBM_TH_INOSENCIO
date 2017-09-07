@@ -19,9 +19,9 @@ gulp.task( 'uglify:front', function() {
 	return gulp.src( config.front.vendor.concat( config.front.src ) )
 		.pipe( $.plumber( { errorHandler: onError } ) )
 		.pipe( $.sourcemaps.init() )
-		//.pipe( $.babel( {
-		//	presets: ['es2015'] // Gulp-uglify has no official support for ECMAScript 2015 (aka ES6, aka Harmony), so we'll transpile to EcmaScript5
-		//} ) )
+		.pipe( $.babel( {
+			presets: ['es2015'] // Gulp-uglify has no official support for ECMAScript 2015 (aka ES6, aka Harmony), so we'll transpile to EcmaScript5
+		} ) )
 		.pipe( $.concat( config.front.filename ) )
 		.pipe( $.uglify() )
 		.pipe( gulpif( ! isRelease, $.sourcemaps.write( '.' ) ) )

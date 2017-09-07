@@ -8,7 +8,7 @@
  * GitHub Branch: issue/7/menu-structure
  */
 
-@import "foundation/functions";
+@import "foundation";
 
 // Vendor
 @import "vendor/normalize";
@@ -18,17 +18,21 @@
 @import "settings.scss";
 @import "functions.scss";
 
-// Foundation
-// Here we control all of the various foundation components to use
-@import "foundation/components/visibility";
-@import "foundation/components/clearing";
-@import "foundation/components/grid";
-@import "foundation/components/block-grid";
-@import "foundation/components/buttons";
-@import "foundation/components/type";
-@import "foundation/components/forms";
-@import "foundation/components/alert-boxes";
-@import "foundation/components/top-bar";
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-grid;
+@include foundation-top-bar;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-off-canvas;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-visibility-classes;
+@include foundation-sticky;
 
 // Setup
 @import "base";
@@ -38,6 +42,7 @@
 @import "static/footer";
 @import "static/site-content";
 @import "static/sidebar";
+@import "static/top-bar-menu";
 
 // Templates
 @import "templates/single-post";

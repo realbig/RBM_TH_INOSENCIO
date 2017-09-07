@@ -18,51 +18,99 @@ $landscape: "#{$screen} and (orientation: landscape)";
 $portrait: "#{$screen} and (orientation: portrait)";
 
 $small-up: $screen;
-$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
 
-$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
-$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})" !default;
+$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})" !default;
 
-$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})";
-$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
+$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
+$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
 
-$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
-$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})";
+$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
+$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
 
-$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
-$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
+$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
+$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
 
-// We use these as default colors throughout
+$retina-only: (
+  "#{$screen} and (-webkit-min-device-pixel-ratio: 2)",
+  "#{$screen} and (min--moz-device-pixel-ratio: 2)",
+  "#{$screen} and (-o-min-device-pixel-ratio: 2/1)",
+  "#{$screen} and (min-device-pixel-ratio: 2)",
+  "#{$screen} and (min-resolution: 192dpi)",
+  "#{$screen} and (min-resolution: 2dppx)"
+) !default;
+
+$phablet-landscape: "#{$screen} and (max-width: 733px) and (orientation: landscape)" !default;
+$ipad-portrait: "#{$medium-only} and (orientation: portrait)" !default; // This includes up through Medium technically, but it shouldn't cause problems for desktop users unless they have a low resolution portrait monitor for some reason
+$ipad-landscape: "#{$screen} and (min-device-width : 768px) and (max-width: 1024px) and (orientation: landscape)" !default;
+
 $primary-color: #232E56;
 $secondary-color: #4D6330;
+
 $alert-color: #f04124;
 $success-color: #43AC6A;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
-// Extra colors
+// Allows our color changes to be passed to things like the Button classes
+$foundation-palette: (
+    primary: $primary-color,
+    secondary: $secondary-color,
+    info: $info-color,
+    success: $success-color,
+    warning: $warning-color,
+    alert: $alert-color,
+);
+
+// Why, Foundation 6.3. Why.
+$button-palette: $foundation-palette;
+
 $dark-color: #333;
-$medium-color: #aaa;
 $light-color: #fff;
+
+//$body-background: #f4f1ef;
 
 // We use these to define default font stacks
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
-$body-font-color: #222;
+$body-font-color: #2B2B2B;
+$body-font-family: $font-family-sans-serif;
+$body-antialiased: false;
+$anchor-color: scale-color( $primary-color, $lightness: -15% );
+$anchor-color-hover: scale-color( $anchor-color, $lightness: -25% );
 
-// Top-bar
-$topbar-bg-color: $primary-color;
+$topbar-background: $primary-color;
+$offcanvas-background: $topbar-background;
+
+$topbar-link-color: null;
+@if lightness( $topbar-background ) < 65% {
+
+    $topbar-link-color: $light-color;
+    $titlebar-icon-color: $topbar-link-color;
+
+}
+@else {
+
+    $topbar-link-color: $black;
+    $titlebar-icon-color: $topbar-link-color;
+
+}
+
+$titlebar-icon-hover: scale-color( $titlebar-icon-color, $lightness: -25% );
+
+$tab-content-padding: 0;
+$tab-color: $anchor-color;
+$tab-active-color: $anchor-color-hover;
+$tab-background-active: scale-color( desaturate( $secondary-color, 60% ), $lightness: 60% );
+
 $topbar-height: rem-calc(30);
 $topbar-link-bg-hover: lighten($primary-color, 10%);
-$topbar-divider-border-bottom: solid 1px scale-color($topbar-bg-color, $lightness: 15%);
-$topbar-dropdown-bg: $topbar-bg-color;
+$topbar-divider-border-bottom: solid 1px scale-color($topbar-background, $lightness: 15%);
+$topbar-dropdown-bg: $topbar-background;
 $topbar-media-query: $small-up;
 
-// Buttons
-$button-bg-color: transparent;
-$button-bg-hover: $primary-color;
-$button-font-color: $body-font-color;
 $button-border-width: 1px;
 $button-border-color: $body-font-color;
 $button-tny: rem-calc(7);
@@ -70,31 +118,17 @@ $button-sml: rem-calc(8);
 $button-med: rem-calc(10);
 $button-lrg: rem-calc(13);
 
+// Extra colors
+$dark-color: #333;
+$medium-color: #aaa;
+$light-color: #fff;
+
 // Forms
 $input-border-color: $body-font-color;
 
 // Sizes
 $gutter: 30px;
 $column-gutter: rem-calc(30);
-
-// We use these to control header font styles
-$header-font-family: $font-family-sans-serif;
-$header-font-weight: 900;
-//$header-line-height: 1.4;
-//$header-top-margin: .2rem;
-//$header-bottom-margin: .5rem;
-$h1-font-reduction: rem-calc(18);
-$h2-font-reduction: rem-calc(8);
-$h3-font-reduction: rem-calc(5);
-$h4-font-reduction: rem-calc(5);
-$h5-font-reduction: 0;
-$h6-font-reduction: 0;
-
-// We use these to style anchors
-$anchor-text-decoration: none;
-$anchor-text-decoration-hover: none;
-$anchor-font-color: $primary-color;
-$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 
 // Grid
 $row-width: rem-calc(1000);
