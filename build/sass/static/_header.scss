@@ -109,6 +109,7 @@ body.admin-bar {
       text-align: right;
       text-transform: uppercase;
       font-size: 0.8em;
+		font-family: $font-family-serif;
 
       @media #{$large-up} {
         font-size: 1em;
