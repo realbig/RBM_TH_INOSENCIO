@@ -6,7 +6,6 @@ The static site content.
 
 #site-content {
   @include pattern-background($light-color);
-  padding-top: $column-gutter;
 
   .page-content {
     ul {
@@ -44,6 +43,7 @@ The static site content.
 
   .section {
     padding-top: 30px;
+	  padding-bottom: 30px;
 
     &.blue {
       @include pattern-background($primary-color);

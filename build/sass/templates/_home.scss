@@ -6,13 +6,8 @@ The home page.
 
 body.home {
 
-  #site-content {
-    padding-top: 0;
-  }
-
   .home-cta {
     @include image-overlay;
-    margin-top: -100px; // compensate for separator
     position: relative;
     background-size: cover;
     height: 90vh;
@@ -82,26 +77,29 @@ body.home {
   }
 
   .home-about {
-    .practice-areas {
-      max-width: $row-width;
-      margin: 0 auto;
-    }
-
-    .practice-areas-heading {
-      margin: 2em 0 1em;
-    }
-
-    .practice-areas.top-level {
-      @media #{$medium-up} {
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
 
     .image-container {
       @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
     }
   }
+	
+	.home-practice-areas {
+		.practice-areas {
+		  max-width: $row-width;
+		  margin: 0 auto;
+		}
+
+		.practice-areas-heading {
+		  margin: 2em 0 1em;
+		}
+
+		.practice-areas.top-level {
+		  @media #{$medium-up} {
+			width: 70%;
+			margin: 0 auto;
+		  }
+		}
+	}
 
   .home-about-2 {
     h1 {
