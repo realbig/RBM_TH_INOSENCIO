@@ -3,11 +3,7 @@
 	font-weight: 600;
 	position: relative;
 
-	@media #{$medium-up} {
-
-		padding: 1.5rem 1rem;
-
-	}
+	padding: 1.5rem 1rem;
 
 	// Phablet Landscape and Portrait iPad Fix
 	@media #{$phablet-landscape}, #{$ipad-portrait} {
