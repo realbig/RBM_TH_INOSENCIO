@@ -111,7 +111,7 @@ if ( ! empty( $practice_areas ) ) :
 				The areas in which we practice include:
 			</h3>
 
-			<ul class="practice-areas top-level small-block-grid-1 medium-block-grid-2">
+			<div class="practice-areas top-level row small-up-1 medium-up-2">
 				<?php
 				foreach ( $practice_areas as $practice_area ) :
 
@@ -119,7 +119,7 @@ if ( ! empty( $practice_areas ) ) :
 						continue;
 					}
 					?>
-					<li>
+					<div class="column column-block">
 						<div class="practice-area">
 							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
 								<?php if ( $icon = get_post_meta( $practice_area->ID, '_icon', true ) ) : ?>
@@ -131,22 +131,22 @@ if ( ! empty( $practice_areas ) ) :
 								</h4>
 							</a>
 						</div>
-					</li>
+					</div>
 				<?php endforeach; ?>
-			</ul>
+			</div>
 
 			<h3 class="practice-areas-heading">
 				We’ve also represented clients concerning:
 			</h3>
 
-			<ul class="practice-areas small-block-grid-1 medium-block-grid-2">
+			<div class="practice-areas row small-up-1 medium-up-2">
 				<?php
 				foreach ( $practice_areas as $practice_area ) :
 					if ( get_post_meta( $practice_area->ID, '_top_level', true ) ) {
 						continue;
 					}
 					?>
-					<li>
+					<div class="column column-block">
 						<div class="practice-area">
 							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
 								<h4 class="practice-area-title">
@@ -154,9 +154,9 @@ if ( ! empty( $practice_areas ) ) :
 								</h4>
 							</a>
 						</div>
-					</li>
+					</div>
 				<?php endforeach; ?>
-			</ul>
+			</div>
 
 		<?php endif; ?>
 

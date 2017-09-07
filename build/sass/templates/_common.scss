@@ -9,13 +9,6 @@ Styles shared among all templates.
   font-size: 1.7em !important;
 }
 
-[class*="block-grid-"] {
-  &.collapse {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 #page-load-overlay {
   position: fixed;
   left: 0;
@@ -75,8 +68,9 @@ Styles shared among all templates.
     font-weight: inherit;
   }
 
-  li {
+  .column {
     padding-bottom: rem-calc(10);
+	  margin-bottom: 0;
 
     .practice-area {
 

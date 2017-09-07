@@ -40,9 +40,9 @@ the_post();
 				?>
 				<h3 class="text-uppercase">Practice Areas:</h3>
 
-				<ul class="practice-areas small-block-grid-1 collapse">
+				<div class="practice-areas row small-up-1 small-collapse">
 					<?php foreach ( $practice_areas as $practice_area ) : ?>
-						<li>
+						<div class="column column-block">
 							<div class="practice-area">
 								<a href="<?php echo get_post_type_archive_link( 'practice_area' ) . "#{$practice_area->post_name}"; ?>">
 									<h4 class="practice-area-title">
@@ -50,9 +50,9 @@ the_post();
 									</h4>
 								</a>
 							</div>
-						</li>
+						</div>
 					<?php endforeach; ?>
-				</ul>
+				</div>
 			<?php endif; ?>
 		</section>
 

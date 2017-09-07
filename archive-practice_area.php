@@ -26,13 +26,13 @@ get_header();
 			<?php if ( have_posts() ) : ?>
 				<h3 class="text-uppercase">Practice Areas:</h3>
 
-				<ul class="practice-areas small-block-grid-1 collapse">
+				<div class="practice-areas row small-up-1 small-collapse">
 					<?php
 					while ( have_posts() ) :
 						the_post();
 						global $post;
 						?>
-						<li>
+						<div class="column column-block">
 							<div id="<?php echo $post->post_name; ?>" class="practice-area">
 								<a href="#<?php echo $post->post_name; ?>">
 									<h4 class="practice-area-title">
@@ -44,9 +44,9 @@ get_header();
 							<div class="practice-area-content">
 								<?php the_content(); ?>
 							</div>
-						</li>
+						</div>
 					<?php endwhile; ?>
-				</ul>
+				</div>
 			<?php endif; ?>
 		</section>
 
