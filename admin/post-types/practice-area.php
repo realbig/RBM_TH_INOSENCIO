@@ -15,7 +15,7 @@ add_action( 'init', function () {
 
 	easy_register_post_type( 'practice_area', 'Practice Area', 'Practice Areas', array(
 		'menu_icon' => 'dashicons-book',
-		'supports'  => array( 'title', 'editor' ),
+		'supports'  => array( 'title', 'editor', 'page-attributes' ),
 		'rewrite'   => array( 'slug' => 'practice-areas' ),
 		'public'  => false,
 		'show_ui' => true,
