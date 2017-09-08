@@ -29,6 +29,15 @@ add_action( 'add_meta_boxes', function () {
 		'_inosencio_metabox_attorney_extra_meta',
 		'attorney'
 	);
+	
+	add_meta_box(
+		'inosencio-attorney-small-image',
+		'Image without Backdrop',
+		'_inosencio_metabox_attorney_small_image',
+		'attorney',
+		'side'
+	);
+	
 } );
 
 /**
@@ -98,6 +107,24 @@ function _inosencio_metabox_attorney_extra_meta( $post ) {
 		?>
 	</p>
 <?php
+}
+
+function _inosencio_metabox_attorney_small_image( $post ) {
+	
+	rbm_do_field_media(
+        'attorney_small_image',
+        'Image Without Backdrop',
+        false,
+        array(
+			'description' => 'This is used for the Home Page',
+            'type' => 'image',
+            'button_text' => 'Upload/Choose Image',
+            'button_remove_text' => 'Remove Image',
+            'window_title' => 'Choose Image',
+            'window_button_text' => 'Use Image',
+        )
+    );
+	
 }
 
 add_action( 'save_post', function ( $post_ID ) {
