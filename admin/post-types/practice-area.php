@@ -19,6 +19,8 @@ add_action( 'init', function () {
 		'rewrite'   => array( 'slug' => 'practice-areas' ),
 		'public'  => false,
 		'show_ui' => true,
+		'hierarchical' => true,
+		'show_in_nav_menus' => true,
 	) );
 } );
 
