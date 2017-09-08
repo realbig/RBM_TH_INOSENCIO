@@ -49,6 +49,11 @@ body.home {
       color: inherit;
       border-color: inherit;
       transition: border 300ms, background 300ms;
+			padding-top: 0.625rem;
+	padding-right: 1.25rem;
+	padding-bottom: 0.6875rem;
+	padding-left: 1.25rem;
+		margin: 0;
 
       &:hover {
         border-color: $primary-color;
