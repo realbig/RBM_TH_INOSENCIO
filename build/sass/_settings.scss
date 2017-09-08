@@ -134,3 +134,22 @@ $column-gutter: rem-calc(30);
 
 // Grid
 $grid-row-width: 66rem;
+
+$header-styles: (
+  small: (
+    'h1': ('font-size': 26),
+    'h2': ('font-size': 29), // WAT. I grabbed this size from the Foundation 5 version of the Theme
+    'h3': ('font-size': 22),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 44),
+    'h2': ('font-size': 37),
+    'h3': ('font-size': 27),
+    'h4': ('font-size': 23),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 16),
+  ),
+);
