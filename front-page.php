@@ -74,33 +74,61 @@ if ( ! empty( $practice_areas ) ) :
 <?php endif; ?>
 
 	<section class="home-about section green">
-
-		<h1><?php the_title(); ?></h1>
 		
-		<div class="row">
- 			<div class="columns small-12">
+		<div class="row expanded small-collapse">
+			
+ 			<div class="columns small-12 medium-6 text-container">
+				
+				<div class="row small-uncollapse vertical-align">
+					<div class="columns small-12">
+				
+						<h1><?php the_title(); ?></h1>
 
-				<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
-					<p class="home-about-sub-head">
-						<?php echo do_shortcode( $sub_head ); ?>
-					</p>
-				<?php endif; ?>
+						<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
+							<p class="home-about-sub-head">
+								<?php echo do_shortcode( $sub_head ); ?>
+							</p>
+						<?php endif; ?>
+						
+					</div>
+				</div>
 				
 			</div>
-		</div>
-
-				<?php
-				if ( $about_image = get_post_meta( get_the_ID(), '_inosencio_home_about_image', true ) ) :
-					$about_image_src = wp_get_attachment_image_src( $about_image, 'full' );
+			
+			<div class="columns small-12 medium-6">
+				
+				<div class="row small-collapse">
+					
+					<?php 
+					
+						$attorneys = new WP_Query( array(
+							'post_type' => 'attorney',
+							'posts_per_page' => 4,
+						) );
+					
+						if ( $attorneys->have_posts() ) : 
+					
+							while ( $attorneys->have_posts() ) : $attorneys->the_post(); ?>
+					
+								<div class="small-6 medium-3 columns">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<?php echo wp_get_attachment_image( rbm_get_field( 'attorney_small_image' ), 'medium', false, array( 'title' => get_the_title(), 'alt' => get_the_title() ) ); ?>
+									</a>
+								</div>
+					
+							<?php endwhile;
+					
+							wp_reset_postdata();
+					
+						endif;
+					
 					?>
-					<div style="background-image: url('<?php echo $about_image_src[0]; ?>');
-						height:<?php echo $about_image_src[2]; ?>px;"
-						 class="image-container">
-						<div class="container bottom">
-							<?php echo do_shortcode( get_post_meta( get_the_ID(), '_inosencio_home_about_copy', true ) ); ?>
-						</div>
-					</div>
-				<?php endif; ?>
+					
+				</div>
+				
+			</div>
+			
+		</div>
 		
 	</section>
 

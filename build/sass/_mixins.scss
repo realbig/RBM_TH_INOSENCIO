@@ -116,3 +116,11 @@
 	background: $color; /* The fallback for ancient things */
 	background: rgba( $color, $opacity );
 }
+
+@mixin vertical-align {
+	
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	
+}

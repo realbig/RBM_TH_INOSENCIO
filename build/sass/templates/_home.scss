@@ -81,11 +81,30 @@ body.home {
 
   .home-about {
 	  
+	  padding-top: 0 !important;
 	  padding-bottom: 0 !important;
 
-    .image-container {
-      @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
-    }
+    
+	  .text-container {
+		  
+		  @media #{$small-only} {
+			  padding-top: 30px;
+			  padding-bottom: 30px;
+		  }
+		  
+		  @media #{$medium-up} {
+			  
+			  min-height: 254px; // Height of the images
+			  
+			  .vertical-align {
+				  @include vertical-align;
+				  transform: translateY(20%);
+			  }
+			  
+		  }
+		  
+	  }
+	  
   }
 	
 	.home-practice-areas {
