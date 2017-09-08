@@ -10,7 +10,8 @@ body.home {
     @include image-overlay;
     position: relative;
     background-size: cover;
-    height: 90vh;
+	background-position: center;
+    height: 15em;
     color: $light-color;
     text-align: center;
     font-size: 1.5em;
