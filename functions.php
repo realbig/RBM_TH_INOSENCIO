@@ -237,6 +237,9 @@ add_action( 'admin_enqueue_scripts', function () {
  */
 add_action( 'after_setup_theme', function () {
 	
+	// Add Customer Controls
+	require_once __DIR__ . '/includes/customizer.php';
+	
 	// Nav Walker for Foundation
     require_once __DIR__ . '/includes/class-foundation-nav-walker.php';
 
@@ -261,6 +264,22 @@ add_action( 'widgets_init', function () {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+	
+	// Social
+    $social_columns = get_theme_mod( 'inosencio_social_columns', 3 );
+    for ( $index = 0; $index < $social_columns; $index++ ) {
+        register_sidebar(
+            array(
+                'name'          =>  'Social ' . ( $index + 1 ),
+                'id'            =>  'social-' . ( $index + 1 ),
+                'description'   =>  sprintf( 'This is Social Widget Area %d', ( $index + 1 ) ),
+                'before_widget' =>  '<aside id="%1$s" class="widget %2$s">',
+                'after_widget'  =>  '</aside>',
+                'before_title'  =>  '<h3 class="widget-title">',
+                'after_title'   =>  '</h3>',
+            )
+        );
+    }
 
 	// Footer Left
 	register_sidebar( array(
@@ -296,3 +315,4 @@ require_once __DIR__ . '/includes/shortcodes/contact.php';
 // Include widgets
 require_once __DIR__ . '/includes/widgets/image.php';
 require_once __DIR__ . '/includes/widgets/text-icon.php';
+require_once __DIR__ . '/includes/widgets/social-stream.php';

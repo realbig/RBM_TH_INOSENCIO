@@ -254,5 +254,26 @@ if ( ! empty( $practice_areas ) ) :
 		</div>
 	</section>
 
+	<section class="home-social-stream section white">
+		
+		<div class="row">
+			
+			<?php
+            $social_columns = get_theme_mod( 'inosencio_social_columns', 3 );
+            for ( $index = 0; $index < $social_columns; $index++ ) {
+                ?>
+
+                    <div class="small-12 medium-<?php echo ( 12 / $social_columns ); ?> columns">
+                        <?php dynamic_sidebar( 'social-' . ( $index + 1 ) ); ?>
+                    </div>
+
+                <?php
+            }
+            ?>
+			
+		</div>
+		
+	</section>
+
 <?php
 get_footer();
