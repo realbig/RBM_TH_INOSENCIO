@@ -102,7 +102,16 @@ class Inosencio_Social_Stream extends WP_Widget {
 			'order' => 'DESC',
 		) );
 		
-		$streams_array = wp_list_pluck( $streams->posts, 'post_title', 'ID' );
+		$streams_array = array();
+		
+		foreach ( $streams->posts as $stream ) {
+			
+			parse_str( trim( $stream->post_content, '"' ), $content );
+			
+			// Why they couldn't store this as the Post Title like literally any other CPT, I have no clue
+			$streams_array[ $stream->ID ] = $content['name'];
+			
+		}
 
 		?>
 
