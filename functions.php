@@ -149,15 +149,6 @@ add_action( 'init', function () {
 		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION
 	);
 
-	// Textillate
-	wp_register_script(
-		THEME_ID . '-textillate',
-		get_template_directory_uri() . '/assets/js/jquery.textillate.js',
-		array( THEME_ID . '-lettering' ),
-		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : '0.4.0',
-		true
-	);
-
 	// Lettering
 	wp_register_script(
 		THEME_ID . '-lettering',
@@ -198,7 +189,6 @@ add_action( 'wp_enqueue_scripts', function () {
 	if ( is_front_page() ) {
 		wp_enqueue_style( THEME_ID . '-animate-css' );
 		wp_enqueue_script( THEME_ID . '-lettering' );
-		wp_enqueue_script( THEME_ID . '-textillate' );
 	}
 
 	// Theme styles

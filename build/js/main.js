@@ -22,27 +22,6 @@
 		
 	} );
 
-    $(function () {
-
-        // Textillate
-        if ($().textillate) {
-            $('.textillate').textillate({
-                loop: true,
-                minDisplayTime: 1000,
-                in: {
-                    effect: 'flipInX',
-                    delayScale: 0.75,
-                    delay: 100
-                },
-                out: {
-                    effect: 'flipOutX',
-                    delayScale: 0.75,
-                    delay: 50
-                }
-            });
-        }
-    });
-
     // Page loading overlay
     $('#site-content').append('<div id="page-load-overlay"><div class="loader fa fa-circle-o-notch fa-spin-fast" /></div>');
 

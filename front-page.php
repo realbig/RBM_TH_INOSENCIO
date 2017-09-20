@@ -16,22 +16,6 @@ add_filter( 'inosencio_page_title', '__return_false' );
 get_header();
 the_post();
 
-$practice_areas = get_posts( array(
-	'post_type'   => 'practice_area',
-	'numberposts' => 5,
-	'orderby'     => 'menu_order',
-	'order'       => 'ASC',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'practice_area_category',
-			'field' => 'slug',
-			'terms' => 'home-banner',
-		),
-	),
-) );
-
-if ( ! empty( $practice_areas ) ) :
-
 	$style = '';
 	if ( has_post_thumbnail() ) {
 
@@ -53,16 +37,6 @@ if ( ! empty( $practice_areas ) ) :
 				</p>
 			<?php endif; ?>
 
-			<div class="practice-areas textillate text-center">
-				<ul class="texts">
-
-					<?php foreach ( $practice_areas as $practice_area ) : ?>
-						<li><?php echo $practice_area->post_title; ?></li>
-					<?php endforeach; ?>
-
-				</ul>
-			</div>
-
 			<p class="call-to-action">
 				Learn more <a href="/firm-overview/" class="button primary hollow white-border">about us</a>
 			</p>
@@ -70,8 +44,6 @@ if ( ! empty( $practice_areas ) ) :
 		</div>
 
 	</section>
-
-<?php endif; ?>
 
 	<section class="home-about section green">
 		
