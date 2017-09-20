@@ -132,75 +132,7 @@ if ( ! empty( $practice_areas ) ) :
 		
 	</section>
 
-	<section class="home-practice-areas section white">
-
-		<?php
-		$practice_areas = get_posts( array(
-			'post_type'   => 'practice_area',
-			'orderby'     => 'menu_order',
-			'order'       => 'ASC',
-			'numberposts' => - 1,
-
-		) );
-
-		if ( ! empty( $practice_areas ) ) :
-			?>
-			<h3 class="practice-areas-heading">
-				The areas in which we practice include:
-			</h3>
-
-			<div class="practice-areas top-level row small-up-1 medium-up-2">
-				<?php
-				foreach ( $practice_areas as $practice_area ) :
-
-					if ( ! has_term( 'top-level', 'practice_area_category', $practice_area ) ) {
-						continue;
-					}
-					?>
-					<div class="column column-block">
-						<div class="practice-area">
-							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
-								<?php if ( $icon = get_post_meta( $practice_area->ID, '_icon', true ) ) : ?>
-									<p class="practice-area-icon fa fa-<?php echo $icon; ?>"></p>
-								<?php endif; ?>
-
-								<h4 class="practice-area-title">
-									<?php echo $practice_area->post_title; ?>
-								</h4>
-							</a>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-			<h3 class="practice-areas-heading">
-				We’ve also represented clients concerning:
-			</h3>
-
-			<div class="practice-areas row small-up-1 medium-up-2">
-				<?php
-				foreach ( $practice_areas as $practice_area ) :
-					if ( get_post_meta( $practice_area->ID, '_top_level', true ) ) {
-						continue;
-					}
-					?>
-					<div class="column column-block">
-						<div class="practice-area">
-							<a href="<?php bloginfo( 'url' ); ?>/practice-areas/#<?php echo $practice_area->post_name; ?>">
-								<h4 class="practice-area-title">
-									<?php echo $practice_area->post_title; ?>
-								</h4>
-							</a>
-						</div>
-					</div>
-				<?php endforeach; ?>
-			</div>
-
-		<?php endif; ?>
-
-	</section>
-
-	<section class="home-about-2 section green">
+	<section class="home-about-2 section white">
 
 		<h1><?php echo get_post_meta( get_the_ID(), '_inosencio_home_about_2_title', true ); ?></h1>
 		

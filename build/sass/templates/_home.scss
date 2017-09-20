@@ -109,23 +109,6 @@ body.home {
 	  }
 	  
   }
-	
-	.home-practice-areas {
-		.practice-areas {
-		  margin: 0 auto;
-		}
-
-		.practice-areas-heading {
-		  margin: 1em 0 1em;
-		}
-
-		.practice-areas.top-level {
-		  @media #{$medium-up} {
-			width: 70%;
-			margin: 0 auto;
-		  }
-		}
-	}
 
   .home-about-2 {
 	  
