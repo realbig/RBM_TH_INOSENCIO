@@ -51,6 +51,8 @@ function _inosencio_mb_home_extra_callback() {
 	$about_2_image = get_post_meta( $post->ID, '_inosencio_home_about_2_image', true );
 	$about_2_image_preview = $about_2_image ? wp_get_attachment_image_src( $about_2_image, 'medium' ) : '';
 	$about_2_form = get_post_meta( $post->ID, '_inosencio_home_about_2_form', true );
+	
+	$cta_height = get_post_meta( $post->ID, '_inosencio_home_cta_height', true );
 
 	// Deal with missing images
 	if ( ! $about_image_preview ) {
@@ -147,6 +149,16 @@ function _inosencio_mb_home_extra_callback() {
 			       value="<?php echo $about_2_form; ?>"/>
 		</label>
 	</p>
+	
+	<p>
+		<label>
+			CTA Height (in pixels):
+			<br/>
+			<input type="text" name="_inosencio_home_cta_height"
+			       value="<?php echo ( $cta_height ) ? $cta_height : '550'; ?>"/>
+		</label>
+	</p>
+
 <?php
 }
 
@@ -178,6 +190,7 @@ function _inosencio_save_metaboxes_home( $post_ID ) {
 		'_inosencio_home_about_2_copy',
 		'_inosencio_home_about_2_image',
 		'_inosencio_home_about_2_form',
+		'_inosencio_home_cta_height',
 	);
 
 	foreach ( $options as $option ) {

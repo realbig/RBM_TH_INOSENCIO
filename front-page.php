@@ -20,10 +20,13 @@ the_post();
 	if ( has_post_thumbnail() ) {
 
 		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+		$cta_height = get_post_meta( get_the_ID(), '_inosencio_home_cta_height', true );
 
 		$style = 'style="background-image: url(\'';
 		$style .= $image_src[0];
-		$style .= '\');"';
+		$style .= '\');';
+		$style .= 'height: ' . ( ( $cta_height ) ? $cta_height : '550' ) . 'px;';
+		$style .= '"';
 	}
 	?>
 
