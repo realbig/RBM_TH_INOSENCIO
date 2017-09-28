@@ -142,10 +142,6 @@ the_post();
 		<div class="row">
 			<div class="columns small-12">
 
-				<h2 class="text-left">
-					Find out how we can help you with your case.
-				</h2>
-
 				<?php
 				gravity_form(
 					$about_form,
