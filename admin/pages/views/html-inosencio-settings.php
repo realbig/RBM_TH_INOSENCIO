@@ -82,6 +82,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</td>
 			</tr>
+			
+			<tr valign="top">
+				<th scope="row">
+					<label for="_inosencio_hours">
+						Hours
+					</label>
+				</th>
+				<td>
+					<div style="max-width: 500px;">
+						<?php
+						wp_editor( get_option( '_inosencio_hours' ), '_inosencio_hours', array(
+							'textarea_name' => '_inosencio_hours',
+							'textarea_rows' => '10',
+						));
+						?>
+					</div>
+				</td>
+			</tr>
 
 		</table>
 

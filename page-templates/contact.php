@@ -36,9 +36,17 @@ the_post();
 			</div>
 
 			<p class="meta">
-				<?php echo get_option( '_inosencio_phone', '' ); ?>
+				Phone: <?php echo get_option( '_inosencio_phone', '' ); ?>
+				<br />
+				Fax: <?php echo get_option( '_inosencio_fax', '' ); ?>
 				<br/>
 				<a href="mailto:<?php echo $email = get_option( '_inosencio_email', '' ); ?>"><?php echo $email; ?></a>
+				<br /><br />
+				Hours: 
+				<?php
+					$hours = get_option( '_inosencio_hours', "Monday - Thursday 8:00am - 5:00pm\nFriday 8:00am - 4:00pm" );
+					echo wpautop( do_shortcode( $hours ) );
+				?>
 			</p>
 		</div>
 	</div>
