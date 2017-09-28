@@ -57,7 +57,8 @@ the_post();
 				<div class="row small-uncollapse vertical-align">
 					<div class="columns small-12">
 				
-						<h1><?php the_title(); ?></h1>
+						<h1>Welcome to <br />
+						<?php echo bloginfo( 'name' ); ?></h1>
 
 						<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
 							<p class="home-about-sub-head">
