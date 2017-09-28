@@ -85,6 +85,10 @@ input[type="submit"] {
   @extend .button;
 }
 
+#site-content {
+	padding: 30px;
+}
+
 #wrapper {
   overflow-x: hidden;
 }

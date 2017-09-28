@@ -31,9 +31,9 @@ add_action( 'add_meta_boxes', function () {
 	);
 	
 	add_meta_box(
-		'inosencio-attorney-small-image',
-		'Image without Backdrop',
-		'_inosencio_metabox_attorney_small_image',
+		'inosencio-attorney-header-image',
+		'Image With Backdrop',
+		'_inosencio_metabox_attorney_header_image',
 		'attorney',
 		'side'
 	);
@@ -109,14 +109,14 @@ function _inosencio_metabox_attorney_extra_meta( $post ) {
 <?php
 }
 
-function _inosencio_metabox_attorney_small_image( $post ) {
+function _inosencio_metabox_attorney_header_image( $post ) {
 	
 	rbm_do_field_media(
-        'attorney_small_image',
-        'Image Without Backdrop',
+        'attorney_header_image',
+        'Image With Backdrop',
         false,
         array(
-			'description' => 'This is used for the Home Page',
+			'description' => 'This is used for the Individual Attorney Pages',
             'type' => 'image',
             'button_text' => 'Upload/Choose Image',
             'button_remove_text' => 'Remove Image',

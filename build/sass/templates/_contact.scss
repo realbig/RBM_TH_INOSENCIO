@@ -5,6 +5,11 @@ Contact template
 */
 
 body.page-template-contact {
+	
+	#site-content {
+		padding: 0;
+	}
+	
   .image-container {
     @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
     background-size: cover;

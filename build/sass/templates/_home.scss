@@ -5,6 +5,10 @@ The home page.
 */
 
 body.home {
+	
+	#site-content {
+		padding: 0;
+	}
 
   .home-cta {
     @include image-overlay;

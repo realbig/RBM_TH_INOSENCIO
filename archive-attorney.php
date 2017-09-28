@@ -22,57 +22,37 @@ function _inosencio_page_title_attorneys() {
 get_header();
 ?>
 
+<div class="row">
 
-<?php if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
+	
+		<?php while ( have_posts() ) : the_post(); ?>
+	
+			<div <?php post_class( array(
+				'small-12',
+				'medium-3',
+				'columns',
+				'text-center',
+			) ); ?>>
 
-	<ul class="attorney-select text-center">
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
-			<li>
-				<?php the_post_thumbnail( 'thumbnail' ); ?>
-			</li>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php echo wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'medium' ); ?>
+				</a>
+
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<h4><?php the_title(); ?></h4>
+					<?php echo get_post_meta( get_the_ID(), '_attorney_title', true ); ?>
+				</a>
+
+			</div>
+	
 		<?php endwhile; ?>
-	</ul>
 
-	<ul class="attorneys">
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			$image_ID = get_post_thumbnail_id( get_the_ID() );
-			$image    = wp_get_attachment_image_src( $image_ID, 'full' );
-			?>
-			<li style="background-image: url('<?php echo $image[0]; ?>');height: <?php echo min( $image[2], 500 ); ?>px;">
-				<div class="container">
-					<h2>
-						<a href="<?php the_permalink(); ?>">
-							<?php the_title(); ?>
-						</a>
-					</h2>
-
-					<?php if ( $attorney_title = get_post_meta( get_the_ID(), '_attorney_title', true ) ) : ?>
-						<p class="attorney-title">
-							<?php echo $attorney_title; ?>
-						</p>
-					<?php endif; ?>
-
-					<p class="attorney-read-more">
-						Read more about <a href="<?php the_permalink(); ?>" class="button primary hollow white-border">
-							<?php
-							$arr = explode( ' ', trim( get_the_title() ) );
-							echo $arr[0];
-							?>
-						</a>
-					</p>
-				</div>
-			</li>
-		<?php endwhile; ?>
-	</ul>
-
-<?php else: ?>
-	No Attorneys!
-<?php endif; ?>
+	<?php else: ?>
+		No Attorneys!
+	<?php endif; ?>
+	
+</div>
 
 
 <?php

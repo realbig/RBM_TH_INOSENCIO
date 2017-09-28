@@ -88,7 +88,7 @@ the_post();
 					
 								<div class="small-6 medium-3 columns">
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php echo wp_get_attachment_image( rbm_get_field( 'attorney_small_image' ), 'medium', false, array( 'title' => get_the_title(), 'alt' => get_the_title() ) ); ?>
+										<?php echo wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'medium', false, array( 'title' => get_the_title(), 'alt' => get_the_title() ) ); ?>
 									</a>
 								</div>
 					

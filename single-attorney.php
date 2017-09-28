@@ -16,7 +16,9 @@ get_header();
 the_post();
 ?>
 
-	<?php the_post_thumbnail( 'attorney' ); ?>
+	<?php echo wp_get_attachment_image( rbm_get_field( 'attorney_header_image' ), 'attorney', false, array(
+		'class' => 'attachment-attorney size-attorney wp-post-image',
+	) ); ?>
 
 	<div class="row">
 		<section class="columns small-12 medium-8">
