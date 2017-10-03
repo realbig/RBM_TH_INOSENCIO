@@ -8,6 +8,10 @@ The static site content.
   @include pattern-background($light-color);
 
   .page-content {
+	  
+	  text-align: left;
+	  text-align: justify;
+	  
     ul {
       margin-left: 3em;
       list-style: disc;
