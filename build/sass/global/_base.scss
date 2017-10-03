@@ -138,3 +138,41 @@ input[type="submit"] {
   display: block;
   margin: $gutter auto;
 }
+
+blockquote {
+
+	border-left: 0;
+	position: relative;
+	padding: 0;
+	
+	&, p {
+		color: scale-color( $secondary-color, $lightness: -25% );
+		font-style: italic;
+		text-align: left;
+	}
+
+    &:before {
+
+        content: '\f10d';
+        font-family: 'FontAwesome';
+        font-size: rem-calc( map-get-deep( $header-styles, 'medium', 'h1', 'font-size' ) );
+		color: $secondary-color;
+		font-style: normal;
+
+    }
+
+    @media #{$medium-up} {
+
+        padding: $blockquote-padding;
+        padding-left: rem-calc( map-get-deep( $header-styles, 'medium', 'h1', 'font-size' ) );
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: rem-calc( map-get-deep( $header-styles, 'medium', 'h2', 'font-size' ) );
+        }
+
+    }
+
+}

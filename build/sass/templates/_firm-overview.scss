@@ -5,19 +5,39 @@ Firm OVerview template
 */
 
 body.page-template-firm-overview {
-	
+
 	#site-content {
 		padding: 0;
 	}
-	
-  .image-container {
-    @include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
-    background-size: cover;
-    margin-bottom: $column-gutter / 2;
 
-    .quote {
-      display: block;
-      font-size: 3em;
-    }
-  }
+	.image-container {
+		
+		@include image-overlay(rgba(#000, 0.8), rgba(#000, 0), left);
+		background-size: cover;
+		margin-bottom: $column-gutter / 2;
+
+		.container {
+			
+			width: auto;
+
+			blockquote {
+				
+				display: block;
+				font-size: 2em;
+				padding-top: 0;
+				
+				&, p {
+					color: #fff;
+				}
+				
+				&:before {
+					color: #fff;
+				}
+				
+			}
+
+		}
+		
+	}
+	
 }

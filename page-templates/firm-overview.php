@@ -25,8 +25,10 @@ the_post();
 		     class="image-container">
 
 			<?php if ( $quote = get_post_meta( get_the_ID(), '_inosencio_firm_overview_quote', true ) ) : ?>
-				<div class="container">
-					<?php echo $quote; ?>
+				<div class="row container">
+					<blockquote>
+						<?php echo apply_filters( 'the_content', $quote ); ?>
+					</blockquote>
 				</div>
 			<?php endif; ?>
 		</div>
