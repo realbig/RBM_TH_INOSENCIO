@@ -16,15 +16,21 @@ get_header();
 the_post();
 ?>
 
-	<?php echo wp_get_attachment_image( rbm_get_field( 'attorney_header_image' ), 'attorney', false, array(
-		'class' => 'attachment-attorney size-attorney wp-post-image',
-	) ); ?>
-
 	<div class="row">
 		<section class="columns small-12 medium-8">
 
 			<div class="page-content">
+				
+				<?php if ( has_post_thumbnail() ) : ?>
+					<div class="thumbnail">
+						<?php the_post_thumbnail( 'medium', array(
+							'class' => 'attachment-medium size-medium wp-post-image alignleft',
+						) ); ?>
+					</div>
+				<?php endif; ?>
+				
 				<?php the_content(); ?>
+				
 			</div>
 
 			<?php

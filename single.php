@@ -23,11 +23,9 @@ the_post();
 				
 				<?php if ( has_post_thumbnail() ) : ?>
 					<div class="thumbnail">
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php the_post_thumbnail( 'medium', array(
-								'class' => 'attachment-medium size-medium wp-post-image alignleft',
-							) ); ?>
-						</a>
+						<?php the_post_thumbnail( 'medium', array(
+							'class' => 'attachment-medium size-medium wp-post-image alignleft',
+						) ); ?>
 					</div>
 				<?php endif; ?>
 				

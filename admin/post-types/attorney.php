@@ -30,14 +30,6 @@ add_action( 'add_meta_boxes', function () {
 		'attorney'
 	);
 	
-	add_meta_box(
-		'inosencio-attorney-header-image',
-		'Image With Backdrop',
-		'_inosencio_metabox_attorney_header_image',
-		'attorney',
-		'side'
-	);
-	
 } );
 
 /**
@@ -107,24 +99,6 @@ function _inosencio_metabox_attorney_extra_meta( $post ) {
 		?>
 	</p>
 <?php
-}
-
-function _inosencio_metabox_attorney_header_image( $post ) {
-	
-	rbm_do_field_media(
-        'attorney_header_image',
-        'Image With Backdrop',
-        false,
-        array(
-			'description' => 'This is used for the Individual Attorney Pages',
-            'type' => 'image',
-            'button_text' => 'Upload/Choose Image',
-            'button_remove_text' => 'Remove Image',
-            'window_title' => 'Choose Image',
-            'window_button_text' => 'Use Image',
-        )
-    );
-	
 }
 
 add_action( 'save_post', function ( $post_ID ) {
