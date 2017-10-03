@@ -16,7 +16,7 @@ add_action( 'init', function () {
 		'menu_icon' => 'dashicons-businessman',
 		'supports'  => array( 'title', 'editor', 'thumbnail' ),
 		'rewrite'   => array( 'slug' => 'attorneys' ),
-		'public'    => false,
+		'public'    => true,
 		'show_ui'   => true,
 	) );
 } );
