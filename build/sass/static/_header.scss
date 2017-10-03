@@ -137,6 +137,8 @@ The static site header.
   .page-title {
     @include pattern-background($secondary-color);
     text-transform: uppercase;
+	margin-bottom: 0;
     padding-top: 20px;
+	padding-bottom: 20px;
   }
 }
