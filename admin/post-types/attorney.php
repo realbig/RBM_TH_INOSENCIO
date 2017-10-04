@@ -66,6 +66,7 @@ function _inosencio_metabox_attorney_extra_meta( $post ) {
 		<label>
 			Practice Areas
 			<br/>
+			<em>Leave this empty to pull all the "Top-Level" Practice Areas from the Navigation Menu</em>
 			<?php
 			if ( ! empty( $practice_areas ) ) {
 				?>

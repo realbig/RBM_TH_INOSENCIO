@@ -40,12 +40,58 @@ the_post();
 					<?php
 					$included_areas = get_post_meta( get_the_ID(), '_practice_areas', true );
 					$practice_areas = array();
+					
 					if ( ! empty( $included_areas ) ) {
 						$practice_areas = get_posts( array(
 							'post_type'   => 'practice_area',
 							'numberposts' => - 1,
 							'include'     => $included_areas,
 						) );
+					}
+					else {
+						
+						$theme_locations = get_nav_menu_locations();
+						$theme_location = 'primary';
+						
+						$menu_obj = get_term( $theme_locations[$theme_location], 'nav_menu' );
+						
+						$menu_items = wp_get_nav_menu_items( $menu_obj->name );
+						
+						$menu_item_parent_id = 0;
+						$practice_areas = array();
+						foreach ( $menu_items as $menu_item ) {
+							
+							if ( $menu_item->type == 'post_type_archive' && 
+							   $menu_item->object == 'practice_area' ) {
+								
+								// Use this later to grab our items
+								$menu_item_parent_id = $menu_item->ID;
+								break;
+								
+							}
+							
+						}
+						
+						// We unfortunately have to loop twice to ensure we grabbed the Menu Item Parent ID in time
+						foreach ( $menu_items as $menu_item ) {
+							
+							if ( $menu_item->menu_item_parent == $menu_item_parent_id ) {
+								
+								// We need to modify the object a little to make it look like what the code originally meant for get_posts() expects
+								
+								$menu_item->post_title = $menu_item->title;
+								
+								$post_name = rtrim( $menu_item->url, '/' );
+								$post_name = substr( $post_name, strrpos( $post_name, '/' ) + 1 );
+								
+								$menu_item->post_name = $post_name;
+								
+								$practice_areas[] = $menu_item;
+								
+							}
+							
+						}
+						
 					}
 
 					if ( ! empty( $practice_areas ) ) :
