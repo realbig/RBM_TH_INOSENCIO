@@ -14,45 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_filter( 'inosencio_page_title', '__return_false' );
 
 get_header();
-the_post();
+the_post(); 
 
-	$style = '';
-	if ( has_post_thumbnail() ) {
-
-		$image_src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-		$cta_height = get_post_meta( get_the_ID(), '_inosencio_home_cta_height', true );
-
-		$style = 'style="background-image: url(\'';
-		$style .= $image_src[0];
-		$style .= '\');';
-		$style .= 'height: ' . ( ( $cta_height ) ? $cta_height : '550' ) . 'px;';
-		$style .= '"';
-	}
-	?>
-
-	<section class="home-cta" <?php echo $style; ?>>
-
-		<div class="container">
-
-			<?php if ( $home_title = get_post_meta( get_the_ID(), '_inosencio_home_title', true ) ) : ?>
-				<p>
-					<?php echo $home_title; ?>
-				</p>
-			<?php endif; ?>
-
-			<p class="call-to-action">
-				Learn more <a href="/firm-overview/" class="button primary hollow white-border">about us</a>
-			</p>
-
-		</div>
-
-	</section>
+?>
 
 	<section class="home-about section green">
 		
-		<div class="row expanded small-collapse">
+		<div class="row expanded small-collapse" data-equalizer data-equalize-on="medium">
 			
- 			<div class="columns small-12 medium-6 text-container">
+ 			<div class="columns small-12 medium-6 text-container" data-equalizer-watch>
 				
 				<div class="row small-uncollapse vertical-align">
 					<div class="columns small-12">
@@ -63,6 +33,9 @@ the_post();
 						<?php if ( $sub_head = get_post_meta( get_the_ID(), '_inosencio_home_about_sub_head', true ) ) : ?>
 							<p class="home-about-sub-head">
 								<?php echo do_shortcode( $sub_head ); ?>
+								<p class="call-to-action">
+									Learn more <a href="/firm-overview/" class="button primary hollow white-border">about us</a>
+								</p>
 							</p>
 						<?php endif; ?>
 						
@@ -71,7 +44,7 @@ the_post();
 				
 			</div>
 			
-			<div class="columns small-12 medium-6">
+			<div class="columns small-12 medium-6 attorney-container">
 				
 				<div class="row small-collapse">
 					
@@ -84,11 +57,16 @@ the_post();
 					
 						if ( $attorneys->have_posts() ) : 
 					
-							while ( $attorneys->have_posts() ) : $attorneys->the_post(); ?>
+							while ( $attorneys->have_posts() ) : $attorneys->the_post(); 
 					
-								<div class="small-6 medium-3 columns">
+								$src = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium', false );
+					
+								?>
+					
+								<div class="small-6 medium-3 columns" data-equalizer-watch>
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-										<?php echo wp_get_attachment_image( get_post_thumbnail_id( get_the_ID() ), 'medium', false, array( 'title' => get_the_title(), 'alt' => get_the_title() ) ); ?>
+										<div class="attorney-image" style="background-image: url('<?php echo $src[0]; ?>');">
+										</div>
 									</a>
 								</div>
 					

@@ -10,60 +10,6 @@ body.home {
 		padding: 0;
 	}
 
-  .home-cta {
-    @include image-overlay;
-    position: relative;
-    background-size: cover;
-    color: $light-color;
-    text-align: center;
-    font-size: 1.5em;
-
-    @media #{$small-only} {
-      font-size: 1em;
-    }
-
-    > .container {
-      position: relative;
-      padding: $column-gutter 0;
-      height: 100%;
-      z-index: 1;
-    }
-
-    p {
-      font-size: inherit;
-    }
-
-    .practice-areas {
-      @extend h1;
-      color: inherit;
-      font-size: 2em;
-      border-bottom: 1px solid rgba(#fff, 0.5);
-		text-align: center;
-    }
-
-    .call-to-action {
-      position: absolute;
-      bottom: 20%;
-      width: 100%;
-    }
-
-    .button {
-      font-size: inherit;
-      color: inherit;
-      border-color: inherit;
-      transition: border 300ms, background 300ms;
-			padding-top: 0.625rem;
-	padding-right: 1.25rem;
-	padding-bottom: 0.6875rem;
-	padding-left: 1.25rem;
-		margin: 0;
-
-      &:hover {
-        border-color: $primary-color;
-      }
-    }
-  }
-
   .section {
     text-align: center;
 
@@ -104,8 +50,49 @@ body.home {
 			  
 			  .vertical-align {
 				  @include vertical-align;
-				  transform: translateY(5%);
+				  transform: translateY(-46%);
 			  }
+			  
+		  }
+		  
+		  .call-to-action {
+			  
+			  .button {
+				  padding-right: 1.25rem;
+				  padding-bottom: 0.6875rem;
+				  padding-left: 1.25rem;
+				  margin: 0;
+			  }
+			  
+			  @media #{$medium-up} {
+			  
+			  	padding-bottom: 1em;
+				  
+			  }
+			  
+		  }
+		  
+	  }
+	  
+	  .attorney-container {
+		  
+		  position: relative;
+		  
+		  .columns {
+			  min-height: 254px;
+			  position: relative;
+		  }
+		  
+		  .attorney-image {
+			  
+			  position: absolute;
+			  top: 0;
+			  bottom: 0;
+			  right: 0;
+			  left: 0;
+			  background-position: 50%;
+			  background-repeat: no-repeat;
+			  background-size: cover;
 			  
 		  }
 		  
