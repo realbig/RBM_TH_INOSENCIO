@@ -160,6 +160,19 @@ blockquote {
 		font-style: normal;
 
     }
+	
+	&:after {
+
+        content: '\f10e';
+        font-family: 'FontAwesome';
+        font-size: rem-calc( map-get-deep( $header-styles, 'medium', 'h1', 'font-size' ) );
+		color: $secondary-color;
+		font-style: normal;
+		display: block;
+		text-align: right;
+		line-height: 0.5;
+
+    }
 
     @media #{$medium-up} {
 
@@ -170,6 +183,16 @@ blockquote {
             position: absolute;
             left: 0;
             top: 0;
+            font-size: rem-calc( map-get-deep( $header-styles, 'medium', 'h2', 'font-size' ) );
+        }
+		
+		&:after {
+            position: absolute;
+			display: inline;
+			text-align: left;
+			line-height: rem-calc( map-get-deep( $header-styles, 'medium', 'h2', 'font-size' ) );
+            right: rem-calc( map-get-deep( $header-styles, 'medium', 'h5', 'font-size' ) );
+            bottom: 0;
             font-size: rem-calc( map-get-deep( $header-styles, 'medium', 'h2', 'font-size' ) );
         }
 
