@@ -273,20 +273,9 @@ add_action( 'widgets_init', function () {
 
 	// Footer Left
 	register_sidebar( array(
-		'name' => 'Footer Left',
+		'name' => 'Footer',
 		'id' => 'footer-left',
-		'description' => 'Displays in the footer, on the left side.',
-		'before_widget' => '<div class="columns small-12">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
-
-	// Footer Right
-	register_sidebar( array(
-		'name' => 'Footer Right',
-		'id' => 'footer-right',
-		'description' => 'Displays in the footer, on the right side.',
+		'description' => 'Displays in the footer',
 		'before_widget' => '<div class="columns small-12">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
