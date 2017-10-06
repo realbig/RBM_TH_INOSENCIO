@@ -17,7 +17,7 @@ add_action( 'init', function () {
 		'menu_icon' => 'dashicons-book',
 		'supports'  => array( 'title', 'editor', 'page-attributes' ),
 		'rewrite'   => array( 'slug' => 'practice-areas' ),
-		'public'  => false,
+		'public'  => true,
 		'show_ui' => true,
 		'hierarchical' => true,
 		'show_in_nav_menus' => true,
