@@ -13,7 +13,7 @@
         // Prevent page jump
         prevent_jump();
 
-        if (!$('body').hasClass('post-type-archive-practice_area')) {
+        if (!$('body').hasClass('page-template-practice-areas')) {
             return;
         }
 

@@ -21,6 +21,7 @@ add_action( 'init', function () {
 		'show_ui' => true,
 		'hierarchical' => true,
 		'show_in_nav_menus' => true,
+		'has_archive' => false,
 	) );
 } );
 

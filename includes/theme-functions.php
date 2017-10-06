@@ -11,19 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-add_filter( 'pre_get_posts', '_inosencio_pre_get_posts' );
 add_filter( 'gform_field_content', '_inosencio_gform_column_splits', 10, 5 );
 add_filter( 'gform_get_form_filter', '_inosencio_gform_do_shortcode' );
-
-function _inosencio_pre_get_posts( $query ) {
-
-	if ( is_post_type_archive( 'practice_area' ) ) {
-
-		$query->set( 'posts_per_archive_page', '-1' );
-		$query->set( 'orderby', 'menu_order' );
-		$query->set( 'order', 'ASC' );
-	}
-}
 
 function inosencio_get_menu_by_location( $location ) {
 
