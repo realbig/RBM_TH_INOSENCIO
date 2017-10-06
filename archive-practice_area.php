@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Practice Areas
+ * Show's list of attorneys.
  *
- * @since {{VERSION}}
+ * @since   0.1.0
  * @package Inosencio
  */
 
@@ -11,36 +11,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
+add_filter( 'inosencio_page_title', '_inosencio_page_title_practice_areas' );
+
+function _inosencio_page_title_practice_areas() {
+	return 'Practice Areas';
+}
+
 get_header();
-
-the_post();
-
-$practice_areas = new WP_Query( array(
-	'post_type' => 'practice_area',
-	'posts_per_page' => -1,
-	'orderby' => 'menu_order',
-	'order' => 'ASC',
-) );
-
-global $post;
-
 ?>
 
-<div class="row">
-	<section class="columns small-12 medium-8">
-		
-		<section class="page-content">
-			<?php the_content(); ?>
-		</section>
-		
-		<div class="practice-areas-container">
+	<div class="row">
+		<section class="columns small-12 medium-8">
 
-			<?php if ( $practice_areas->have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 				<h3 class="text-uppercase">Practice Areas:</h3>
 
 				<div class="practice-areas row small-up-1 small-collapse">
 					<?php
-					while ( $practice_areas->have_posts() ) : $practice_areas->the_post();
+					while ( have_posts() ) :
+						the_post();
+						global $post;
 						?>
 						<div class="column column-block">
 							<div id="<?php echo $post->post_name; ?>" class="practice-area">
@@ -56,16 +46,12 @@ global $post;
 							</div>
 						</div>
 					<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
 				</div>
 			<?php endif; ?>
-			
-		</div>
-		
-	</section>
+		</section>
 
-	<?php get_sidebar(); ?>
-</div>
+		<?php get_sidebar(); ?>
+	</div>
 
 <?php
 get_footer();
