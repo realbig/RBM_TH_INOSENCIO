@@ -2,7 +2,7 @@
 /**
  * Loop Template fallback
  *
- * @since       {{VERSION}}
+ * @since       1.1.0
  * @package     Inosencio
  * @subpackage  Inosencio/partials/loop
  */

@@ -2,7 +2,7 @@
 /**
  * Widgets for the Social Stream plugin
  *
- * @since {{VERSION}}
+ * @since 1.1.0
  *
  * @package Inosencio
  */
@@ -14,7 +14,7 @@ class Inosencio_Social_Stream extends WP_Widget {
 	/**
 	 * Inosencio_Social_Stream constructor.
 	 *
-	 * @since {{VERSION}}
+	 * @since 1.1.0
 	 */
 	function __construct() {
 
@@ -38,7 +38,7 @@ class Inosencio_Social_Stream extends WP_Widget {
 	 * @param        array $instance Saved values from database
 	 *
 	 * @access        public
-	 * @since        {{VERSION}}
+	 * @since        1.1.0
 	 * @return        HTML
 	 */
 	public function widget( $args, $instance ) {
@@ -85,7 +85,7 @@ class Inosencio_Social_Stream extends WP_Widget {
 	 * @param        array $instance Previously saved values from database
 	 *
 	 * @access        public
-	 * @since        {{VERSION}}
+	 * @since        1.1.0
 	 * @return        HTML
 	 */
 	public function form( $instance ) {
@@ -169,7 +169,7 @@ class Inosencio_Social_Stream extends WP_Widget {
 	 * @param        array $old_instance Previously saved values from database
 	 *
 	 * @access        public
-	 * @since        {{VERSION}}
+	 * @since        1.1.0
 	 * @return        array Updated safe values to be saved
 	 */
 	public function update( $new_instance, $old_instance ) {

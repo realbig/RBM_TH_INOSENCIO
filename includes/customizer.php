@@ -2,7 +2,7 @@
 /**
  * Adds Customizer Functionality
  * 
- * @since   {{VERSION}}
+ * @since   1.1.0
  * @package Inosencio
  */
 
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Adds custom Customizer Controls.
  *
- * @since {{VERSION}}
+ * @since 1.1.0
  */
 add_action( 'customize_register', function( $wp_customize ) {
 
