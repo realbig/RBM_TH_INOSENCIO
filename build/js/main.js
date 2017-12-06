@@ -9,18 +9,6 @@
 
     // Foundation
     $(document).foundation();
-	
-	$( document ).on( 'opened.zf.offcanvas', function() {
-		
-		$( 'body' ).addClass( 'off-canvas-open' );
-		
-	} );
-	
-	$( document ).on( 'closed.zf.offcanvas', function() {
-		
-		$( 'body' ).removeClass( 'off-canvas-open' );
-		
-	} );
 
     // Page loading overlay
     $('#site-content').append('<div id="page-load-overlay"><div class="loader fa fa-circle-o-notch fa-spin-fast" /></div>');

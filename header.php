@@ -28,9 +28,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'off-canvas-wrapper' ); ?>>
+<body <?php body_class(); ?>>
 	
-<div id="wrapper" class="off-canvass-wrapper-inner" data-off-canvas-wrapper>
+<div id="wrapper" class="off-canvas-wrapper">
 
 	<div class="off-canvas position-right nav-menu" id="offCanvasRight" data-off-canvas>
 
